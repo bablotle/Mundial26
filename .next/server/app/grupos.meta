@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/grupos/layout,_N_T_/grupos/page,_N_T_/grupos"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/grupos/__PAGE__",
+    "/grupos",
+    "/_index",
+    "/_head"
+  ]
+}

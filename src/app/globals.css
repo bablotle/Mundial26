@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+
+/* --- ANIMACIÓN DEL TICKER --- */
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* --- CLASES PERSONALIZADAS --- */
+/* En Tailwind v4, definimos las clases directamente debajo del import */
+
+
+.animate-ticker-custom {
+    display: flex;
+    gap: 2.5rem;
+    animation: ticker 30s linear infinite;
+    width: max-content;
+}
+
+
+.animate-ticker-custom:hover {
+    animation-play-state: paused;
+}
+
+
+/* Estilo para las tarjetas Island Card usando CSS estándar para evitar el error de apply */
+.island-card {
+    border-radius: 2rem;
+    border: 1px solid #f3f4f6;
+    /* Esto es border-gray-100 */
+    background-color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.island-card:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border-color: #dbeafe;
+    /* Esto es border-blue-100 */
+    transform: translateY(-4px);
+}
+
+
+/* --- ESTILOS BASE --- */
+body {
+    background-color: #f0f2f5;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+
+@import "tailwindcss";
+
+
+/* 1. Definimos la animación pura */
+@keyframes scrollTicker {
+    from {
+        transform: translateX(0);
+    }
+
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* 2. Creamos la clase con CSS estándar */
+.ticker-container {
+    display: flex !important;
+    width: max-content;
+    animation: scrollTicker 30s linear infinite !important;
+}
+
+
+/* 3. Evitamos que se rompa el layout */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}

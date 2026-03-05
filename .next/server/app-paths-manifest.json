@@ -1,0 +1,19 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/agencias/page": "app/agencias/page.js",
+  "/comercial/page": "app/comercial/page.js",
+  "/estadisticas/page": "app/estadisticas/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/grupos/page": "app/grupos/page.js",
+  "/mi-seleccion/page": "app/mi-seleccion/page.js",
+  "/noticias/[id]/page": "app/noticias/[id]/page.js",
+  "/noticias/page": "app/noticias/page.js",
+  "/page": "app/page.js",
+  "/partidos/page": "app/partidos/page.js",
+  "/predicciones/page": "app/predicciones/page.js",
+  "/sedes/[id]/page": "app/sedes/[id]/page.js",
+  "/sedes/page": "app/sedes/page.js",
+  "/selecciones/[id]/page": "app/selecciones/[id]/page.js",
+  "/selecciones/page": "app/selecciones/page.js"
+}

@@ -1,0 +1,19 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/agencias/page": "/agencias",
+  "/comercial/page": "/comercial",
+  "/estadisticas/page": "/estadisticas",
+  "/favicon.ico/route": "/favicon.ico",
+  "/grupos/page": "/grupos",
+  "/mi-seleccion/page": "/mi-seleccion",
+  "/noticias/[id]/page": "/noticias/[id]",
+  "/noticias/page": "/noticias",
+  "/page": "/",
+  "/partidos/page": "/partidos",
+  "/predicciones/page": "/predicciones",
+  "/sedes/[id]/page": "/sedes/[id]",
+  "/sedes/page": "/sedes",
+  "/selecciones/[id]/page": "/selecciones/[id]",
+  "/selecciones/page": "/selecciones"
+}
