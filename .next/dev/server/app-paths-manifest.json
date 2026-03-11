@@ -1,9 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/estadisticas/page": "app/estadisticas/page.js",
-  "/mi-seleccion/page": "app/mi-seleccion/page.js",
-  "/noticias/[id]/page": "app/noticias/[id]/page.js",
-  "/noticias/page": "app/noticias/page.js",
-  "/page": "app/page.js",
-  "/partidos/page": "app/partidos/page.js"
+  "/page": "app/page.js"
 }

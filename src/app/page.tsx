@@ -7,10 +7,12 @@ import CardSeleccion from '@/components/CardSeleccion';
 import TablaGrupos from '@/components/TablaGrupo';
 import Image from 'next/image'; // Importante para las noticias
 import Link from 'next/link';
+import MarketingCards from '@/components/MarketingCards';
 import { todosLosPartidos } from '@/data/partidos';
 import { todasLasSelecciones } from '@/data/selecciones';
 import { todasLasNoticias } from '@/data/noticias';
-
+import SponsorGlobal from '@/components/SponsorGlobal';
+import SponsorGlobalis from '@/components/SponsorGlobalis';
 
 export default function Home() {
    // 1. Datos de Sedes
@@ -36,8 +38,7 @@ export default function Home() {
    return (
       <main className="min-h-screen bg-[#f0f2f5] pb-20">
          <Navbar />
-
-
+         
          {/* --- SECCIÓN HERO --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
             <img src="/images/hero.jpg" className="w-full h-full object-cover" alt="Mundial 2026" />
@@ -123,6 +124,7 @@ export default function Home() {
                </div>
             </section>
 
+   
 
             {/* --- FASE DE GRUPOS --- */}
             <section className="mt-16">

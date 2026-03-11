@@ -10,15 +10,16 @@ export interface Partido {
        grupo: string;
 
 
-       // Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
+
+// Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
 
 
-       fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
-
+fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
 
 }
+
 export const todosLosPartidos: Partido[] = [
-       
+
        // --- Grupo A ---
        {
               id: "A1",

@@ -43,7 +43,7 @@ export default function Footer() {
 
                                    <div className="flex items-center gap-5">
                                           <a
-                                                 href="https://instagram.com/milgoles_"
+                                               //  href="https://instagram.com/milgoles_"
                                                  target="_blank"
                                                  rel="noopener noreferrer"
                                                  className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-600 hover:text-white transition-all duration-300 border border-white/10"
@@ -53,7 +53,7 @@ export default function Footer() {
 
 
                                           <a
-                                                 href="https://x.com/milgoles_"
+                                               //  href="https://x.com/milgoles_"
                                                  target="_blank"
                                                  rel="noopener noreferrer"
                                                  className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition-all duration-300 border border-white/10"
@@ -65,32 +65,18 @@ export default function Footer() {
 
 
                             {/* 3. INFO DEBAJO (TEXTOS Y CRÉDITOS) */}
-                            <div className="w-full pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-
-
-                                   <div className="max-w-[300px]">
-                                          <p className="text-[9px] text-gray-500 uppercase tracking-[0.2em] leading-relaxed">
-                                                 Sitio independiente de la FIFA. Todas las marcas y logotipos pertenecen a sus respectivos dueños.
-                                          </p>
-                                   </div>
-
-
-                                   <div className="flex flex-col items-center md:items-end">
-                                          <p className="text-[8px] font-black text-gray-600 uppercase tracking-[0.3em] mb-1">Desarrollado por:</p>
-                                          <p className="text-[13px] font-black uppercase italic tracking-tighter text-blue-500 underline decoration-2 underline-offset-4">
-                                                 UELTA / GROUP
-                                          </p>
-                                          <p className="text-[8px] text-gray-700 mt-3 uppercase font-bold">© 2026 WORLD26 APP</p>
-                                   </div>
+                             <div className="w-full pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+                             <p className="text-[8px] text-gray-700 mt-3 uppercase font-bold">© 2026 WORLD26 APP</p>
+                                 
                             </div>
 
 
-                            {/* CONTACTO FINAL 
+                        { /*   CONTACTO FINAL 
                             <div className="mt-8">
                                    <p className="text-[10px] font-black text-white italic opacity-40 hover:opacity-100 transition-opacity">
                                           contacto@world26app.com
                                    </p>
-                            </div> */}
+                            </div> */ }
                      </div>
               </footer>
        );

@@ -1,1 +1,14 @@
-node_modules
+# Dependencias
+node_modules/
+
+# Next.js build y cache
+.next/
+out/
+build/
+
+# Variables de entorno (Seguridad)
+.env*.local
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
