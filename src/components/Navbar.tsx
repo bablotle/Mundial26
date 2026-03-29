@@ -13,7 +13,7 @@ export default function Navbar() {
         { name: 'Estadísticas', href: '/estadisticas' },
         { name: 'Sedes', href: '/sedes' },
         { name: 'Selecciones', href: '/selecciones' },
-        { name: 'Mi Selección', href: '/mi-seleccion' },
+        { name: 'La Albirroja', href: '/mi-seleccion' },
     ];
 
 

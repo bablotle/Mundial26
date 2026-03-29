@@ -49,7 +49,25 @@ export const locales: Local[] = [
             foto: 'https://lh3.googleusercontent.com/gps-cs-s/AHVAweoA0ReGOqkCMbPZ5oukFkiPh5wiCvD6wk3-BVfFhhgQJm639UVXdTun2qnSTR55WvPS_JT-YCfcu41U7jblpDA3_9dhsS9AadVBHmYxFmuomReaGz3Vguv-73XxUZcpZZdh9G43=s1468-w784-h1468-rw' // O una URL
         },
         wifi: 'biker2026'
+    },
+    {
+        id: '3',
+        nombre: 'La Cabra Sport Bar',
+        slug: 'la-cabra',
+        promoHoy: '2x1 en Chopp durante el partido de Paraguay',
+        foto: 'https://lh3.googleusercontent.com/gps-cs-s/AHVAweqqu8SMZxbLlc9QOjr7AZWethNWCez3fOsvEhROM8wPWwPzqmMC2wINQWpQAZB8yyNZZtKkUkghySdavbyrEErBxbGN5oKym9KPR2NZ-Dq0vlLTJZovgXvFH546UxHi_-IGDZGxDrz-DqY9=s1468-w784-h1468-rw',
+        descripcion: 'Todos los deportes en vivo, todos los días.',
+        amenities: ['Pantalla Gigante', 'Bar & Restaurante', 'Promos de Cerveza', 'After Game Party'],
+        direccion: 'Paseo Los Arboles',
+        linkReserva: 'https://wa.me/595991782332',
+        menuDestacado: {
+            nombre: 'Pizza "La Albirroja" (Para 4)',
+            precio: '110.000 Gs',
+            foto: 'https://lh3.googleusercontent.com/gps-proxy/ALd4DhG5RRmefV3gHYz6uIBqPY1SZNT85dTy6ejkljJ6q8wOk9sznYBSGPgkBJNf1FIwgFJA1NCWuSByqCy1t81hsVdErtk99qMZP6bBOHj6_rBZ8ViLJE1if6EKsJY_bACjW_df2_xnz85zZ0R1rgoGimt13U9ruDyGT4bzsiBnDdp_zODxAH2V-wCo0g=s1468-w784-h1468-rw' // O una URL
+        },
+        wifi: 'lacabra2026'
     }
+
 
     // Agrega más locales aquí...
 ];

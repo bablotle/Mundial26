@@ -43,5 +43,16 @@ export const FAN_ZONES: FanZone[] = [
     googleMapsUrl: 'https://share.google/iP0NF9xrkkwNuLSK9',
     destacado: false,
     promo: 'Promo chop 10% OFF'
+  },
+   {
+    id: 'la-cabra',
+    nombre: 'La Cabra Sport Bar',
+    categoria: 'Bar & Restaurant',
+    ubicacion: 'Santisimo Sacramento, Asunción',
+    imagen: 'https://lh3.googleusercontent.com/gps-cs-s/AHVAweqqu8SMZxbLlc9QOjr7AZWethNWCez3fOsvEhROM8wPWwPzqmMC2wINQWpQAZB8yyNZZtKkUkghySdavbyrEErBxbGN5oKym9KPR2NZ-Dq0vlLTJZovgXvFH546UxHi_-IGDZGxDrz-DqY9=s1468-w784-h1468-rw',
+    linkReserva: 'https://wa.me/595991782332',
+    googleMapsUrl: 'https://share.google/sczSgqRmC1q7AO6Hwhttps://share.google/iP0NF9xrkkwNuLSK9',
+    destacado: false,
+    promo: 'Promo chop 10% OFF'
   }
 ];
