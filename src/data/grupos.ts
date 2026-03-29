@@ -1,5 +1,5 @@
 export interface Grupo {
-    nombre: string; // Ej: "Grupo A"
+    nombre: string; // Eje: "Grupo A"
     equipos: {
         id: string;
         nombre: string;

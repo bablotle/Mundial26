@@ -39,7 +39,7 @@ export default async function SeleccionPage({ params }: { params: Promise<{ id: 
                     </div>
                 </div>
 
-                {/* --- FRAME 2: BANNER HORIZONTAL UNIFICADO --- */}
+                {/* --- FRAME 2: BANNER HORIZONTAL UNIFICADO -- */}
                 <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-gray-100">
                     <div className="relative w-full h-20 md:h-60 bg-blue-950">
                         <Image

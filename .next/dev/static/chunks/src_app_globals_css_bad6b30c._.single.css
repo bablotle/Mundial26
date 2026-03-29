@@ -1837,16 +1837,6 @@
     background-color: var(--color-blue-500);
   }
 
-  .bg-blue-500\/10 {
-    background-color: #3080ff1a;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-blue-500\/10 {
-      background-color: color-mix(in oklab, var(--color-blue-500) 10%, transparent);
-    }
-  }
-
   .bg-blue-500\/20 {
     background-color: #3080ff33;
   }

@@ -44,7 +44,7 @@ export default function SeleccionesPage() {
                 </div>
 
 
-                {/* Grid de Tarjetas */}
+                {/* Grid de Tarjeta */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {filtradas.map((s) => (
                         // 3. PASAMOS LOS DATOS A LA CARD

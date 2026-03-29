@@ -51,7 +51,7 @@ function Navbar() {
             href: '/selecciones'
         },
         {
-            name: 'Mi Selección',
+            name: 'La Albirroja',
             href: '/mi-seleccion'
         }
     ];

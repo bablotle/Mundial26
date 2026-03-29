@@ -23,7 +23,7 @@ export default function CardSeleccion({
     estrellas = 0
 }: SeleccionProps) {
     return (
-        /* Envolvemos todo el contenido en el Link dinámico */
+        /* Envolvemos todo el contenido en el Link dinámic */
         <Link href={`/selecciones/${id}`} className="block">
             <div className="island-card p-4 flex flex-col items-center group hover:border-blue-400 hover:shadow-lg transition-all cursor-pointer text-center">
 

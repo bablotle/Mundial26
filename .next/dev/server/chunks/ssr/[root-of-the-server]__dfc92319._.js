@@ -2517,7 +2517,7 @@ async function SeleccionPage({ params }) {
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-blue-300 rounded-3xl p-6 text-white shadow-xl",
+                            className: "bg-blue-400 rounded-3xl p-6 text-white shadow-xl",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-[10px] font-black uppercase tracking-[0.2em] mb-4 opacity-80",
@@ -2531,7 +2531,7 @@ async function SeleccionPage({ params }) {
                                     className: "grid grid-cols-4 gap-3",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "text-center bg-yellow-300 py-3 rounded-xl",
+                                            className: "text-center bg-green-400 py-3 rounded-xl",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-xl font-black",
@@ -2539,7 +2539,7 @@ async function SeleccionPage({ params }) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/selecciones/[id]/page.tsx",
                                                     lineNumber: 102,
-                                                    columnNumber: 88
+                                                    columnNumber: 87
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-[8px] uppercase opacity-60",
@@ -2547,7 +2547,7 @@ async function SeleccionPage({ params }) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/selecciones/[id]/page.tsx",
                                                     lineNumber: 102,
-                                                    columnNumber: 149
+                                                    columnNumber: 148
                                                 }, this)
                                             ]
                                         }, void 0, true, {
@@ -2556,7 +2556,7 @@ async function SeleccionPage({ params }) {
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "text-center bg-green-500/20 py-3 rounded-xl",
+                                            className: "text-center bg-green-400 py-3 rounded-xl",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-xl font-black",
@@ -2564,7 +2564,7 @@ async function SeleccionPage({ params }) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/selecciones/[id]/page.tsx",
                                                     lineNumber: 103,
-                                                    columnNumber: 90
+                                                    columnNumber: 87
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-[8px] uppercase text-green-300",
@@ -2572,7 +2572,7 @@ async function SeleccionPage({ params }) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/selecciones/[id]/page.tsx",
                                                     lineNumber: 103,
-                                                    columnNumber: 147
+                                                    columnNumber: 144
                                                 }, this)
                                             ]
                                         }, void 0, true, {
@@ -2581,7 +2581,7 @@ async function SeleccionPage({ params }) {
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "text-center bg-green-300 py-3 rounded-xl",
+                                            className: "text-center bg-green-400 py-3 rounded-xl",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-xl font-black",
@@ -2606,7 +2606,7 @@ async function SeleccionPage({ params }) {
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "text-center bg-yellow-600 py-3 rounded-xl",
+                                            className: "text-center bg-green-400 py-3 rounded-xl",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-xl font-black",
@@ -2614,7 +2614,7 @@ async function SeleccionPage({ params }) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/selecciones/[id]/page.tsx",
                                                     lineNumber: 105,
-                                                    columnNumber: 88
+                                                    columnNumber: 87
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-[8px] uppercase text-black-300",
@@ -2622,7 +2622,7 @@ async function SeleccionPage({ params }) {
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/selecciones/[id]/page.tsx",
                                                     lineNumber: 105,
-                                                    columnNumber: 145
+                                                    columnNumber: 144
                                                 }, this)
                                             ]
                                         }, void 0, true, {

@@ -117,7 +117,7 @@ export default function GruposPage() {
         <main className="min-h-screen bg-[#f8f9fa] pt-24 pb-12 px-5">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {gruposData.map((grupo, index) => (
-                    /* IMPORTANTE: El nombre de la prop debe ser 'equipos' */
+                    /* IMPORTANT: El nombre de la prop debe ser 'equipos' */
                     <TablaGrupo
                         key={index}
                         nombre={grupo.nombre}
