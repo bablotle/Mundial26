@@ -1,7 +1,0 @@
-{
-  "/fan-zones/[id]/page": "app/fan-zones/[id]/page.js",
-  "/fan-zones/page": "app/fan-zones/page.js",
-  "/grupos/page": "app/grupos/page.js",
-  "/page": "app/page.js",
-  "/selecciones/[id]/page": "app/selecciones/[id]/page.js"
-}
