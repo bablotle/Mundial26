@@ -137,13 +137,13 @@ export default function Home() {
                      { id: "estados_unidos", nombre: "Estados Unidos", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/usa.png" },
                      { id: "paraguay", nombre: "Paraguay", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/paraguay.png" },
                      { id: "australia", nombre: "Australia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/australia.png" },
-                     { id: "tbd", nombre: "Playoff UEFA C", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+                     { id: "turquia", nombre: "Turquía", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/turquia.png" },
                   ]} />
                    <TablaGrupos nombre="Grupo A" equipos={[
                      { id: "mexico", nombre: "México", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/mexico.png" },
                      { id: "sudafrica", nombre: "Sudáfrica", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/sudafrica.png" },
                      { id: "corea_sur", nombre: "Corea del Sur", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/corea-del-sur.png" },
-                     { id: "tbd", nombre: "Playoff UEFA D", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+                     { id: "republica-checa", nombre: "República Checa", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/republica-checa.png" },
                   ]} />
                </div>
             </section>

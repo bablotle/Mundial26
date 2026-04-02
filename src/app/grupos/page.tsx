@@ -8,7 +8,7 @@ const gruposData = [
             { id:"mexico", nombre: "México", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/mexico.png" },
             { id:"sudafrica", nombre: "Sudáfrica", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/sudafrica.png" },
             { id:"corea_sur", nombre: "Corea del Sur", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/corea-del-sur.png" },
-            { id:"tbd", nombre: "Playoff UEFA D", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+            { id:"republica_checa", nombre: "República Checa", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/republica-checa.png" },
         ]
     },
     {
@@ -17,7 +17,7 @@ const gruposData = [
             { id:"canada", nombre: "Canadá", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/canada.png" },
             { id:"qatar", nombre: "Qatar", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/qatar.png" },
             { id:"suiza", nombre: "Suiza", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/suiza.png" },
-            { id:"tbd", nombre: "Playoff UEFA A", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+            { id:"bosnia", nombre: "Bosnia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/bosnia.png" },
         ]
     },
     {
@@ -35,7 +35,7 @@ const gruposData = [
             { id:"estados_unidos", nombre: "Estados Unidos", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/usa.png" },
             { id:"paraguay", nombre: "Paraguay", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/paraguay.png" },
             { id:"australia", nombre: "Australia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/australia.png" },
-            { id:"tbd", nombre: "Playoff UEFA C", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+            { id:"turquia", nombre: "Turquía", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/turquia.png" },
         ]
     },
     {
@@ -53,7 +53,7 @@ const gruposData = [
             { id:"paises_bajos", nombre: "Países Bajos", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/paises-bajos.png" },
             { id:"japon", nombre: "Japón", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/japon.png" },
             { id:"tunez", nombre: "Túnez", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/tunez.png" },
-            { id:"tbd", nombre: "Playoff UEFA B", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+            { id:"suecia", nombre: "Suecia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/suecia.png" },
         ]
     },
     {
@@ -80,7 +80,7 @@ const gruposData = [
             { id:"francia", nombre: "Francia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/francia.png" },
             { id:"senegal", nombre: "Senegal", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/senegal.png" },
             { id:"noruega", nombre: "Noruega", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/noruega.png" },
-            { id:"tbd", nombre: "Playoff 2", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+            { id:"irak", nombre: "Irak", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/irak.png" },
         ]
     },
     {
@@ -98,7 +98,7 @@ const gruposData = [
             { id:"portugal", nombre: "Portugal", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/portugal.png" },
             { id:"uzbekistan", nombre: "Uzbekistán", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uzbekistan.png" },
             { id:"colombia", nombre: "Colombia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/colombia.png" },
-            { id:"tbd", nombre: "Playoff 1", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/uefa.png" },
+            { id:"congo", nombre: "Congo", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/congo.png" },
         ]
     },
     {

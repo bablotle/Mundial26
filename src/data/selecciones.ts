@@ -116,8 +116,8 @@ export const todasLasSelecciones: Seleccion[] = [
         "noticias": [
             {
                 "id": 1,
-                "titulo":"Alemania en el Grupo E",
-                "desc":"",
+                "titulo": "Alemania en el Grupo E",
+                "desc": "",
                 "img": "/images/noticias/espana-seleccion.jpg",
             }
         ]
@@ -137,8 +137,8 @@ export const todasLasSelecciones: Seleccion[] = [
         "noticias": [
             {
                 "id": 1,
-                "titulo":"",
-                "desc":"",
+                "titulo": "",
+                "desc": "",
                 "img": "/images/noticias/espana-seleccion.jpg",
             }
         ]
@@ -158,8 +158,8 @@ export const todasLasSelecciones: Seleccion[] = [
         "noticias": [
             {
                 "id": 1,
-                "titulo":"",
-                "desc":"",
+                "titulo": "",
+                "desc": "",
                 "img": "/images/noticias/espana-seleccion.jpg",
             }
         ]
@@ -179,8 +179,8 @@ export const todasLasSelecciones: Seleccion[] = [
         "noticias": [
             {
                 "id": 1,
-                "titulo":"",
-                "desc":"",
+                "titulo": "",
+                "desc": "",
                 "img": "/images/noticias/espana-seleccion.jpg",
             }
         ]
@@ -200,8 +200,8 @@ export const todasLasSelecciones: Seleccion[] = [
         "noticias": [
             {
                 "id": 1,
-                "titulo":"",
-                "desc":"",
+                "titulo": "",
+                "desc": "",
                 "img": "/images/noticias/espana-seleccion.jpg",
             }
         ]
@@ -219,6 +219,21 @@ export const todasLasSelecciones: Seleccion[] = [
         "titulos": 0,
         "dt": "Rudi García",
         "plantilla": "*Porteros:* Thibaut Courtois (Real Madrid), Matz Sels (Nottingham Forest), Maarten Vandevoordt (RB Leipzig), Senne Lammens (Manchester United).\n\n*Defensas:* Timothy Castagne (Fulham FC), Arthur Theate (Eintracht Frankfurt), Koni De Winter (AC Milan), Zeno Debast (Sporting CP), Maxim De Cuyper (Brighton), Thomas Meunier (Lille), Brandon Mechele (Club Brugge), Joaquin Seys (Club Brugge).\n\n*Mediocampo:* Kevin De Bruyne (Manchester City), Youri Tielemans (Aston Villa), Amadou Onana (Aston Villa), Axel Witsel (Girona FC), Hans Vanaken (Club Brugge), Charles Vanhoutte (OGC Nice), Nicolas Raskin (Rangers FC).\n\n*Delanteros:* Romelu Lukaku (SSC Napoli), Jérémy Doku (Manchester City), Leandro Trossard (Arsenal FC), Loïs Openda (Juventus/ex-RB Leipzig), Charles De Ketelaere (Atalanta BC), Dodi Lukébakio (Sevilla/Benfica), Alexis Saelemaekers (AC Milan), Diego Moreira (RC Strasbourg).",
+        "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
+        "noticias": []
+    },
+
+    {
+        "id": "bosnia",
+        "nombre": "Bosnia",
+        "confederacion": "UEFA",
+        "bandera": "/images/banderas/bosnia.png",
+        "ranking": "68",
+        "debut": "1995",
+        "estrellas": 0,
+        "titulos": 0,
+        "dt": "Sergej Barbarez",
+        "plantilla": "*Porteros:* Nikola Vasilj (St. Pauli), Osman Hadzikic (Velež Mostar), Martin Zlomislić (Rijeka).\n\n*Defensas:* Sead Kolašinac (Atalanta), Amar Dedić  (Red Bull Salzburg), Dennis Hadžikadunić (Hamburgo SV), Adrian Leon Barišić (Basilea), Nikola Katić (FC Zürich), Nihad Mujakić (Partizan), Jusuf Gazibegović (Sturm Graz).\n\n*Mediocampo:* Benjamin Tahirović (Ajax), Amir Hadžiahmetović: Beşiktaş), Armin Gigović (Holstein Kiel), Ivan Bašić (Orenburg), Haris Hajradinović (Kasımpaşa), Dženis Burnić (Karlsruher SC), Esmir Bajraktarevic (New England Revolution).\n\n*Delanteros:* Edin Džeko (Fenerbahçe), Ermedin Demirović (Stuttgart), Haris Tabaković (Hoffenheim), Samed Baždar (Real Zaragoza).",
         "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": []
     },
@@ -275,6 +290,20 @@ export const todasLasSelecciones: Seleccion[] = [
         "titulos": 0,
         "dt": "Néstor Lorenzo",
         "plantilla": "*Porteros:* Camilo Vargas (Atlas FC), David Ospina (Atlético Nacional), Kevin Mier (Cruz Azul), Álvaro Montero (Millonarios).\n\n*Defensas:* Daniel Muñoz (Crystal Palace), Dávinson Sánchez (Galatasaray SK), Jhon Lucumí (Bologna)Johan Mojica (Mallorca), Yerry Mina (Cagliari), Carlos Cuesta: K.R.C. Genk (Bélgica), Santiago Arias (EC Bahia), Deiver Machado (R.C. Lens).\n\n*Mediocampo:* James Rodríguez (Minnesota United) (Estados Unidos), Jefferson Lerma (Crystal Palace), Richard Ríos (Palmeiras), Juan Fernando Quintero (Racing Club), Jhon Arias (Fluminense), Kevin Castaño (Krasnodar), Jorge Carrascal (Dinamo Moscú).\n\n*Delanteros:* Luis Díaz (Liverpool FC), Jhon Córdoba (Krasnodar), Rafael Santos Borré (Internacional), Juan Camilo Hernández (Columbus Crew), Luis Sinisterra (Bournemouth), Jhon Jader Durán (Aston Villa).",
+        "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
+        "noticias": []
+    },
+    {
+        "id": "congo",
+        "nombre": "Congo",
+        "confederacion": "CAF",
+        "bandera": "/images/banderas/congo.png",
+        "ranking": "48",
+        "debut": "1974",
+        "estrellas": 0,
+        "titulos": 0,
+        "dt": "Sébastien Desabre",
+        "plantilla": "*Porteros:* Dimitry Bertaud (Montpellier), Lionel Mpasi (Rodez AF).\n\n*Defensas:* Chancel Mbemba (Olympique de Marsella), Aaron Wan-Bissaka (West Ham United), Axel Tuanzebe (Ipswich Town), Arthur Masuaku (Beşikta), Gédéon Kalulu (Lorient).\n\n*Mediocampo:* Charles Pickel (Cremonese), Samuel Moutoussamy (Nantes), Edo Kayembe (Watford), Noah Sadiki (Union Saint-Gilloise), Yoane Wissa	(Newcastle United), Cédric Bakambu (Real Betis).\n\n*Delanteros:* Simon Banza (SC Braga), Théo Bongonda (Spartak Moscú), Fiston Mayele (Pyramids FC).",
         "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": []
     },
@@ -450,16 +479,16 @@ export const todasLasSelecciones: Seleccion[] = [
         "noticias": []
     },
     {
-        "id": "italia",
-        "nombre": "Italia",
-        "confederacion": "UEFA",
-        "bandera": "/images/banderas/italia.png",
-        "ranking": "13",
-        "debut": "1934",
-        "estrellas": 4,
+        "id": "irak",
+        "nombre": "Irak",
+        "confederacion": "IFA",
+        "bandera": "/images/banderas/irak.png",
+        "ranking": "57",
+        "debut": "1986",
+        "estrellas": 0,
         "titulos": 0,
-        "dt": "",
-        "plantilla": "",
+        "dt": "Graham Arnold",
+        "plantilla": "*Porteros:* Ahmed Basil (Al-Shorta), Fahad Talib, Kumel Al-Rekabe.\n\n*Defensas:* Rebin Sulaka (Port), Hussein Ali (Pogon Szczecin), Merchas Doski (Viktoria Plzen), Zaid Tahseen.\n\n*Mediocampo:* Zidane Iqbal (Utrecht), Amir Al-Ammari (Cracovia), Ibrahim Bayesh (Al-Dhafra), Youssef Amyn (AEK Larnaca).\n\n*Delanteros:* Aymen Hussein (Al-Karma), Ali Al-Hamadi (Luton Town), Mohanad Ali (Dibba), Ali Jasim.",
         "stats": { g: "-", e: "-", p: "-", total: "-" },
         "noticias": []
     },
@@ -606,8 +635,6 @@ export const todasLasSelecciones: Seleccion[] = [
         "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": []
     },
-
-
     {
         "id": "portugal",
         "nombre": "Portugal",
@@ -619,6 +646,20 @@ export const todasLasSelecciones: Seleccion[] = [
         "titulos": 0,
         "dt": "Roberto Martínez",
         "plantilla": "*Porteros:* Diogo Costa (FC Porto), José Sá (Wolverhampton Wanderers), Rui Silva (Real Betis).\n\n*Defensas:* Rúben Dias (Man City), Diogo Dalot (Man United), João Cancelo (Al-Hilal), Nuno Mendes (PSG), António Silva (Benfica), Gonçalo Inácio (Sporting CP), Nelson Semedo (Fenerbahçe), Renato Veiga (Villarreal).\n\n*Mediocampo:* Bruno Fernandes (Man United), Bernardo Silva (Man City), Vitinha (PSG), João Neves (PSG), João Palhinha (Tottenham/Bayern), Rúben Neves (Al-Hilal), Matheus Nunes (Man City)\n\n*Delanteros:* Cristiano Ronaldo (Al-Nassr), Rafael Leão (AC Milan), João Félix (Al-Nassr/Chelsea), Gonçalo Ramos (PSG), Pedro Neto (Chelsea), Francisco Conceição (Juventus), Francisco Trincão (Sporting CP), Pedro Gonçalves (Sporting CP), Carlos Forbs (Club Brugge).",
+        "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
+        "noticias": []
+    },
+    {
+        "id": "republica_checa",
+        "nombre": "Republica Checa",
+        "confederacion": "UEFA",
+        "bandera": "/images/banderas/republica-checa.png",
+        "ranking": "42",
+        "debut": "1994",
+        "estrellas": 0,
+        "titulos": 0,
+        "dt": "Miroslav Koubek",
+        "plantilla": "*Porteros:* Matěj Kovář (PSV Eindhoven), Martin Jedlička (Baník Ostrava), Lukáš Horníček (SC Braga).\n\n*Defensas:* Ladislav Krejčí (Wolverhampton Wanderers), Vladimír Coufal (TSG Hoffenheim), David Jurásek (Slavia Praga), Martin Vitík (Bologna FC), Robin Hranáč (SG Hoffenheim).\n\n*Mediocampo:* Tomáš Souček (West Ham United), Pavel Šulc (Olympique de Lyon), Michal Sadílek (Slavia Praga), Lukáš Provod (Slavia Praga), Adam Karabec (Olympique de Lyon).\n\n*Delanteros:* Patrik Schick (Bayer Leverkusen), Mojmír Chytil (Slavia Praga), Tomáš Chorý (Slavia Praga).",
         "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": []
     },
@@ -650,6 +691,20 @@ export const todasLasSelecciones: Seleccion[] = [
         "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": []
     },
+      {
+        "id": "suecia",
+        "nombre": "Suecia",
+        "confederacion": "UEFA",
+        "bandera": "/images/banderas/suecia.png",
+        "ranking": "42",
+        "debut": "1908",
+        "estrellas": 0,
+        "titulos": 0,
+        "dt": "Graham Potter",
+        "plantilla": "*Porteros:* Kristoffer Nordfeldt (AIK Solna), Noel Törnqvist (Como), Melker Ellborg (Sunderland AFC).\n\n*Defensas:* Victor Lindelöf (Aston Villa), Isak Hien (Atalanta), Carl Starfelt (Celta de Vigo), Gabriel Gudmundsson (Leeds United), Daniel Svensson (Borussia Dortmund), Gustaf Lagerbielke (SC Braga).\n\n*Mediocampo:* Hugo Larsson (Eintracht Fráncfort), Lucas Bergvall (Tottenham Hotspur), Mattias Svanberg (VfL Wolfsburgo), Yasin Ayari (B&H Albion), Jesper Karlström (Udinese), Emil Forsberg (New York Red Bulls).\n\n*Delanteros:* Viktor Gyökeres (Arsenal FC), Alexander Isak (Newcastle United), Anthony Elanga (Newcastle United), Roony Bardghji (FC Barcelona), Williot Swedberg (Celta de Vigo), Gustaf Nilsson (Club Brujas).",
+        "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
+        "noticias": []
+    },
     {
         "id": "suiza",
         "nombre": "Suiza",
@@ -675,6 +730,20 @@ export const todasLasSelecciones: Seleccion[] = [
         "titulos": 0,
         "dt": "Sami Trabelsi",
         "plantilla": "*Porteros:* Aymen Dahmen (CS Sfaxien), Bechir Ben Saïd (Union Sportive Monastirienne), Sami Helal (Stade Tunisien), Noureddine Farhati (US Ben Guerdane).\n\n*Defensas:* Montassar Talbi (FC Lorient), Ali Abdi (OGC Nice), Dylan Bronn (Salernitana), Yan Valery (Angers SCO), Nader Ghandri (Akhmat Grozny), Mortadha Ben Ouanes (Kasımpaşa), Yassine Meriah (Espérance de Tunis).\n\n*Mediocampo:* Ellyes Skhiri (Eintracht Frankfurt), Hannibal Mejbri (Burnley FC), Mohamed Ali (Ferencváros), Aïssa Laïdouni (Al-Wakrah), Ferjani Sassi (Al Gharafa), Anis Ben Slimane (Norwich).\n\n*Delanteros:* Elias Achouri (FC Copenhague), Elias Saad (FC St. Pauli), Ismaël Gharbi (Stade de Reims), Seifeddine Jaziri (Zamalek), Naïm Sliti (Al-Shamal), Sebastian Tounekti (FK Haugesund), Firas Chaouat (Étoile du Sahel).",
+        "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
+        "noticias": []
+    },
+    {
+        "id": "turquia",
+        "nombre": "Turquía",
+        "confederacion": "UEFA",
+        "bandera": "/images/banderas/turquia.png",
+        "ranking": "25",
+        "debut": "1923",
+        "estrellas": 0,
+        "titulos": 0,
+        "dt": "Vincenzo Montella",
+        "plantilla": "*Porteros:* Mert Günok (Fenerbahçe), Uğurcan Çakir (Galatasaray), Altay Bayindir (Manchester United), Muhammed Şengezer İstanbul (Başakşehir).\n\n*Defensas:* Merih Demiral (Al-Ahli), Zeki Çelik	(AS Roma), Ferdi Kadioğlu (B&H Albion), Abdülkerim Bardakci (Galatasaray), Çağlar Söyüncü (Fenerbahçe), Mert Müldür (Fenerbahçe), Ozan Kabak (Hoffenheim), Samet Akaydin (Çaykur Rizespor), Eren Elmali (Galatasaray).\n\n*Mediocampo:* Hakan Çalhanoğlu (Inter de Milán), Arda Güler (Real Madrid), Orkun Kökçü (Benfica), Ismail Yüksek (Fenerbahçe), Salih Özcan (Borussia Dortmund), Kaan Ayhan (Galatasaray), Atakan Karazor (VfB Stuttgart).\n\n*Delanteros:* Kenan Yildiz (Juventus), Kerem Aktürkoğlu (Benfica), Bariş Alper Yilmaz (Galatasaray), Irfan Can Kahveci (Fenerbahçe), Yunus Akgün (Galatasaray), Semih Kiliçsoy (Cagliari).",
         "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": []
     },
