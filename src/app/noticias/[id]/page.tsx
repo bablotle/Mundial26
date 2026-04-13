@@ -59,11 +59,18 @@ export default function DetalleNoticia() {
                         />
                     </div>
 
-
                     {/* Cuerpo de la noticia */}
-                    <div className="text-gray-700 text-lg leading-relaxed space-y-6 font-medium">
-                        {/* Aquí podrías mapear párrafos si los tienes en un array o usar un string largo */}
-                        <p>{noticiaActual.contenidoLargo || "El camino al Mundial 2026 continúa con preparativos intensos en todas las sedes..."}</p>
+                    <div className="text-gray-800 text-lg leading-relaxed font-medium">
+                        {noticiaActual.contenidoLargo?.split('\n').map((parrafo, index) => (
+                            <p key={index} className="mb-6 whitespace-pre-line">
+                                {/* Esta lógica detecta el texto entre asteriscos **texto** y lo pone en negrita */}
+                                {parrafo.split(/(\*\*.*?\*\*)/g).map((parte, i) =>
+                                    parte.startsWith('**') && parte.endsWith('**')
+                                        ? <strong key={i} className="font-black text-black">{parte.replace(/\*\*/g, '')}</strong>
+                                        : parte
+                                )}
+                            </p>
+                        )) || "Contenido no disponible"}
                     </div>
 
 
