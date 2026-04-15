@@ -27,7 +27,7 @@ export const FAN_ZONES: FanZone[] = [
     nombre: 'Biker Brothers',
     categoria: 'Resto Bar',
     ubicacion: 'Avenida Aviadores 2971, Asunción',
-    imagen: 'https://lh3.googleusercontent.com/gps-cs-s/AHVAwerVv798wL5h9wi6c8R_tWSdm5AVatMm1Q1zGhAWsctD87X24UO92iHiSmGkxza3QGYDIfPb3BJmurOcdVMJk49yqu9Fkm3aydhwt3-7sJEhTkgQdJdntthH1EgpE73wCO9eKFiYIFmsMstt=s1468-w784-h1468-rw',
+    imagen: 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAHl7F8fxb-v7IYPuTqoRo-Ja7KvkgLwjY1FrLZ9MYaF4wOeA85ff_hcMlHOq6h3UW9kM2tgJ7hJAy1bRl1oJzfA-7PqKBuxiU0TMaFEHUbc_OaGOjo81T7kxJ8_WKDPr0sa-PxvE6L0kJ_W=s1468-w784-h1468-rw',
     linkReserva: 'https://wa.me/595987229534',
     googleMapsUrl: 'https://share.google/2xF7DjcmrVuJcMJgC',
     destacado: false,

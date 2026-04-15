@@ -38,7 +38,7 @@ export const locales: Local[] = [
         nombre: 'Biker Brothers',
         slug: 'biker-brothers',
         promoHoy: '2x1 en Chopp durante el partido de Paraguay',
-        foto: 'https://lh3.googleusercontent.com/gps-cs-s/AHVAwerVv798wL5h9wi6c8R_tWSdm5AVatMm1Q1zGhAWsctD87X24UO92iHiSmGkxza3QGYDIfPb3BJmurOcdVMJk49yqu9Fkm3aydhwt3-7sJEhTkgQdJdntthH1EgpE73wCO9eKFiYIFmsMstt=s1468-w784-h1468-rw',
+        foto: 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAHl7F8fxb-v7IYPuTqoRo-Ja7KvkgLwjY1FrLZ9MYaF4wOeA85ff_hcMlHOq6h3UW9kM2tgJ7hJAy1bRl1oJzfA-7PqKBuxiU0TMaFEHUbc_OaGOjo81T7kxJ8_WKDPr0sa-PxvE6L0kJ_W=s1468-w784-h1468-rw',
         descripcion: 'El templo del fútbol en Asunción. Ambiente de estadio garantizado.',
         amenities: ['Pantalla Gigante', 'Banda en Vivo', 'Promos de Cerveza', 'Mesa de Pool'],
         direccion: 'Avenida Aviadored 2971',
@@ -46,7 +46,7 @@ export const locales: Local[] = [
         menuDestacado: {
             nombre: 'Pizza "La Albirroja" (Para 4)',
             precio: '110.000 Gs',
-            foto: 'https://lh3.googleusercontent.com/gps-cs-s/AHVAweoA0ReGOqkCMbPZ5oukFkiPh5wiCvD6wk3-BVfFhhgQJm639UVXdTun2qnSTR55WvPS_JT-YCfcu41U7jblpDA3_9dhsS9AadVBHmYxFmuomReaGz3Vguv-73XxUZcpZZdh9G43=s1468-w784-h1468-rw' // O una URL
+            foto: 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFwv0VE8jbsQFyXT-ph307BEXeKnV2_Ky76AfD7lJgxCCZ6kTqFqrgz4Fy5LbEV1cu-Pkd-XLerPI8wbuHCBftA_ThNG4ezKNexvqLtUqATk4-zsqGsszj1mvu6pYoCiHf9-98Y=s1468-w784-h1468-rw' // O una URL
         },
         wifi: 'biker2026'
     },
