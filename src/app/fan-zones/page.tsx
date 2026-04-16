@@ -49,7 +49,7 @@ export default function FanZonesPage() {
                                 <p className="text-green-800 text-xs font-bold leading-tight">{zona.promo}</p>
                             </div>
 
-                            {/* Botones de Acción (Se mantienen como links externos) */}
+                          {/* Botones de Acción (Se mantienen como links externos)  */}
                             <div className="mt-auto grid grid-cols-2 gap-2">
                                 <a
                                     href={zona.googleMapsUrl}
@@ -69,7 +69,7 @@ export default function FanZonesPage() {
                                     <MessageCircle size={14} />
                                     Reservar
                                 </a>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 ))}

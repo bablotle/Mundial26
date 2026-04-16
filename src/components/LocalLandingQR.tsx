@@ -5,6 +5,7 @@ import { todosLosPartidos, type Partido } from '@/data/partidos';
 import { Beer, MapPin, Calendar, Clock, Bell, Wifi, Trophy } from 'lucide-react';
 import CardTrivia from '@/components/CardTrivia';
 import CardCountdown from '@/components/CardCountdown';
+import CardLiveMatch from '@/components/CardLiveMatch';
 
 interface LocalLandingProps {
     id: string;
@@ -71,12 +72,15 @@ export default function LocalLandingQR({ id }: LocalLandingProps) {
                     </h1>
                 </div>
             </div>
-       
-            <div className="px-4 -mt-8 relative z-10 space-y-8">
 
-                {/* 1. CARD DE PROMO + BOTÓN DE VALIDACIÓN */}
-                <div className={`p-6 rounded-[2.5rem] shadow-xl border-2 transition-all duration-500 ${canjeado ? 'bg-green-50 border-green-500' : 'bg-white border-amber-400 border-dashed'
-                    }`}>
+            {/* ... después del cierre del Header con Foto */}
+
+            <div className="px-4 mt-4 relative z-10 space-y-10"> {/* Aumentamos space-y-12 para más aire entre frames */}
+
+             <CardLiveMatch />
+
+                {/* 1. CARD DE PROMO (Ahora debajo del partido) */}
+                <div className={`p-6 rounded-[2.5rem] shadow-xl border-2 transition-all duration-500 ${canjeado ? 'bg-green-50 border-green-500' : 'bg-white border-amber-400 border-dashed'}`}>
                     <div className="flex items-center gap-4 mb-4">
                         <div className={`p-3 rounded-2xl shadow-lg transition-colors ${canjeado ? 'bg-green-500 text-white' : 'bg-amber-500 text-slate-900'
                             }`}>
@@ -120,8 +124,8 @@ export default function LocalLandingQR({ id }: LocalLandingProps) {
                         </div>
                     )}
                 </div>
-                <CardTrivia /> 
-                         {/* La trivia diaria */}
+                <CardTrivia />
+                {/* La trivia diaria */}
 
                 {/* TEXTO DE ALIENTO (NUEVO) */}
                 <div className="text-center py-2">
@@ -221,7 +225,7 @@ export default function LocalLandingQR({ id }: LocalLandingProps) {
                 </div>
             </div> {/* Cierre del contenedor principal space-y-8 */}
 
-            {/* 5. BOTÓN FLOTANTE */}
+            {/* 5. BOTÓN FLOTANTE 
             <div className="fixed bottom-6 left-6 right-6 z-50">
                 <a
                     href={local.linkReserva}
@@ -231,7 +235,7 @@ export default function LocalLandingQR({ id }: LocalLandingProps) {
                     <MapPin size={20} className="text-blue-400" />
                     Cómo llegar / Reservar
                 </a>
-            </div>
+            </div> */}
         </div >
     );
 }

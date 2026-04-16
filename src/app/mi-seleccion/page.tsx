@@ -20,8 +20,8 @@ export default function MiSeleccion() {
       noticias: [
          {
             id: '1',
-            titulo: "Paraguay enfrentará a Croacia y Marruecos",
-            desc: "La Selección Nacional disputará dos amistosos internacionales ante la Selección de Grecia, el 27 de marzo en Atenas, y a la Selección de Marruecos, el 31 de marzo en Lens, Francia.",
+            titulo: "Paraguay enfrentó a Croacia y Marruecos",
+            desc: "La selección de Paraguay cerró recientemente su gira europea de marzo de 2026 con un saldo de una victoria y una derrota como parte de su preparación para el Mundial 2026.\n\n\ Victoria contra Grecia (1-0): El 27 de marzo de 2026, la Albirroja derrotó a Grecia en El Pireo. El único gol del encuentro fue anotado por Diego Gómez de tiro libre a los 52 minutos. \n\n\ Derrota contra Marruecos (1-2): El 31 de marzo de 2026, el equipo dirigido por Gustavo Alfaro cayó ante la selección marroquí en Lens, Francia. El gol paraguayo fue obra de Gustavo Caballero.",
             img: "/images/noticias/paraguay-amistoso.jpg",
          }
       ]
@@ -166,19 +166,19 @@ export default function MiSeleccion() {
                      <div className="space-y-4">
                         <p className="text-sm text-gray-600 italic">
                            <strong className="text-black not-italic font-black uppercase text-[11px] mr-2">Porteros:</strong>
-                           Carlos Coronel, Roberto Fernández, Juan Espínola.
+                           Gatito Fernández (Cerro Porteño), Orlando Gill (San Lorenzo), Aldo Pérez (Guarani), Carlos Coronel (New York Red Bulls).
                         </p>
                         <p className="text-sm text-gray-600 italic border-t border-gray-50 pt-4">
                            <strong className="text-black not-italic font-black uppercase text-[11px] mr-2">Defensas:</strong>
-                           Gustavo Gómez (C), Omar Alderete, Júnior Alonso, Alexis "Pulpito" Duarte, Blas Riveros, Gustavo Velázquez, Juan José Cáceres, Agustín Sández, Diego León, Alan Benítez.
+                           Gustavo Gómez (Palmeiras), Omar Alderete (Sunderland), Junior Alonso (Atlético Mineiro), Juan José Cáceres (Dynamo Moscú),Alexis Duarte (Santos), Alan Benítez (Internacional), Agustín Sández: (Rosario Central), Blas Riveros (Cerro Porteño), Gustavo Velázquez (Cerro Porteño).
                         </p>
                         <p className="text-sm text-gray-600 italic border-t border-gray-50 pt-4">
                            <strong className="text-black not-italic font-black uppercase text-[11px] mr-2">Mediocampistas:</strong>
-                           Miguel Almirón, Diego Gómez, Andrés Cubas, Damián Bobadilla, Ramón Sosa, Alejandro Romero Gamarra, Braian Ojeda, Matías Galarza, Hugo Cuenca, Lucas Romero.
+                           Diego Gómez (Brighton & Hove Albion), Miguel Almirón (Atlanta), Ramón Sosa (Palmeiras), Damián Bobadilla Sao Paulo), Julio Enciso (Racing de Estrasburgo), Alejandro Romero Gamarra (Al Ain), Braian Ojeda (Real Salt Lake), Matías Galarza (River Plate), Andrés Cubas (Vancouver Whitecaps), Diego León (Manchester United), Hugo Cuenca (Genoa).
                         </p>
                         <p className="text-sm text-gray-600 italic border-t border-gray-50 pt-4">
                            <strong className="text-black not-italic font-black uppercase text-[11px] mr-2">Delanteros:</strong>
-                           Miguel Almirón, Diego Gómez, Andrés Cubas, Damián Bobadilla, Ramón Sosa, Alejandro Romero Gamarra, Braian Ojeda, Matías Galarza, Hugo Cuenca, Lucas Romero.
+                           Antonio Sanabria (Torino), Álex Arce (Liga de Quito), Ronaldo Martínez (Platense), Gabriel Ávalos (Independiente), Diego González (Atlas).
                         </p>
                      </div>
                   </div>
