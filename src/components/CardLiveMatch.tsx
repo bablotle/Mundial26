@@ -13,7 +13,7 @@ export default function CardLiveMatch() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
                     </span>
-                    <span className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em]">Partido en Vivo</span>
+                    <span className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em]">Partido Inaugural</span>
                 </div>
 
                 {/* Marcador Principal */}

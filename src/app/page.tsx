@@ -1,18 +1,15 @@
 'use client';
 import Navbar from '@/components/Navbar';
 import BreakingNews from '@/components/BreakingNews';
-import Countdown from '@/components/Countdown';
+import CardLiveMatch from '@/components/CardLiveMatch'; // Reemplaza a Countdown
 import AdBanner from '@/components/ads/AdBanner';
 import CardSeleccion from '@/components/CardSeleccion';
 import TablaGrupos from '@/components/TablaGrupo';
-import Image from 'next/image'; // Importante para las noticias
+import Image from 'next/image'; 
 import Link from 'next/link';
-import MarketingCards from '@/components/MarketingCards';
 import { todosLosPartidos } from '@/data/partidos';
 import { todasLasSelecciones } from '@/data/selecciones';
 import { todasLasNoticias } from '@/data/noticias';
-import SponsorGlobal from '@/components/SponsorGlobal';
-import SponsorGlobalis from '@/components/SponsorGlobalis';
 
 export default function Home() {
    // 1. Datos de Sedes
@@ -22,47 +19,45 @@ export default function Home() {
       { id: '3', nombre: 'BC Place', ciudad: 'Vancouver', pais: 'CANADÁ', capacidad: '54,500', temp: '16°C', imagen: '/images/sedes/vancouver.jpg' },
    ];
 
-
-   // 2. Lógica de filtrado (Todo dentro de Home)
+   // 2. Lógica de filtrado
    const noticiasDestacadas = todasLasNoticias.slice(0, 2);
-
 
    const proximosPartidos = [...todosLosPartidos]
       .sort((a, b) => new Date(a.fecha).getTime() - new Date(b.fecha).getTime())
       .slice(0, 3);
 
-
    const sedesDestacadas = todasLasSedes.slice(0, 3);
-
 
    return (
       <main className="min-h-screen bg-[#f0f2f5] pb-20">
          <Navbar />
          
-         {/* --- SECCIÓN HERO --- */}
+         {/* --- SECCIÓN HERO (PARTIDO DE HOY: MÉXICO VS SUDAFRICA) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/hero.jpg" className="w-full h-full object-cover" alt="Mundial 2026" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col items-center justify-center text-center px-5">
-               <span className="bg-red-600 text-white text-[8px] font-black px-2 py-0.5 rounded-sm mb-4 animate-pulse tracking-widest">EN DIRECTO</span>
-               <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-[0.85] mb-6">
-
-
-                  RUMBO A LA <br /> GRAN CITA
+            <img src="/images/sedes/azteca.jpg" className="w-full h-full object-cover brightness-75" alt="Estadio Azteca Inauguración" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
+               <span className="bg-red-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 animate-pulse tracking-widest uppercase">
+                  Partido Inaugural 🏟️
+               </span>
+               <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-6">
+                  MÉXICO <span className="text-blue-500">vs</span> SUDAFRICA
                </h1>
-               <Link href="/partidos" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105">
-                  Ver Calendario Oficial
+               <p className="text-white/80 font-bold uppercase tracking-widest text-[10px] mb-6">
+                  Grupo A · Estadio Azteca, CDMX
+               </p>
+               <Link href="/partidos" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-blue-600/30">
+                  Ver Marcadores en Vivo
                </Link>
             </div>
          </section>
 
-
-         <div className="max-w-4xl mx-auto px-5 -mt-10 relative z-10">
-            <Countdown />
-
+         <div className="max-w-4xl mx-auto px-5 -mt-12 relative z-10">
+            
+            {/* CARGADO DESDE TU TABLERO DE CONTROL DIRECTO */}
+            <CardLiveMatch /> 
 
             <div className="my-10"><AdBanner /></div>
             <div className="my-10"><BreakingNews /></div>
-
 
             {/* --- PRÓXIMOS PARTIDOS --- */}
             <section className="mt-12">
@@ -90,7 +85,7 @@ export default function Home() {
                </div>
             </section>
 
-            {/* --- ÚLTIMAS NOTICIAS (DISEÑO PREMIUM) --- */}
+            {/* --- ÚLTIMAS NOTICIAS --- */}
             <section className="mt-16">
                <div className="flex items-end justify-between mb-8 px-2">
                   <div>
@@ -101,7 +96,6 @@ export default function Home() {
                      VER TODAS <span>→</span>
                   </Link>
                </div>
-
 
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {noticiasDestacadas.map((noticia) => (
@@ -123,8 +117,6 @@ export default function Home() {
                   ))}
                </div>
             </section>
-
-   
 
             {/* --- FASE DE GRUPOS --- */}
             <section className="mt-16">
@@ -148,8 +140,7 @@ export default function Home() {
                </div>
             </section>
 
-
-            {/* --- SEDES (DISEÑO PREMIUM) --- */}
+            {/* --- SEDES --- */}
             <section className="mt-16">
                <div className="flex justify-between items-end mb-4 px-2">
                   <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Sedes</h2>
@@ -182,7 +173,6 @@ export default function Home() {
                </div>
             </section>
 
-
             {/* --- SELECCIONES CLASIFICADAS --- */}
             <section className="mt-16">
                <div className="flex justify-between items-end mb-6 px-2">
@@ -195,7 +185,6 @@ export default function Home() {
                   ))}
                </div>
             </section>
-
 
             <div className="my-12"><AdBanner /></div>
          </div>
