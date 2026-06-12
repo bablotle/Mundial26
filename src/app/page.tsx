@@ -1,7 +1,6 @@
 'use client';
 import Navbar from '@/components/Navbar';
 import BreakingNews from '@/components/BreakingNews';
-import CardLiveMatch from '@/components/CardLiveMatch'; // Reemplaza a Countdown
 import AdBanner from '@/components/ads/AdBanner';
 import CardSeleccion from '@/components/CardSeleccion';
 import TablaGrupos from '@/components/TablaGrupo';
@@ -21,66 +20,202 @@ export default function Home() {
 
    // 2. Lógica de filtrado
    const noticiasDestacadas = todasLasNoticias.slice(0, 2);
-
-   const proximosPartidos = [...todosLosPartidos]
-      .sort((a, b) => new Date(a.fecha).getTime() - new Date(b.fecha).getTime())
-      .slice(0, 3);
-
    const sedesDestacadas = todasLasSedes.slice(0, 3);
+
+   // Filtrar los próximos partidos (excluyendo los que ya se juegan hoy para no repetirlos)
+   // 1. Obtenemos el año, mes y día actuales de tu sistema de forma limpia
+   const hoyObj = new Date();
+   const anoHoy = hoyObj.getFullYear();
+   const mesHoy = hoyObj.getMonth() + 1; // JS cuenta los meses de 0 a 11
+   const diaHoy = hoyObj.getDate();
+
+   // 2. Filtramos la data real comparando los números directamente
+   const proximosPartidos = [...todosLosPartidos]
+      .filter((p) => {
+         // Separamos "2026-06-11" en números [2026, 6, 11]
+         const [anoP, mesP, diaP] = p.fecha.split('-').map(Number);
+         
+         // COMPARACIÓN DE FECHAS PURA:
+         if (anoP > anoHoy) return true;
+         if (anoP < anoHoy) return false;
+         
+         if (mesP > mesHoy) return true;
+         if (mesP < mesHoy) return false;
+         
+         return diaP > diaHoy;
+      })
+      // Los ordenamos cronológicamente (del más cercano al más lejano)
+      .sort((a, b) => {
+         return new Date(a.fecha + 'T12:00:00').getTime() - new Date(b.fecha + 'T12:00:00').getTime();
+      })
+      // Mostramos solo los 3 siguientes en la lista corta
+      .slice(0, 3);
 
    return (
       <main className="min-h-screen bg-[#f0f2f5] pb-20">
          <Navbar />
          
-         {/* --- SECCIÓN HERO (PARTIDO DE HOY: MÉXICO VS SUDAFRICA) --- */}
+         {/* --- SECCIÓN HERO (PARTIDO DESTACADO DE HOY) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/azteca.jpg" className="w-full h-full object-cover brightness-75" alt="Estadio Azteca Inauguración" />
+            <img src="/images/sedes/sofi.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="MetLife Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
-               <span className="bg-red-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 animate-pulse tracking-widest uppercase">
-                  Partido Inaugural 🏟️
+               <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
+                  EL PARTIDO DESTACADO DE HOY 🌟
                </span>
-               <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-6">
-                  MÉXICO <span className="text-blue-500">vs</span> SUDAFRICA
+               <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
+                  PARAGUAY <span className="text-red-500">vs</span> ESTADOS UNIDOS
                </h1>
-               <p className="text-white/80 font-bold uppercase tracking-widest text-[10px] mb-6">
-                  Grupo A · Estadio Azteca, CDMX
+               <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
+                  Grupo D · 22:00 HS · Sofi Stadium, US
                </p>
-               <Link href="/partidos" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-blue-600/30">
-                  Ver Marcadores en Vivo
+               <Link href="/partidos" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
+                  Seguir Transmisión del Día
                </Link>
             </div>
          </section>
 
          <div className="max-w-4xl mx-auto px-5 -mt-12 relative z-10">
             
-            {/* CARGADO DESDE TU TABLERO DE CONTROL DIRECTO */}
-            <CardLiveMatch /> 
+            {/* --- BLOQUE: PARTIDOS DE HOY (12 DE JUNIO) --- */}
+            <div className="bg-slate-900 rounded-[2rem] p-6 text-white shadow-xl border border-slate-800">
+               <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-3">
+                  <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">📅 Partidos de Hoy — 12 de Junio</h3>
+                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Fase de Grupos</span>
+               </div>
+
+               <div className="space-y-4">
+                  {/* Partido Principal */}
+                  <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
+                     <div className="flex items-center gap-3 flex-1">
+                        <img src="/images/banderas/paraguay.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Paraguay" />
+                        <span className="font-black text-xs md:text-sm uppercase italic">Paraguay</span>
+                     </div>
+                     <div className="px-4 text-center min-w-[100px]">
+                        <span className="bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">22:00 HS</span>
+                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Sofi Stadium</p>
+                     </div>
+                     <div className="flex items-center gap-3 flex-1 justify-end">
+                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Estados Unidos</span>
+                        <img src="/images/banderas/usa.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="USA" />
+                     </div>
+                  </div>
+
+                  {/* Segundo Partido del día */}
+                  <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
+                     <div className="flex items-center gap-3 flex-1">
+                        <img src="/images/banderas/canada.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Canadá" />
+                        <span className="font-black text-xs md:text-sm uppercase italic">Canadá</span>
+                     </div>
+                     <div className="px-4 text-center min-w-[100px]">
+                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">16:00 HS</span>
+                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">BC Place</p>
+                     </div>
+                     <div className="flex items-center gap-3 flex-1 justify-end">
+                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Bosnia</span>
+                        <img src="/images/banderas/bosnia.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Bosnia" />
+                     </div>
+                  </div>
+
+                  {/* --- HISTORIAL DE RESULTADOS RECIENTES --- */}
+                  <div className="mt-4 pt-4 border-t border-slate-800/60">
+                     <div className="flex items-center gap-2 mb-2 px-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span className="text-[8px] font-black tracking-[0.2em] text-slate-500 uppercase">Partidos Concluidos</span>
+                     </div>
+                     
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {/* Partido 1 */}
+                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
+                           <div className="flex items-center gap-2.5">
+                              <span className="text-[7px] font-black bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Inaugural</span>
+                              <div className="flex items-center gap-2 text-[11px]">
+                                 <span className="font-medium text-slate-300">México 🇲🇽</span>
+                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
+                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
+                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">0</span>
+                                 <span className="font-medium text-slate-500">Sudáfrica 🇿🇦</span>
+                              </div>
+                           </div>
+                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
+                        </div>
+
+                        {/* Partido 2 */}
+                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
+                           <div className="flex items-center gap-2.5">
+                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 1</span>
+                              <div className="flex items-center gap-2 text-[11px]">
+                                 <span className="font-medium text-slate-300">Corea 🇰🇷</span>
+                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
+                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
+                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
+                                 <span className="font-medium text-slate-500">Chequia 🇨🇿</span>
+                              </div>
+                           </div>
+                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
 
             <div className="my-10"><AdBanner /></div>
             <div className="my-10"><BreakingNews /></div>
 
-            {/* --- PRÓXIMOS PARTIDOS --- */}
+            {/* --- PRÓXIMOS PARTIDOS (FILTRADOS AUTOMÁTICOS POR DÍA NUMÉRICO) --- */}
             <section className="mt-12">
                <div className="flex justify-between items-end mb-4 px-2">
-                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Próximos Partidos</h2>
-                  <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Ver más →</Link>
+                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Próximos Días</h2>
+                  <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Ver Calendario Completo →</Link>
                </div>
                <div className="space-y-3">
-                  {proximosPartidos.map((p) => (
-                     <div key={p.id} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm border border-gray-100">
-                        <div className="flex items-center gap-3 flex-1">
-                           <img src={p.banderaLocal} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.local} />
-                           <span className="font-black text-[11px] uppercase italic">{p.local}</span>
+                  {proximosPartidos.map((p) => {
+                     const [anoStr, mesStr, diaStr] = p.fecha.split('-');
+                     const meses = [
+                        'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
+                        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+                     ];
+                     const fechaFormateada = `${parseInt(diaStr)} de ${meses[parseInt(mesStr) - 1]}`;
+
+                     return (
+                        <div key={p.id} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm border border-gray-100 group hover:border-blue-100 transition-colors">
+                           <div className="flex items-center gap-3 flex-1">
+                              <img src={p.banderaLocal} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.local} />
+                              <span className="font-black text-[11px] uppercase italic text-gray-900">{p.local}</span>
+                           </div>
+                           
+                           <div className="px-4 text-center border-x border-gray-50 min-w-[95px]">
+                              <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5 tracking-wider">{p.hora}</p>
+                              <p className="text-[7px] font-bold text-gray-400 uppercase whitespace-nowrap">{fechaFormateada}</p>
+                           </div>
+                           
+                           <div className="flex items-center gap-3 flex-1 justify-end">
+                              <span className="font-black text-[11px] uppercase italic text-right text-gray-900">{p.visitante}</span>
+                              <img src={p.banderaVisitante} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.visitante} />
+                           </div>
                         </div>
-                        <div className="px-4 text-center border-x border-gray-50 min-w-[80px]">
-                           <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5">{p.hora}</p>
-                           <p className="text-[7px] font-bold text-gray-400 uppercase">{p.fecha}</p>
-                        </div>
-                        <div className="flex items-center gap-3 flex-1 justify-end">
-                           <span className="font-black text-[11px] uppercase italic text-right">{p.visitante}</span>
-                           <img src={p.banderaVisitante} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.visitante} />
-                        </div>
+                     );
+                  })}
+
+                  {proximosPartidos.length === 0 && (
+                     <div className="bg-white rounded-2xl p-6 text-center border border-gray-100">
+                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-wider">
+                           No hay más partidos programados para los próximos días
+                        </p>
                      </div>
+                  )}
+               </div>
+            </section>
+       
+            {/* --- SELECCIONES CLASIFICADAS --- */}
+            <section className="mt-16">
+               <div className="flex justify-between items-end mb-6 px-2">
+                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Selecciones</h2>
+                  <Link href="/selecciones" className="text-[9px] font-black uppercase text-blue-600">Todas las federaciones →</Link>
+               </div>
+               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {todasLasSelecciones.slice(0, 4).map((s) => (
+                     <CardSeleccion key={s.id} {...s} />
                   ))}
                </div>
             </section>
@@ -131,9 +266,9 @@ export default function Home() {
                      { id: "australia", nombre: "Australia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/australia.png" },
                      { id: "turquia", nombre: "Turquía", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/turquia.png" },
                   ]} />
-                   <TablaGrupos nombre="Grupo A" equipos={[
-                     { id: "mexico", nombre: "México", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/mexico.png" },
-                     { id: "sudafrica", nombre: "Sudáfrica", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/sudafrica.png" },
+                  <TablaGrupos nombre="Grupo A" equipos={[
+                     { id: "mexico", nombre: "México", pj: 1, dg: 1, pts: 3, bandera: "/images/banderas/mexico.png" },
+                     { id: "sudafrica", nombre: "Sudáfrica", pj: 1, dg: -1, pts: 0, bandera: "/images/banderas/sudafrica.png" },
                      { id: "corea_sur", nombre: "Corea del Sur", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/corea-del-sur.png" },
                      { id: "republica-checa", nombre: "República Checa", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/republica-checa.png" },
                   ]} />
@@ -172,22 +307,8 @@ export default function Home() {
                   ))}
                </div>
             </section>
-
-            {/* --- SELECCIONES CLASIFICADAS --- */}
-            <section className="mt-16">
-               <div className="flex justify-between items-end mb-6 px-2">
-                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Selecciones</h2>
-                  <Link href="/selecciones" className="text-[9px] font-black uppercase text-blue-600">Todas las federaciones →</Link>
-               </div>
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {todasLasSelecciones.slice(0, 4).map((s) => (
-                     <CardSeleccion key={s.id} {...s} />
-                  ))}
-               </div>
-            </section>
-
             <div className="my-12"><AdBanner /></div>
          </div>
       </main>
-   );
+   ); 
 }

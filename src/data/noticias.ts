@@ -15,18 +15,49 @@ export interface Noticia {
 
 
 export const todasLasNoticias: Noticia[] = [
+      {
+                id: "partido-inaugural",
+                categoria: "MUNDIAL 2026",
+                titulo: "Inicio del Mundial 2026",
+                resumen: "México se llevo la victoria ante Sudáfrica con un marcador 2-0.",
+                contenidoLargo: `El evento deportivo más importante del mundo comenzó el 11 de junio en México, Estados Unidos y Canadá (el primero coorganizado por tres países y con 48 selecciones).
+                México debutó con la victoria 2-0 ante Sudáfrica en el Estadio Azteca, con goles que generaron gran emoción (incluyendo participación de Raúl Jiménez). El partido inaugural se vivió entre celebraciones masivas.
+                Otros resultados iniciales: Corea del Sur venció 2-1 a República Checa.`,
+                imagen: "/images/noticias/noticia-7.jpg",
+                fecha: "2026-06-11",
+                autor: "Redacción Mil Goles",
+                tags: ["México", "Sudáfrica", "Mundial", "FIFA"]
+        },
+        {
+                id: "inauguracion-mundial",
+                categoria: "MUNDIAL 2026",
+                titulo: "Inauguración del Mundial de Futbol",
+                resumen: "Inicio el evento mas esperado del mundo con un elenco internacional que sorprendio a los espectadores. Andrea Bocelli, Mana, Shakira, Belinda, Danny Ocean, entre otros.",
+                contenidoLargo: `Maná dió inicio al espectaculo de la gala inaugural del Mundial 2026, con su clásico Oye mi amor.
+                La Ceremonia Principal en México tuvo como escenario al Estadio Azteca.
+                El evento combinó un despliegue tecnológico de drones, danzas tradicionales con trajes indígenas y un tributo a los legados de Pelé y Diego Maradona.
+                Andrea Bocelli junto con la estrella de K-Pop EJAE. Interpretaron el tema "DNA" justo durante el acto solembe del despliegue de las 48 banderas de las selecciones.
+                Los artistas musicales destacados fueron:Shakira y Burna Boy: Coronaron el evento interpretando en vivo "Dai Dai", el himno oficial del torneo.
+                Maná y Danny Ocean: Abrieron la tanda musical con temas clásicos y la canción "Partidazo".
+                Los Ángeles Azules y Belinda: Pusieron el ritmo latino interpretando el tema "Por Ella".
+                Alejandro Fernández y Tyla: Encargados de entonar con fervor los himnos nacionales de México y Sudáfrica respectivamente.`,
+                imagen: "/images/noticias/noticia-6.jpg",
+                fecha: "2026-06-12",
+                autor: "Redacción Mil Goles",
+                tags: ["Shakira", "Inauguración", "FIFA"]
+        },
         {
                 id: "reglamento-fifa",
                 categoria: "MUNDIAL 2026",
                 titulo: "Las nuevas Reglas de la FIFA",
                 resumen: "Los Cambios en: Sustituciones más rápidas, Gestión del tiempo en saques, Atención médica en campo, Capitán como interlocutor, Ampliación del VAR.",
                 contenidoLargo: `Principales Reglas y Cambios para el Mundial 2026:
-                **Sustituciones más rápidas:** El jugador reemplazado tendrá un máximo de 10 segundos para salir. Si se demora, el jugador que ingresa deberá esperar un minuto de juego activo.
-                **Gestión del tiempo en saques:** Límite visual de 5 segundos para ejecutar saques de arco y saques de banda. La demora en saques de arco resultará en un tiro de esquina, mientras que en saques de banda significará la pérdida de posesión.
-                **Atención médica en campo:** Si un jugador requiere atención médica, deberá permanecer 1 minuto fuera del terreno de juego antes de poder regresar.
-                **Capitán como interlocutor:** Solo el capitán podrá dirigirse al árbitro. Si otros jugadores protestan en grupo, serán sancionados.
-                **Ampliación del VAR:** El VAR podrá revisar segundas tarjetas amarillas que resulten en una expulsión, además de saques de esquina mal concedidos.
-                **Regla del fuera de juego:** Se prueba una norma donde el atacante está en posición reglamentaria si cualquier parte del cuerpo con la que pueda marcar gol está alineada con el penúltimo defensor, reduciendo los offsides por milímetro.`,
+                Sustituciones más rápidas:** El jugador reemplazado tendrá un máximo de 10 segundos para salir. Si se demora, el jugador que ingresa deberá esperar un minuto de juego activo.
+                Gestión del tiempo en saques:** Límite visual de 5 segundos para ejecutar saques de arco y saques de banda. La demora en saques de arco resultará en un tiro de esquina, mientras que en saques de banda significará la pérdida de posesión.
+                Atención médica en campo:** Si un jugador requiere atención médica, deberá permanecer 1 minuto fuera del terreno de juego antes de poder regresar.
+                Capitán como interlocutor:** Solo el capitán podrá dirigirse al árbitro. Si otros jugadores protestan en grupo, serán sancionados.
+                Ampliación del VAR:** El VAR podrá revisar segundas tarjetas amarillas que resulten en una expulsión, además de saques de esquina mal concedidos.
+                Regla del fuera de juego:** Se prueba una norma donde el atacante está en posición reglamentaria si cualquier parte del cuerpo con la que pueda marcar gol está alineada con el penúltimo defensor, reduciendo los offsides por milímetro.`,
                 imagen: "/images/noticias/noticia-5.jpg",
                 fecha: "2026-04-13",
                 autor: "Redacción Mil Goles",

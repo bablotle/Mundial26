@@ -8,13 +8,14 @@ export interface Partido {
        hora: string;
        sede: string;
        grupo: string;
+       golesLocal?: number;       
+       golesVisitante?: number;
 
 
+       // Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
 
-// Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
 
-
-fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
+       fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
 
 }
 
@@ -31,7 +32,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "16:00",
               sede: "CDMX",
               grupo: "A",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 2,       
+              golesVisitante: 0
        },
        {
               id: "A2",
@@ -43,7 +46,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "23:00",
               sede: "Guadalajara",
               grupo: "A",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 2,       
+              golesVisitante: 1
        },
        {
               id: "A3",
