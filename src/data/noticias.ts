@@ -16,6 +16,18 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-2",
+                categoria: "MUNDIAL 2026",
+                titulo: "Estados Unidos se lleva la victoria",
+                resumen: "En la segunda jornada Estados Unidos se llevo la victoria 4-1 ante Paraguay.",
+                contenidoLargo: `Estados Unidos derrotó 4-1 a Paraguay en el partido disputado el viernes 12 de junio por la primera fecha del Grupo D en el Mundial 2026. El encuentro se llevó a cabo en el Estadio Los Ángeles (SoFi Stadium) ante un marco espectacular de público.
+                A su vez Canadá empató 1-1 frente a Bosnia y Herzegovina en el partido inaugural del Grupo B de la Copa Mundial 2026, en el Estadio Toronto (BMO Field). A pesar de no conseguir la victoria en casa, el seleccionado hizo historia al sumar el primer punto de su historia en una Copa del Mundo.`,
+                imagen: "/images/noticias/noticia-8.jpg",
+                fecha: "2026-06-13",
+                autor: "Redacción Mil Goles",
+                tags: ["Paraguay", "Albirroja", "Mundial", "FIFA"]
+        },
+         {
                 id: "partido-inaugural",
                 categoria: "MUNDIAL 2026",
                 titulo: "Inicio del Mundial 2026",
@@ -24,7 +36,7 @@ export const todasLasNoticias: Noticia[] = [
                 México debutó con la victoria 2-0 ante Sudáfrica en el Estadio Azteca, con goles que generaron gran emoción (incluyendo participación de Raúl Jiménez). El partido inaugural se vivió entre celebraciones masivas.
                 Otros resultados iniciales: Corea del Sur venció 2-1 a República Checa.`,
                 imagen: "/images/noticias/noticia-7.jpg",
-                fecha: "2026-06-11",
+                fecha: "2026-06-12",
                 autor: "Redacción Mil Goles",
                 tags: ["México", "Sudáfrica", "Mundial", "FIFA"]
         },
