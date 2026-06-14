@@ -16,6 +16,21 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-3",
+                categoria: "MUNDIAL 2026",
+                titulo: "Brasil se lleva el empate 1-1 ante Marruecos",
+                resumen: "En la tercera jornada Escocia se llevo la victoria a su regreso despues de 28 años.",
+                contenidoLargo: `En la tercera fecha del Mundial, se vieron los siguientes resultados:
+                Catar 1-1 Suiza: Catar logró un empate histórico en el último minuto del descuento con un gol de Boualem Khoukhi.
+                Brasil 1-1 Marruecos: Las potencias igualaron en un duelo intenso, con goles de Ismael Saibari y Vinícius Júnior.
+                Escocia 1-0 Haití: Los británicos celebraron su regreso mundialista tras 28 años llevándose los tres puntos.
+                Australia 2-0 Turquía: Los australianos dominaron el cierre de la jornada y vencieron con solvencia al conjunto turco.`,
+                imagen: "/images/noticias/noticia-9.jpg",
+                fecha: "2026-06-14",
+                autor: "Redacción Mil Goles",
+                tags: ["Brasil", "Escocia", "Mundial", "FIFA"]
+        },
+        {
                 id: "jornada-2",
                 categoria: "MUNDIAL 2026",
                 titulo: "Estados Unidos se lleva la victoria",
