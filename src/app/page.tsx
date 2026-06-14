@@ -108,7 +108,7 @@ export default function Home() {
                      </div>
                      <div className="px-4 text-center min-w-[100px]">
                         <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">17:00 HS</span>
-                        <p className="text8px] text-slate-400 font-bold uppercase tracking-wider">Dallas, US</p>
+                         <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Dallas, US</p>
                      </div>
                      <div className="flex items-center gap-3 flex-1 justify-end">
                         <span className="font-black text-xs md:text-sm uppercase italic text-right">Japón</span>
