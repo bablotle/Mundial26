@@ -57,16 +57,16 @@ export default function Home() {
          
          {/* --- SECCIÓN HERO (PARTIDO DESTACADO DE HOY) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/houston.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="MetLife Stadium" />
+            <img src="/images/sedes/atlanta.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="MetLife Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
                   EL PARTIDO DESTACADO DE HOY 🌟
                </span>
                <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
-                  ALEMANIA <span className="text-red-500">vs</span> CURAZAO
+                  ESPAÑA <span className="text-red-500">vs</span> CABO VERDE
                </h1>
                <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
-                  Grupo E · 14:00 HS · Houston Stadium, US
+                  Grupo H · 13:00 HS · Atlanta Stadium, US
                </p>
                <Link href="/partidos" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
                   Seguir Transmisión del Día
@@ -76,10 +76,10 @@ export default function Home() {
 
          <div className="max-w-4xl mx-auto px-5 -mt-12 relative z-10">
             
-            {/* --- BLOQUE: PARTIDOS DE HOY (13 DE JUNIO) --- */}
+            {/* --- BLOQUE: PARTIDOS DE HOY (15 DE JUNIO) --- */}
             <div className="bg-slate-900 rounded-[2rem] p-6 text-white shadow-xl border border-slate-800">
                <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-3">
-                  <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">📅 Partidos de Hoy — 13 de Junio</h3>
+                  <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">📅 Partidos de Hoy — 15 de Junio</h3>
                   <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Fase de Grupos</span>
                </div>
 
@@ -87,62 +87,62 @@ export default function Home() {
                   {/* Partido Principal */}
                   <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
                      <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/alemania.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Alemania" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">Alemania</span>
+                        <img src="/images/banderas/espana.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="España" />
+                        <span className="font-black text-xs md:text-sm uppercase italic">España</span>
                      </div>
                      <div className="px-4 text-center min-w-[100px]">
                         <span className="bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">14:00 HS</span>
-                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Houston, US</p>
+                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Atlanta, US</p>
                      </div>
                      <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Curazao</span>
-                        <img src="/images/banderas/curazao.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Curazao" />
+                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Cabo Verde</span>
+                        <img src="/images/banderas/cabo-verde.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Cabo Verde" />
                      </div>
                   </div>
 
                   {/* Segundo Partido del día */}
                   <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
                      <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/paises-bajos.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Países Bajos" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">Países Bajos</span>
+                        <img src="/images/banderas/belgica.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Belgica" />
+                        <span className="font-black text-xs md:text-sm uppercase italic">Belgica</span>
                      </div>
                      <div className="px-4 text-center min-w-[100px]">
-                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">17:00 HS</span>
-                         <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Dallas, US</p>
+                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">16:00 HS</span>
+                         <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Seattle, US</p>
                      </div>
                      <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Japón</span>
-                        <img src="/images/banderas/japon.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Japón" />
+                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Egipto</span>
+                        <img src="/images/banderas/egipto.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Egipto" />
                      </div>
                   </div>
                   {/* Tercer Partido del día */}
                   <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
                      <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/costa-de-marfil.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Costa de Marfil" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">Costa de Marfil</span>
+                        <img src="/images/banderas/arabia-saudita.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Arabia Saudita" />
+                        <span className="font-black text-xs md:text-sm uppercase italic">Arabia Saudita</span>
                      </div>
                      <div className="px-4 text-center min-w-[100px]">
-                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">20:00 HS</span>
-                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Filadelfia, US</p>
+                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">19:00 HS</span>
+                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Miami, US</p>
                      </div>
                      <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Ecuador</span>
-                        <img src="/images/banderas/ecuador.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Ecuador" />
+                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Uruguay</span>
+                        <img src="/images/banderas/uruguay.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Uruguay" />
                      </div>
                   </div>
                   {/* Cuarto Partido del día */}
                   <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
                      <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/suecia.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Suecia" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">Suecia</span>
+                        <img src="/images/banderas/iran.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Irán" />
+                        <span className="font-black text-xs md:text-sm uppercase italic">Irán</span>
                      </div>
                      <div className="px-4 text-center min-w-[100px]">
-                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">23:00 HS</span>
-                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Monterrey, MX</p>
+                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">22:00 HS</span>
+                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Los Angeles, US</p>
                      </div>
                      <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Túnez</span>
-                        <img src="/images/banderas/tunez.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Tunez" />
+                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Nueva Zelanda</span>
+                        <img src="/images/banderas/nueva-zelanda.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Nueva Zelanda" />
                      </div>
                   </div>
 
@@ -186,7 +186,7 @@ export default function Home() {
                          {/* Partido 3 */}
                         <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
                            <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 2</span>
+                              <span className="text-[7px] font-black bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 2</span>
                               <div className="flex items-center gap-2 text-[11px]">
                                  <span className="font-medium text-slate-300">Canadá 🇨🇦</span>
                                  <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
@@ -264,6 +264,63 @@ export default function Home() {
                                  <span className="text-slate-600 font-bold text-[9px]">:</span>
                                  <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">0</span>
                                  <span className="font-medium text-slate-500">Turquía 🇹🇷</span>
+                              </div>
+                           </div>
+                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
+                        </div>
+                         {/* Partido 9 */}
+                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
+                           <div className="flex items-center gap-2.5">
+                              <span className="text-[7px] font-black bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
+                              <div className="flex items-center gap-2 text-[11px]">
+                                 <span className="font-medium text-slate-300">Alemania 🇧🇪</span>
+                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">7</span>
+                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
+                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
+                                 <span className="font-medium text-slate-500">Curazao 🇨🇼</span>
+                              </div>
+                           </div>
+                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
+                        </div>
+
+                        {/* Partido 10 */}
+                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
+                           <div className="flex items-center gap-2.5">
+                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
+                              <div className="flex items-center gap-2 text-[11px]">
+                                 <span className="font-medium text-slate-300">Países Bajos 🇷🇺</span>
+                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
+                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
+                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
+                                 <span className="font-medium text-slate-500">Japón 🇯🇵</span>
+                              </div>
+                           </div>
+                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
+                        </div>
+                         {/* Partido 11 */}
+                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
+                           <div className="flex items-center gap-2.5">
+                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
+                              <div className="flex items-center gap-2 text-[11px]">
+                                 <span className="font-medium text-slate-300">Costa de Marfil 🇨🇮</span>
+                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
+                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
+                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">0</span>
+                                 <span className="font-medium text-slate-500">Ecuador 🇪🇨</span>
+                              </div>
+                           </div>
+                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
+                        </div>
+                         {/* Partido 12 */}
+                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
+                           <div className="flex items-center gap-2.5">
+                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
+                              <div className="flex items-center gap-2 text-[11px]">
+                                 <span className="font-medium text-slate-300">Suecia 🇸🇪</span>
+                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">5</span>
+                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
+                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
+                                 <span className="font-medium text-slate-500">Túnez 🇹🇳</span>
                               </div>
                            </div>
                            <span className="text-[9px] font-bold text-emerald-500">✓</span>

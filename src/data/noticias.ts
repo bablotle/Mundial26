@@ -16,6 +16,27 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-4",
+                categoria: "MUNDIAL 2026",
+                titulo: "Alemania gana ante Curazao 7-1",
+                resumen: "Contundente victoria de la selección de Alemania ante Curazao.",
+                contenidoLargo: `Los resultados de los partidos disputados el domingo 14 de junio de 2026, correspondientes a la cuarta jornada de la Fase de Grupos de la Copa Mundial de la FIFA 2026, dejaron abultadas goleadas e intensos debuts:
+                Grupo E
+                Alemania 7-1 Curazao
+                El conjunto teutón arrolló a su rival con anotaciones de Felix Nmecha, Nico Schlotterbeck, Jamal Musiala, Nathaniel Brown, Deniz Undav y un doblete de Kai Havertz. Livano Comenencia marcó el histórico primer gol de Curazao en un Mundial.
+                Costa de Marfil 1-0 Ecuador
+                La escuadra africana se impuso por la mínima diferencia gracias a un solitario gol de Amad Diallo en la recta final del juego.
+                Grupo F
+                Países Bajos 2-2 Japón
+                Un emocionante empate donde Virgil van Dijk y Crysencio Summerville anotaron para la "Naranja Mecánica", mientras que Keito Nakamura y Daichi Kamada rescataron el punto para los nipones.
+                Suecia 5-1 Túnez
+                El combinado sueco se estrenó con una contundente goleada en el Estadio Monterrey gracias a las anotaciones de Yasin Ayari (quien hizo un doblete), Alexander Isak, Viktor Gyökeres y Mattias Svanberg.`,
+                imagen: "/images/noticias/noticia-10.jpg",
+                fecha: "2026-06-15",
+                autor: "Redacción Mil Goles",
+                tags: ["Alemania", "Naranja Mecanica", "Mundial", "FIFA"]
+        },
+        {
                 id: "jornada-3",
                 categoria: "MUNDIAL 2026",
                 titulo: "Brasil se lleva el empate 1-1 ante Marruecos",

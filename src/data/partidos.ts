@@ -348,7 +348,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "14:00",
               sede: "Houston",
               grupo: "E",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 7,       
+              golesVisitante: 1
        },
        {
               id: "E2",
@@ -360,7 +362,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "20:00",
               sede: "Filadelfia",
               grupo: "E",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 1,       
+              golesVisitante: 0
        },
 
 
@@ -425,7 +429,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "17:00",
               sede: "Dallas",
               grupo: "F",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 2,       
+              golesVisitante: 2
        },
        {
               id: "F2",
@@ -437,7 +443,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "23:00",
               sede: "Monterrey",
               grupo: "F",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 5,       
+              golesVisitante: 1
        },
 
 
