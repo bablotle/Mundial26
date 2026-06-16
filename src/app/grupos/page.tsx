@@ -1,7 +1,9 @@
-import { grupos } from '@/data/grupos';
+'use client';
+import { todosLosPartidos } from '@/data/partidos';
 import TablaGrupo from '@/components/TablaGrupo';
 
-const gruposData = [
+// 1. Mantenemos la estructura base limpia (con valores iniciales en 0)
+const estructuraGruposBase = [
     {
         nombre: "Grupo A",
         equipos: [
@@ -113,11 +115,61 @@ const gruposData = [
 ];
 
 export default function GruposPage() {
+    
+    // 2. PROCESAMIENTO AUTOMÁTICO DE ESTADÍSTICAS
+    const gruposCalculados = estructuraGruposBase.map((grupo) => {
+        // Clonamos los equipos del grupo para evitar mutaciones extrañas
+        const equiposActualizados = grupo.equipos.map(equipo => ({ ...equipo }));
+
+        // Recorremos todos los partidos registrados en data/partidos.ts
+        todosLosPartidos.forEach((partido) => {
+            // Solo procesamos partidos de la fase de grupos que ya tengan un resultado cargado
+            if (partido.fase === 'Grupos' && partido.golesLocal !== undefined && partido.golesVisitante !== undefined) {
+                
+                // Buscamos si el equipo local pertenece a este grupo
+                const local = equiposActualizados.find(e => e.nombre.toLowerCase() === partido.local.toLowerCase() || e.id === partido.id);
+                // Buscamos si el equipo visitante pertenece a este grupo
+                const visitante = equiposActualizados.find(e => e.nombre.toLowerCase() === partido.visitante.toLowerCase() || e.id === partido.id);
+
+                if (local && visitante) {
+                    // Sumamos partido jugado a ambos
+                    local.pj += 1;
+                    visitante.pj += 1;
+
+                    // Calculamos diferencia de goles
+                    local.dg += (partido.golesLocal - partido.golesVisitante);
+                    visitante.dg += (partido.golesVisitante - partido.golesLocal);
+
+                    // Repartimos los puntos según el resultado
+                    if (partido.golesLocal > partido.golesVisitante) {
+                        local.pts += 3; // Ganó Local
+                    } else if (partido.golesLocal < partido.golesVisitante) {
+                        visitante.pts += 3; // Ganó Visitante
+                    } else {
+                        local.pts += 1; // Empate
+                        visitante.pts += 1;
+                    }
+                }
+            }
+        });
+
+        // 3. ORDENACIÓN AUTOMÁTICA DE LA TABLA (Clasificación de Posiciones)
+        // Se ordena primero por Puntos, si empatan, define la Diferencia de Goles (DG)
+        equiposActualizados.sort((a, b) => {
+            if (b.pts !== a.pts) return b.pts - a.pts;
+            return b.dg - a.dg;
+        });
+
+        return {
+            ...grupo,
+            equipos: equiposActualizados
+        };
+    });
+
     return (
         <main className="min-h-screen bg-[#f8f9fa] pt-24 pb-12 px-5">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {gruposData.map((grupo, index) => (
-                    /* IMPORTANT: El nombre de la prop debe ser 'equipos' */
+                {gruposCalculados.map((grupo, index) => (
                     <TablaGrupo
                         key={index}
                         nombre={grupo.nombre}

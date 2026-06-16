@@ -16,6 +16,22 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-5",
+                categoria: "MUNDIAL 2026",
+                titulo: "Vozinha el heroe del partido.  ",
+                resumen: "Los Grupos G y H quedan completamente empatados con 1 punto.",
+                contenidoLargo: `Los 4 partidos del lunes 15 de junio terminaron en empate.
+                El arquero de Cabo Verde, Vozinha, fue el héroe absoluto en el histórico empate 0-0 frente a España en su debut mundialista, gracias a una actuación memorable en la que logró 8 atajadas clave para neutralizar el dominio de la ofensiva europea.
+                España 0 - 0 Cabo Verde: Histórico empate sin goles en el debut del equipo africano en un mundial.
+                Bélgica 1 - 1 Egipto: Empate en el Grupo G con goles de Mohamed Hany (en contra para Bélgica) y Emam Ashour para Egipto.
+                Arabia Saudita 1 - 1 Uruguay: Los dirigidos por Marcelo Bielsa rescataron un punto gracias a un gol de Maximiliano Araújo al minuto 80, tras iniciar perdiendo por un tanto de Abdulelah Al-Amri.
+                Irán 2 - 2 Nueva Zelanda: El partido con más emociones de la jornada. Marcaron Ramin Rezaeian y Mohammad Mohebi para Irán, mientras que Elijah Just anotó un doblete para Nueva Zelanda.`,
+                imagen: "/images/noticias/noticia-11.jpg",
+                fecha: "2026-06-16",
+                autor: "Redacción Mil Goles",
+                tags: ["España", "Uruguay", "Mundial", "FIFA"]
+        },
+         {
                 id: "jornada-4",
                 categoria: "MUNDIAL 2026",
                 titulo: "Alemania gana ante Curazao 7-1",

@@ -1,14 +1,14 @@
-'use client';
 import Navbar from '@/components/Navbar';
 import BreakingNews from '@/components/BreakingNews';
 import AdBanner from '@/components/ads/AdBanner';
 import CardSeleccion from '@/components/CardSeleccion';
 import TablaGrupos from '@/components/TablaGrupo';
-import Image from 'next/image'; 
+import Image from 'next/image';
 import Link from 'next/link';
 import { todosLosPartidos } from '@/data/partidos';
 import { todasLasSelecciones } from '@/data/selecciones';
 import { todasLasNoticias } from '@/data/noticias';
+import CardResultadoMini from '@/components/CardResultadoMini';
 
 export default function Home() {
    // 1. Datos de Sedes
@@ -18,55 +18,61 @@ export default function Home() {
       { id: '3', nombre: 'BC Place', ciudad: 'Vancouver', pais: 'CANADÁ', capacidad: '54,500', temp: '16°C', imagen: '/images/sedes/vancouver.jpg' },
    ];
 
-   // 2. Lógica de filtrado
-   const noticiasDestacadas = todasLasNoticias.slice(0, 2);
-   const sedesDestacadas = todasLasSedes.slice(0, 3);
-
-   // Filtrar los próximos partidos (excluyendo los que ya se juegan hoy para no repetirlos)
-   // 1. Obtenemos el año, mes y día actuales de tu sistema de forma limpia
+   // 2. Lógica de filtrado de Fechas
    const hoyObj = new Date();
    const anoHoy = hoyObj.getFullYear();
-   const mesHoy = hoyObj.getMonth() + 1; // JS cuenta los meses de 0 a 11
+   const mesHoy = hoyObj.getMonth() + 1;
    const diaHoy = hoyObj.getDate();
 
-   // 2. Filtramos la data real comparando los números directamente
+   // Formateamos la fecha de hoy para machear con el string de la data (ej: "2026-06-16")
+   const mesFormateado = mesHoy < 10 ? `0${mesHoy}` : mesHoy;
+   const diaFormateado = diaHoy < 10 ? `0${diaHoy}` : diaHoy;
+   const fechaHoyString = `${anoHoy}-${mesFormateado}-${diaFormateado}`;
+
+   // A. PARTIDOS PARA EL MAP DE HOY
+   const partidosDeHoy = todosLosPartidos.filter(p => p.fecha === fechaHoyString);
+
+   // B. EL PARTIDO DESTACADO (El primero de la lista de hoy, o uno por defecto si no hay partidos hoy)
+   const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
+
+   // C. PRÓXIMOS PARTIDOS (Días siguientes)
    const proximosPartidos = [...todosLosPartidos]
       .filter((p) => {
-         // Separamos "2026-06-11" en números [2026, 6, 11]
          const [anoP, mesP, diaP] = p.fecha.split('-').map(Number);
-         
-         // COMPARACIÓN DE FECHAS PURA:
          if (anoP > anoHoy) return true;
          if (anoP < anoHoy) return false;
-         
          if (mesP > mesHoy) return true;
          if (mesP < mesHoy) return false;
-         
          return diaP > diaHoy;
       })
-      // Los ordenamos cronológicamente (del más cercano al más lejano)
-      .sort((a, b) => {
-         return new Date(a.fecha + 'T12:00:00').getTime() - new Date(b.fecha + 'T12:00:00').getTime();
-      })
-      // Mostramos solo los 3 siguientes en la lista corta
+      .sort((a, b) => new Date(a.fecha + 'T12:00:00').getTime() - new Date(b.fecha + 'T12:00:00').getTime())
       .slice(0, 3);
+
+   // D. HISTORIAL DE CONCLUIDOS
+   const resultadosConcluidos = todosLosPartidos
+      .filter(p => p.golesLocal !== undefined && p.golesVisitante !== undefined)
+      .reverse()
+      .slice(0, 6);
+
+   const noticiasDestacadas = todasLasNoticias.slice(0, 2);
+   const sedesDestacadas = todasLasSedes.slice(0, 3);
 
    return (
       <main className="min-h-screen bg-[#f0f2f5] pb-20">
          <Navbar />
-         
-         {/* --- SECCIÓN HERO (PARTIDO DESTACADO DE HOY) --- */}
+
+         {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/atlanta.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="MetLife Stadium" />
+            <img src="/images/sedes/atlanta.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
                   EL PARTIDO DESTACADO DE HOY 🌟
                </span>
                <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
-                  ESPAÑA <span className="text-red-500">vs</span> CABO VERDE
+                  {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}
                </h1>
                <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
-                  Grupo H · 13:00 HS · Atlanta Stadium, US
+                  {partidoDestacado.fase || 'Grupos'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
                </p>
                <Link href="/partidos" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
                   Seguir Transmisión del Día
@@ -75,257 +81,84 @@ export default function Home() {
          </section>
 
          <div className="max-w-4xl mx-auto px-5 -mt-12 relative z-10">
-            
-            {/* --- BLOQUE: PARTIDOS DE HOY (15 DE JUNIO) --- */}
+
+            {/* --- BLOQUE: PARTIDOS DE HOY AUTOMATIZADO --- */}
             <div className="bg-slate-900 rounded-[2rem] p-6 text-white shadow-xl border border-slate-800">
                <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-3">
-                  <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">📅 Partidos de Hoy — 15 de Junio</h3>
+                  <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">
+                     📅 Partidos de Hoy — {diaHoy} de {hoyObj.toLocaleString('es-ES', { month: 'long' })}
+                  </h3>
                   <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Fase de Grupos</span>
                </div>
 
                <div className="space-y-4">
-                  {/* Partido Principal */}
-                  <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
-                     <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/espana.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="España" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">España</span>
-                     </div>
-                     <div className="px-4 text-center min-w-[100px]">
-                        <span className="bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">14:00 HS</span>
-                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Atlanta, US</p>
-                     </div>
-                     <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Cabo Verde</span>
-                        <img src="/images/banderas/cabo-verde.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Cabo Verde" />
-                     </div>
-                  </div>
+                  {partidosDeHoy.length > 0 ? (
+                     partidosDeHoy.map((partido) => (
+                        <div key={partido.id} className="bg-slate-800/50 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-700/30 gap-3">
 
-                  {/* Segundo Partido del día */}
-                  <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
-                     <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/belgica.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Belgica" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">Belgica</span>
-                     </div>
-                     <div className="px-4 text-center min-w-[100px]">
-                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">16:00 HS</span>
-                         <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Seattle, US</p>
-                     </div>
-                     <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Egipto</span>
-                        <img src="/images/banderas/egipto.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Egipto" />
-                     </div>
-                  </div>
-                  {/* Tercer Partido del día */}
-                  <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
-                     <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/arabia-saudita.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Arabia Saudita" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">Arabia Saudita</span>
-                     </div>
-                     <div className="px-4 text-center min-w-[100px]">
-                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">19:00 HS</span>
-                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Miami, US</p>
-                     </div>
-                     <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Uruguay</span>
-                        <img src="/images/banderas/uruguay.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Uruguay" />
-                     </div>
-                  </div>
-                  {/* Cuarto Partido del día */}
-                  <div className="bg-slate-800/50 rounded-2xl p-4 flex items-center justify-between border border-slate-700/30">
-                     <div className="flex items-center gap-3 flex-1">
-                        <img src="/images/banderas/iran.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Irán" />
-                        <span className="font-black text-xs md:text-sm uppercase italic">Irán</span>
-                     </div>
-                     <div className="px-4 text-center min-w-[100px]">
-                        <span className="bg-slate-700 text-slate-300 text-[9px] font-black px-2 py-0.5 rounded uppercase block mb-8">22:00 HS</span>
-                        <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Los Angeles, US</p>
-                     </div>
-                     <div className="flex items-center gap-3 flex-1 justify-end">
-                        <span className="font-black text-xs md:text-sm uppercase italic text-right">Nueva Zelanda</span>
-                        <img src="/images/banderas/nueva-zelanda.png" className="w-7 h-5 object-cover rounded shadow-sm" alt="Nueva Zelanda" />
-                     </div>
-                  </div>
+                           {/* Renglón 1: Hora */}
+                           <div className="shrink-0">
+                              <span className="bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block tracking-wider">
+                                 {partido.hora}
+                              </span>
+                           </div>
+
+                           {/* Renglón 2: Bandera - Pais   VS   Pais - Bandera */}
+                           <div className="flex items-center justify-between w-full px-1 gap-2">
+                              {/* Local: Bandera en el lateral izquierdo, texto a la derecha */}
+                              <div className="flex items-center gap-3 flex-1 min-w-0 justify-start">
+                                 <img src={partido.banderaLocal} className="w-7 h-5 object-cover rounded shadow-sm shrink-0" alt="" />
+                                 <span className="font-black text-xs md:text-sm uppercase italic text-left text-slate-200 truncate">
+                                    {partido.local}
+                                 </span>
+                              </div>
+
+                              {/* VS Central */}
+                              <span className="text-slate-600 font-bold text-[10px] shrink-0 px-1">VS</span>
+
+                              {/* Visitante: Texto a la izquierda, bandera en el lateral derecho */}
+                              <div className="flex items-center gap-3 flex-1 min-w-0 justify-end">
+                                 <span className="font-black text-xs md:text-sm uppercase italic text-right text-slate-200 truncate">
+                                    {partido.visitante}
+                                 </span>
+                                 <img src={partido.banderaVisitante} className="w-7 h-5 object-cover rounded shadow-sm shrink-0" alt="" />
+                              </div>
+                           </div>
+
+                           {/* Renglón 3: Sede */}
+                           <div className="shrink-0 text-center">
+                              <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">
+                                 {partido.sede || 'Sede Central'}
+                              </p>
+                           </div>
+
+                        </div>
+                     ))
+                  ) : (
+                     <p className="text-center text-slate-500 text-xs py-4 uppercase font-bold tracking-wider">No hay más partidos programados para hoy.</p>
+                  )}
 
                   {/* --- HISTORIAL DE RESULTADOS RECIENTES --- */}
                   <div className="mt-4 pt-4 border-t border-slate-800/60">
                      <div className="flex items-center gap-2 mb-2 px-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span className="text-[8px] font-black tracking-[0.2em] text-slate-500 uppercase">Partidos Concluidos</span>
+                        <span className="text-[8px] font-black tracking-[0.2em] text-slate-500 uppercase">
+                           Partidos Concluidos
+                        </span>
                      </div>
-                     
+
                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {/* Partido 1 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Inaugural</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">México 🇲🇽</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">0</span>
-                                 <span className="font-medium text-slate-500">Sudáfrica 🇿🇦</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-
-                        {/* Partido 2 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 1</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Corea 🇰🇷</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Chequia 🇨🇿</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                         {/* Partido 3 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 2</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Canadá 🇨🇦</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Bosnia 🇧🇦</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                         {/* Partido 4 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 2</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">USA 🇺🇲</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">4</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Paraguay 🇵🇾</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                        {/* Partido 5 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 3</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Qatar 🇶🇦</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Suiza 🇨🇭</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-
-                        {/* Partido 6 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 3</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Brasil 🇧🇷</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Marruecos 🇲🇦</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                         {/* Partido 7 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 3</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Haití 🇱🇮</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">0</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Escocia 🇫🇮</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                         {/* Partido 8 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 3</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Australia 🇦🇺</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">0</span>
-                                 <span className="font-medium text-slate-500">Turquía 🇹🇷</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                         {/* Partido 9 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Alemania 🇧🇪</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">7</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Curazao 🇨🇼</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-
-                        {/* Partido 10 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Países Bajos 🇷🇺</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">2</span>
-                                 <span className="font-medium text-slate-500">Japón 🇯🇵</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                         {/* Partido 11 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Costa de Marfil 🇨🇮</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">0</span>
-                                 <span className="font-medium text-slate-500">Ecuador 🇪🇨</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-                         {/* Partido 12 */}
-                        <div className="bg-slate-950/30 rounded-xl p-3 flex items-center justify-between border border-slate-800/40 hover:border-slate-800 transition-colors">
-                           <div className="flex items-center gap-2.5">
-                              <span className="text-[7px] font-black bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase tracking-wider">Jornada 4</span>
-                              <div className="flex items-center gap-2 text-[11px]">
-                                 <span className="font-medium text-slate-300">Suecia 🇸🇪</span>
-                                 <span className="font-black text-white bg-slate-800 px-1.5 py-0.5 rounded text-[10px] tabular-nums">5</span>
-                                 <span className="text-slate-600 font-bold text-[9px]">:</span>
-                                 <span className="font-black text-slate-500 bg-slate-900/50 px-1.5 py-0.5 rounded text-[10px] tabular-nums">1</span>
-                                 <span className="font-medium text-slate-500">Túnez 🇹🇳</span>
-                              </div>
-                           </div>
-                           <span className="text-[9px] font-bold text-emerald-500">✓</span>
-                        </div>
-
+                        {resultadosConcluidos.map((partido) => (
+                           <CardResultadoMini
+                              key={partido.id}
+                              local={partido.local}
+                              banderaLocal={partido.banderaLocal}
+                              golesLocal={partido.golesLocal!}
+                              golesVisitante={partido.golesVisitante!}
+                              visitante={partido.visitante}
+                              banderaVisitante={partido.banderaVisitante}
+                           />
+                        ))}
                      </div>
                   </div>
 
@@ -335,8 +168,8 @@ export default function Home() {
             <div className="my-10"><AdBanner /></div>
             <div className="my-10"><BreakingNews /></div>
 
-            {/* --- PRÓXIMOS PARTIDOS (FILTRADOS AUTOMÁTICOS POR DÍA NUMÉRICO) --- */}
-            <section className="mt-12">
+            {/* --- PRÓXIMOS PARTIDOS (RESTAURADO EXACTAMENTE COMO ESTABA EN PRODUCCIÓN) --- */}
+            <section className="mt-12 text-slate-900">
                <div className="flex justify-between items-end mb-4 px-2">
                   <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Próximos Días</h2>
                   <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Ver Calendario Completo →</Link>
@@ -345,27 +178,32 @@ export default function Home() {
                   {proximosPartidos.map((p) => {
                      const [anoStr, mesStr, diaStr] = p.fecha.split('-');
                      const meses = [
-                        'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
+                        'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
                         'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
                      ];
                      const fechaFormateada = `${parseInt(diaStr)} de ${meses[parseInt(mesStr) - 1]}`;
 
                      return (
                         <div key={p.id} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm border border-gray-100 group hover:border-blue-100 transition-colors">
+
+                           {/* Local */}
                            <div className="flex items-center gap-3 flex-1">
                               <img src={p.banderaLocal} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.local} />
                               <span className="font-black text-[11px] uppercase italic text-gray-900">{p.local}</span>
                            </div>
-                           
+
+                           {/* Bloque Central de Hora y Fecha */}
                            <div className="px-4 text-center border-x border-gray-50 min-w-[95px]">
                               <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5 tracking-wider">{p.hora}</p>
                               <p className="text-[7px] font-bold text-gray-400 uppercase whitespace-nowrap">{fechaFormateada}</p>
                            </div>
-                           
+
+                           {/* Visitante */}
                            <div className="flex items-center gap-3 flex-1 justify-end">
                               <span className="font-black text-[11px] uppercase italic text-right text-gray-900">{p.visitante}</span>
                               <img src={p.banderaVisitante} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.visitante} />
                            </div>
+
                         </div>
                      );
                   })}
@@ -379,7 +217,7 @@ export default function Home() {
                   )}
                </div>
             </section>
-       
+
             {/* --- SELECCIONES CLASIFICADAS --- */}
             <section className="mt-16">
                <div className="flex justify-between items-end mb-6 px-2">
@@ -392,7 +230,7 @@ export default function Home() {
                   ))}
                </div>
             </section>
-
+            xxxxxx
             {/* --- ÚLTIMAS NOTICIAS --- */}
             <section className="mt-16">
                <div className="flex items-end justify-between mb-8 px-2">
@@ -483,5 +321,5 @@ export default function Home() {
             <div className="my-12"><AdBanner /></div>
          </div>
       </main>
-   ); 
+   );
 }
