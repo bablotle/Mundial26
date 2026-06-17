@@ -230,7 +230,7 @@ export default function Home() {
                   ))}
                </div>
             </section>
-            xxxxxx
+
             {/* --- ÚLTIMAS NOTICIAS --- */}
             <section className="mt-16">
                <div className="flex items-end justify-between mb-8 px-2">
@@ -272,10 +272,10 @@ export default function Home() {
                </div>
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <TablaGrupos nombre="Grupo D" equipos={[
-                     { id: "estados_unidos", nombre: "Estados Unidos", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/usa.png" },
-                     { id: "paraguay", nombre: "Paraguay", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/paraguay.png" },
-                     { id: "australia", nombre: "Australia", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/australia.png" },
-                     { id: "turquia", nombre: "Turquía", pj: 0, dg: 0, pts: 0, bandera: "/images/banderas/turquia.png" },
+                     { id: "estados_unidos", nombre: "Estados Unidos", pj: 1, dg: 0, pts: 3, bandera: "/images/banderas/usa.png" },
+                     { id: "paraguay", nombre: "Paraguay", pj: 1, dg: 4, pts: 0, bandera: "/images/banderas/paraguay.png" },
+                     { id: "australia", nombre: "Australia", pj: 1, dg: 0, pts: 3, bandera: "/images/banderas/australia.png" },
+                     { id: "turquia", nombre: "Turquía", pj: 1, dg: 2, pts: 0, bandera: "/images/banderas/turquia.png" },
                   ]} />
                   <TablaGrupos nombre="Grupo A" equipos={[
                      { id: "mexico", nombre: "México", pj: 1, dg: 1, pts: 3, bandera: "/images/banderas/mexico.png" },
