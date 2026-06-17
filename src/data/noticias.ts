@@ -16,6 +16,27 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-6",
+                categoria: "MUNDIAL 2026",
+                titulo: "Messi anota los 3 goles del partido.  ",
+                resumen: "Francia se lleva la victoria ante Senegal 3-1.",
+                contenidoLargo: `Triplete Messi. Los partidos disputados el martes 16 de junio en la Fase de Grupos de la Copa Mundial de la FIFA 2026 son los siguientes:
+                Grupo I
+                Francia 3 - 1 Senegal:
+                Kylian Mbappé anotó un doblete histórico y Bradley Barcola selló la victoria para los subcampeones del mundo. Ibrahim Mbaye descontó para el conjunto africano.
+                Noruega 4 - 1 Irak:
+                Erling Haaland debutó en los mundiales marcando dos goles. Completaron la goleada noruega Leo Østigård y un autogol de Aymen Hussein (quien previamente había anotado el empate transitorio de su país).
+                Grupo J
+                Argentina 3 - 0 Argelia:
+                La vigente campeona del mundo goleó con un espectacular triplete de Lionel Messi. Con este hat-trick, el astro argentino alcanzó al alemán Miroslav Klose como el máximo goleador de la historia de los Mundiales con 16 tantos.
+                Austria 3 - 1 Jordania:
+                Los goles austriacos llegaron por obra de Romano Schmid, un autogol de Yazan Al-Arab y un penal ejecutado por Marko Arnautović en tiempo de descuento. Ali Olwan hizo historia al anotar el primer gol de Jordania en una Copa del Mundo`,
+                imagen: "/images/noticias/noticia-12.jpg",
+                fecha: "2026-06-16",
+                autor: "Redacción Mil Goles",
+                tags: ["España", "Uruguay", "Mundial", "FIFA"]
+        },
+        {
                 id: "jornada-5",
                 categoria: "MUNDIAL 2026",
                 titulo: "Vozinha el heroe del partido.  ",
@@ -31,7 +52,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["España", "Uruguay", "Mundial", "FIFA"]
         },
-         {
+        {
                 id: "jornada-4",
                 categoria: "MUNDIAL 2026",
                 titulo: "Alemania gana ante Curazao 7-1",
