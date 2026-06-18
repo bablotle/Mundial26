@@ -16,6 +16,25 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-7",
+                categoria: "MUNDIAL 2026",
+                titulo: "Portugal empata 1-1 con RD Congo.  ",
+                resumen: "Harry Kane con 2 goles le da la victoria a Inglaterra.",
+                contenidoLargo: `Jornada del Miércoles 17 de Junio:
+                Colombia 3 - 1 Uzbekistán 
+                Con goles de Daniel Muñoz, Luis Díaz y Jáminton Campaz para los cafeteros.
+                Inglaterra 4 - 2 Croacia
+                Destacó un doblete de Harry Kane y un gol de Jude Bellingham.
+                Portugal 1 - 1 RD Congo 
+                Anotaron João Neves para los lusos y Yoane Wissa para la selección africana.
+                Ghana 1 - 0 Panamá 
+                Victoria agónica africana con gol de Caleb Yirenkyi en el tiempo de descuento.`,
+                imagen: "/images/noticias/noticia-13.jpg",
+                fecha: "2026-06-17",
+                autor: "Redacción Mil Goles",
+                tags: ["Cristiano", "Harry Kane", "Portugal", "FIFA"]
+        },
+        {
                 id: "jornada-6",
                 categoria: "MUNDIAL 2026",
                 titulo: "Messi anota los 3 goles del partido.  ",
