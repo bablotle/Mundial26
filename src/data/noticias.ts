@@ -18,6 +18,27 @@ export const todasLasNoticias: Noticia[] = [
       {
                 id: "jornada-7",
                 categoria: "MUNDIAL 2026",
+                titulo: "México se lleva la victoria 1-0 ante Corea.",
+                resumen: "Canada goleó 6-0 a la selección de Qatar en los partidos de la segunda fecha.",
+                contenidoLargo: `Resultados en la segunda fecha de la fase de grupos del Mundial 2026:
+                Grupo A:
+                México 1 - 0 Corea del Sur
+                El equipo tricolor se llevo la victoria con el gol de Luis Romo.
+                República Checa 1 - 1 Sudáfrica 
+                Con goles de Sadílek por Chequia; Mokoena por Sudáfrica.
+                Grupo B:
+                Canadá 6 - 0 Qatar 
+                Aplastante victori del cuadro canadiense con goles de Hat-trick de Jonathan David, Cyle Larin, Nathan Saliba y autogol de Al-Manai.
+                Suiza 4 - 1 Bosnia y Herzegovina
+                Doblete de Manzambi, Vargas y Xhaka por el esquipo Suizo y Mahmic por Bosni.`,
+                imagen: "/images/noticias/noticia-14.jpg",
+                fecha: "2026-06-17",
+                autor: "Redacción Mil Goles",
+                tags: ["México", "Canada", "Suiza", "FIFA"]
+        },
+        {
+                id: "jornada-7",
+                categoria: "MUNDIAL 2026",
                 titulo: "Portugal empata 1-1 con RD Congo.  ",
                 resumen: "Harry Kane con 2 goles le da la victoria a Inglaterra.",
                 contenidoLargo: `Jornada del Miércoles 17 de Junio:
@@ -34,7 +55,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["Cristiano", "Harry Kane", "Portugal", "FIFA"]
         },
-        {
+                {
                 id: "jornada-6",
                 categoria: "MUNDIAL 2026",
                 titulo: "Messi anota los 3 goles del partido.  ",

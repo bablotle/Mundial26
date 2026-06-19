@@ -61,7 +61,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "13:00",
               sede: "Atlanta",
               grupo: "A",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 1,
+              golesVisitante: 1
        },
        {
               id: "A4",
@@ -73,7 +75,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "22:00",
               sede: "Guadalajara",
               grupo: "A",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 1,
+              golesVisitante: 0
        },
        {
               id: "A5",
@@ -140,7 +144,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "16:00",
               sede: "Los Angeles",
               grupo: "B",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 4,
+              golesVisitante: 1
        },
        {
               id: "B4",
@@ -152,7 +158,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "19:00",
               sede: "Vancouver",
               grupo: "B",
-              fase: "Grupos"
+              fase: "Grupos",
+              golesLocal: 6,
+              golesVisitante: 0
        },
        {
               id: "B5",
@@ -307,7 +315,7 @@ export const todosLosPartidos: Partido[] = [
               banderaLocal: "/images/banderas/turquia.png",
               banderaVisitante: "/images/banderas/paraguay.png",
               fecha: "2026-06-19",
-              hora: "01:00",
+              hora: "12:00",
               sede: "San Francisco",
               grupo: "D",
               fase: "Grupos"
