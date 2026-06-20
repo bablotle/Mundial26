@@ -16,7 +16,32 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
-                id: "jornada-7",
+                id: "jornada-9",
+                categoria: "MUNDIAL 2026",
+                titulo: "Paraguay vence a Turquía 1-0.",
+                resumen: "Estados Unidos vuelve a llevarse la victoria y le gana a Australia 2-0.",
+                contenidoLargo: `Los Grupos C y D, finalizaron con los siguientes resultados:
+                Grupo C
+                Brasil 3-0 Haití
+                Goles: Matheus Cunha (23', 36') y Vinícius Jr. (45+3').
+                Haití quedó matemáticamente eliminado.
+                Marruecos 1-0 Escocia
+                Gol: Ismael Saibari (71 segundos).
+                Grupo D
+                Estados Unidos 2-0 Australia
+                Goles: Autogol de Cameron Burgess (11') y Alex Freeman (43').
+                Estados Unidos clasificó a los dieciseisavos de final.
+                Paraguay 1-0 Turquía
+                Gol: Matías Galarza, anota el gol mas rapidi del mundial a los 64 segundos.
+                Turquía quedó matemáticamente eliminada. 
+                Además, Miguel Almirón (Paraguay) fue el primer expulsado bajo la 'Ley Vínicius-Prestianni'.`,
+                imagen: "/images/noticias/noticia-15.jpg",
+                fecha: "2026-06-19",
+                autor: "Redacción Mil Goles",
+                tags: ["Paraguay", "Estados Unidos", "Brasil", "FIFA"]
+        },
+        {
+                id: "jornada-8",
                 categoria: "MUNDIAL 2026",
                 titulo: "México se lleva la victoria 1-0 ante Corea.",
                 resumen: "Canada goleó 6-0 a la selección de Qatar en los partidos de la segunda fecha.",
@@ -32,7 +57,7 @@ export const todasLasNoticias: Noticia[] = [
                 Suiza 4 - 1 Bosnia y Herzegovina
                 Doblete de Manzambi, Vargas y Xhaka por el esquipo Suizo y Mahmic por Bosni.`,
                 imagen: "/images/noticias/noticia-14.jpg",
-                fecha: "2026-06-17",
+                fecha: "2026-06-18",
                 autor: "Redacción Mil Goles",
                 tags: ["México", "Canada", "Suiza", "FIFA"]
         },
