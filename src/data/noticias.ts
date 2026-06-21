@@ -16,6 +16,20 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-10",
+                categoria: "MUNDIAL 2026",
+                titulo: "Alemania paso a los dieciseisavos de final.",
+                resumen: "Países Bajos y Japón consiguieron goleadas contundentes.",
+                contenidoLargo: `Alemania avanzó: Venció 2-1 a Costa de Marfil con doblete agónico de Deniz Undav.
+                Histórico empate: Curazao aguantó el 0-0 ante Ecuador gracias a 15 atajadas del arquero Eloy Room.
+                Goleada neerlandesa: Países Bajos aplastó 5-1 a Suecia y extendió su invicto histórico en fases de grupos.
+                Fiesta japonesa: Japón goleó 4-0 a Túnez en el partido número 1,000 en la historia de los Mundiales.`,
+                imagen: "/images/noticias/noticia-16.jpg",
+                fecha: "2026-06-21",
+                autor: "Redacción Mil Goles",
+                tags: ["Alemania", "Países Bajos", "Japón", "FIFA"]
+        },
+        {
                 id: "jornada-9",
                 categoria: "MUNDIAL 2026",
                 titulo: "Paraguay vence a Turquía 1-0.",
@@ -36,11 +50,10 @@ export const todasLasNoticias: Noticia[] = [
                 Turquía quedó matemáticamente eliminada. 
                 Además, Miguel Almirón (Paraguay) fue el primer expulsado bajo la 'Ley Vínicius-Prestianni'.`,
                 imagen: "/images/noticias/noticia-15.jpg",
-                fecha: "2026-06-19",
+                fecha: "2026-06-20",
                 autor: "Redacción Mil Goles",
                 tags: ["Paraguay", "Estados Unidos", "Brasil", "FIFA"]
-        },
-        {
+        },{
                 id: "jornada-8",
                 categoria: "MUNDIAL 2026",
                 titulo: "México se lleva la victoria 1-0 ante Corea.",
@@ -57,7 +70,7 @@ export const todasLasNoticias: Noticia[] = [
                 Suiza 4 - 1 Bosnia y Herzegovina
                 Doblete de Manzambi, Vargas y Xhaka por el esquipo Suizo y Mahmic por Bosni.`,
                 imagen: "/images/noticias/noticia-14.jpg",
-                fecha: "2026-06-18",
+                fecha: "2026-06-19",
                 autor: "Redacción Mil Goles",
                 tags: ["México", "Canada", "Suiza", "FIFA"]
         },
@@ -76,7 +89,7 @@ export const todasLasNoticias: Noticia[] = [
                 Ghana 1 - 0 Panamá 
                 Victoria agónica africana con gol de Caleb Yirenkyi en el tiempo de descuento.`,
                 imagen: "/images/noticias/noticia-13.jpg",
-                fecha: "2026-06-17",
+                fecha: "2026-06-18",
                 autor: "Redacción Mil Goles",
                 tags: ["Cristiano", "Harry Kane", "Portugal", "FIFA"]
         },
@@ -97,7 +110,7 @@ export const todasLasNoticias: Noticia[] = [
                 Austria 3 - 1 Jordania:
                 Los goles austriacos llegaron por obra de Romano Schmid, un autogol de Yazan Al-Arab y un penal ejecutado por Marko Arnautović en tiempo de descuento. Ali Olwan hizo historia al anotar el primer gol de Jordania en una Copa del Mundo`,
                 imagen: "/images/noticias/noticia-12.jpg",
-                fecha: "2026-06-16",
+                fecha: "2026-06-17",
                 autor: "Redacción Mil Goles",
                 tags: ["España", "Uruguay", "Mundial", "FIFA"]
         },

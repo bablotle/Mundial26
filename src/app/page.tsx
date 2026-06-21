@@ -48,11 +48,19 @@ export default function Home() {
       .sort((a, b) => new Date(a.fecha + 'T12:00:00').getTime() - new Date(b.fecha + 'T12:00:00').getTime())
       .slice(0, 3);
 
-   // D. HISTORIAL DE CONCLUIDOS
-   const resultadosConcluidos = todosLosPartidos
-      .filter(p => p.golesLocal !== undefined && p.golesVisitante !== undefined)
-      .reverse()
-      .slice(0, 6);
+   // D. HISTORIAL DE CONCLUIDOS (CORREGIDO: Muestra siempre los más recientes del torneo)
+const resultadosConcluidos = todosLosPartidos
+   .filter(p => p.golesLocal !== undefined && p.golesLocal !== null && p.golesVisitante !== undefined && p.golesVisitante !== null)
+   .sort((a, b) => {
+      // 1. Comparamos las fechas (Ej: "2026-06-16") de forma descendente
+      const fechaA = new Date(a.fecha).getTime();
+      const fechaB = new Date(b.fecha).getTime();
+      if (fechaB !== fechaA) return fechaB - fechaA;
+      
+      // 2. Si son del mismo día, comparamos las horas (Ej: "14:00" vs "19:00")
+      return b.hora.localeCompare(a.hora);
+   })
+   .slice(0, 6); // Te agarra estrictamente los últimos 6 del torneo cronológicamente
 
    const noticiasDestacadas = todasLasNoticias.slice(0, 2);
    const sedesDestacadas = todasLasSedes.slice(0, 3);
@@ -63,7 +71,7 @@ export default function Home() {
 
          {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/toronto.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/sofi.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
                   EL PARTIDO DESTACADO DE HOY 🌟
