@@ -16,6 +16,25 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-11",
+                categoria: "MUNDIAL 2026",
+                titulo: "España 4-0 ante Arabia Saudita.",
+                resumen: "2-2 termino el partido entre Uruguay y Cabo Verde.",
+                contenidoLargo: ` Dos empates frustrantes para los favoritos, una remontada histórica y una goleada revitalizante.
+                España 4 - 0 Arabia Saudita
+                Tras un flojo debut, la selección de España despertó con una contundente goleada liderada por un tanto tempranero de Lamine Yamal y un doblete de Mikel Oyarzabal.
+                Uruguay 2 - 2 Cabo Verde
+                En un partido ríspido jugado en Miami, la selección de Uruguay rescató el empate tras ir perdiendo por dos costosos errores defensivos aprovechados por los africanos.
+                Bélgica 0 - 0 Irán
+                Los belgas volvieron a decepcionar y sufrieron la expulsión de Amadou Onana, quedando condicionados ante un conjunto iraní al que la tecnología VAR le anuló un gol por fuera de juego.
+                Egipto 3 - 1 Nueva Zelanda
+                El conjunto oceánico sorprendió abriendo el marcador al minuto 15, pero la escuadra de Egipto, guiada por una gran actuación de Mohamed Salah, reaccionó con fuerza en el complemento para remontar el marcador.`,
+                imagen: "/images/noticias/noticia-17.jpg",
+                fecha: "2026-06-22",
+                autor: "Redacción Mil Goles",
+                tags: ["Yamal", "España", "Uruguay", "FIFA"]
+        },
+        {
                 id: "jornada-10",
                 categoria: "MUNDIAL 2026",
                 titulo: "Alemania paso a los dieciseisavos de final.",

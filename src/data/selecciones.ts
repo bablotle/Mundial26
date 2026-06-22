@@ -691,7 +691,7 @@ export const todasLasSelecciones: Seleccion[] = [
         "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": []
     },
-      {
+    {
         "id": "suecia",
         "nombre": "Suecia",
         "confederacion": "UEFA",

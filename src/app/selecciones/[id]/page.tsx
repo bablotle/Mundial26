@@ -1,21 +1,57 @@
 // src/app/selecciones/[id]/page.tsx
 import { todasLasSelecciones, type Seleccion } from '@/data/selecciones';
-// Suponiendo que tienes un archivo de fixture con los partidos
 import { todosLosPartidos } from '@/data/partidos';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
 export default async function SeleccionPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
-    const seleccion = (todasLasSelecciones as Seleccion[]).find((s) => s.id === id);
+    const seleccionBase = (todasLasSelecciones as Seleccion[]).find((s) => s.id === id);
 
-    if (!seleccion) return notFound();
+    if (!seleccionBase) return notFound();
 
     // Filtramos comparando el nombre de la selección con el local o visitante del partido
     const partidosSeleccion = todosLosPartidos.filter(p =>
-        p.local.toLowerCase() === seleccion.nombre.toLowerCase() ||
-        p.visitante.toLowerCase() === seleccion.nombre.toLowerCase()
+        p.local.toLowerCase() === seleccionBase.nombre.toLowerCase() ||
+        p.visitante.toLowerCase() === seleccionBase.nombre.toLowerCase()
     );
+
+    // 🌟 NUEVO: Calculamos los stats dinámicos exclusivamente de los concluidos para esta vista
+    let g = 0, e = 0, p = 0;
+    
+    const partidosConcluidos = partidosSeleccion.filter(partido => 
+        partido.golesLocal !== undefined && partido.golesLocal !== null &&
+        partido.golesVisitante !== undefined && partido.golesVisitante !== null
+    );
+
+partidosConcluidos.forEach(partido => {
+   const esLocal = partido.local.toLowerCase() === seleccionBase.nombre.toLowerCase();
+   
+   // Forzamos a que TypeScript sepa que son números reales
+   const golesPropios = Number(esLocal ? partido.golesLocal : partido.golesVisitante);
+   const golesRivales = Number(esLocal ? partido.golesVisitante : partido.golesLocal);
+
+   if (golesPropios > golesRivales) {
+      g++; // Ganó
+   } else if (golesPropios < golesRivales) {
+      p++; // Perdió
+   } else {
+      e++; // Empató
+   }
+});
+
+    const total = g + e + p;
+
+    // Fusionamos la selección con sus stats calculados vivos
+    const seleccion = {
+        ...seleccionBase,
+        stats: {
+            g: total > 0 ? g.toString() : "-",
+            e: total > 0 ? e.toString() : "-",
+            p: total > 0 ? p.toString() : "-",
+            total: total > 0 ? total.toString() : "-"
+        }
+    };
 
     return (
         <main className="min-h-screen bg-[#f8f9fa] pt-20 pb-12 px-4">
@@ -113,8 +149,6 @@ export default async function SeleccionPage({ params }: { params: Promise<{ id: 
                     <div className="grid grid-cols-1 gap-3">
                         {partidosSeleccion.map((partido, index) => (
                             <div key={index} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between">
-
-                                {/* Fecha y Hora (Usando tus campos: fecha y hora) */}
                                 <div className="flex flex-col border-r border-gray-100 pr-4 min-w-[90px]">
                                     <span className="text-[10px] font-black text-blue-600 uppercase">
                                         {new Date(partido.fecha).toLocaleDateString('es-ES', { day: '2-digit', month: 'short' }).replace('.', '')}
@@ -122,7 +156,6 @@ export default async function SeleccionPage({ params }: { params: Promise<{ id: 
                                     <span className="text-xs font-bold text-gray-400">{partido.hora} HS</span>
                                 </div>
 
-                                {/* Enfrentamiento (Usando tus banderas de imagen) */}
                                 <div className="flex-1 flex items-center justify-center gap-4 px-2 text-center">
                                     <div className="flex flex-col items-center flex-1">
                                         <div className="relative w-8 h-5 mb-1 shadow-sm rounded-sm overflow-hidden border border-gray-100">
@@ -141,7 +174,6 @@ export default async function SeleccionPage({ params }: { params: Promise<{ id: 
                                     </div>
                                 </div>
 
-                                {/* Sede (Usando tu campo: sede) */}
                                 <div className="hidden sm:flex flex-col items-end border-l border-gray-100 pl-4 min-w-[100px]">
                                     <span className="text-[8px] font-black text-gray-400 uppercase">Sede</span>
                                     <span className="text-[10px] font-bold text-gray-800">{partido.sede}</span>
@@ -150,7 +182,6 @@ export default async function SeleccionPage({ params }: { params: Promise<{ id: 
                         ))}
                     </div>
                 </div>
-
 
                 {/* --- FRAME 4: NOTICIA EDITORIAL --- */}
                 <div className="space-y-6">

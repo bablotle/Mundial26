@@ -20,9 +20,9 @@ export default function MiSeleccion() {
       noticias: [
          {
             id: '1',
-            titulo: "Paraguay enfrentó a Croacia y Marruecos",
-            desc: "La selección de Paraguay cerró recientemente su gira europea de marzo de 2026 con un saldo de una victoria y una derrota como parte de su preparación para el Mundial 2026.\n\n\ Victoria contra Grecia (1-0): El 27 de marzo de 2026, la Albirroja derrotó a Grecia en El Pireo. El único gol del encuentro fue anotado por Diego Gómez de tiro libre a los 52 minutos. \n\n\ Derrota contra Marruecos (1-2): El 31 de marzo de 2026, el equipo dirigido por Gustavo Alfaro cayó ante la selección marroquí en Lens, Francia. El gol paraguayo fue obra de Gustavo Caballero.",
-            img: "/images/noticias/paraguay-amistoso.jpg",
+            titulo: "Paraguay mantiene la esperanza",
+            desc: "La Selección de Paraguay ha registrado una derrota y una victoria en sus dos partidos disputados hasta el día de hoy dentro del Grupo D.\n\n\ Resultados en el Mundial 2026\n\n\ Estados Unidos 4 - 1 Paraguay\n\ (12 de junio de 2026) | Primera jornada.\n\n\ Paraguay cayó en su debut en el Estadio de Los Ángeles. El único tanto paraguayo lo convirtió el ingresado Mario tras una asistencia de Miguel Almirón.\n\n\ Turquía 0 - 1 Paraguay\n\ (19 de junio de 2026) | Segunda jornada.\n\n\ La Albirroja logró un triunfo heroico en el Estadio de la Bahía de San Francisco. Matías Galarza marcó el gol de la victoria a los 64 segundos de juego, registrando el gol más rápido del torneo hasta el momento. \n\n\ El equipo sostuvo el resultado con 10 jugadores durante todo el segundo tiempo por la expulsión de Miguel Almirón.",
+            img: "/images/noticias/paraguay-gol.jpg",
          }
       ]
    };
