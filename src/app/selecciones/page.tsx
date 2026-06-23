@@ -12,17 +12,15 @@ export default function SeleccionesPage() {
     const [filtro, setFiltro] = useState('Todas');
     const confs = ['Todas', 'UEFA', 'CONMEBOL', 'CONCACAF', 'CAF', 'AFC'];
 
-
 // 2. USAMOS LA DATA IMPORTADA PARA FILTRAR
     const filtradas = filtro === 'Todas'
         ? todasLasSelecciones
         : todasLasSelecciones.filter(s => s.confederacion === filtro);
 
-    // 🌟 REVISADO Y CORREGIDO: Mapeo sin errores de nombres
+    // 🌟 CORREGIDO: Nombres unificados y sintaxis cerrada correctamente
     const filtradasConStats = filtradas.map(seleccion => {
         let g = 0, e = 0, p = 0;
 
-        // Filtramos y aseguramos que solo cuenten los que YA tienen goles asignados
         const partidosConcluidos = todosLosPartidos.filter(partido => {
             const esSuPartido = partido.local.toLowerCase() === seleccion.nombre.toLowerCase() || 
                                 partido.visitante.toLowerCase() === seleccion.nombre.toLowerCase();
@@ -31,7 +29,6 @@ export default function SeleccionesPage() {
             return esSuPartido && tieneGoles;
         });
 
-        // Procesamos los resultados de los partidos concluidos
         partidosConcluidos.forEach(partido => {
             const esLocal = partido.local.toLowerCase() === seleccion.nombre.toLowerCase();
             const golesPropios = Number(esLocal ? partido.golesLocal : partido.golesVisitante);
@@ -43,6 +40,8 @@ export default function SeleccionesPage() {
         });
 
         const total = g + e + p;
+        // 🌟 Variable corregida sin espacios
+        const puntosTotales = (g * 3) + e; 
 
         return {
             ...seleccion,
@@ -50,10 +49,13 @@ export default function SeleccionesPage() {
                 g: total > 0 ? g.toString() : "-",
                 e: total > 0 ? e.toString() : "-",
                 p: total > 0 ? p.toString() : "-",
-                total: total > 0 ? total.toString() : "-"
+                total: total > 0 ? total.toString() : "-",
+                // 🌟 Invocación corregida respetando mayúsculas
+                pts: total > 0 ? puntosTotales.toString() : "-" 
             }
         };
-    });
+    }); // 🌟 Aquí se cierra correctamente el .map
+
     return (
         <main className="min-h-screen bg-[#f0f2f5] pt-24 pb-12 px-5">
             <Navbar />
