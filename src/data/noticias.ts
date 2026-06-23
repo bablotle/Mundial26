@@ -16,6 +16,26 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-12",
+                categoria: "MUNDIAL 2026",
+                titulo: "Noruega se impone 3-2 contra Senegal.",
+                resumen: "Messi con 2 goles le da la victoria a la Argentina ante Austria.",
+                contenidoLargo: `Grupo J
+                Argentina 2 - 0 Austria
+                Goles de Lionel Messi (38' y 95'), quien se convirtió en el máximo goleador histórico de los mundiales. Argentina selló su clasificación a 16vos de final.
+                Jordania 1 - 2 Argelia
+                Goles de Nizar Al-Rashdan (36') para Jordania; Nadhir Benbouali (69') y Amine Gouiri (82') para la remontada argelina.
+                Grupo I
+                Francia 3 - 0 Irak
+                Goles de Kylian Mbappé (por duplicado) y Ousmane Dembélé. El partido sufrió un retraso debido a una tormenta eléctrica en Filadelfia. Francia aseguró su pase a la siguiente ronda.
+                Noruega 3 - 2 Senegal
+                El delantero Erling Haaland marcó un doblete y Marcus Pedersen aportó un tanto para los europeos. Ismaila Sarr descontó con dos goles para el conjunto africano. Noruega también clasificó a 16vos de final.`,
+                imagen: "/images/noticias/noticia-18.jpg",
+                fecha: "2026-06-23",
+                autor: "Redacción Mil Goles",
+                tags: ["Haaland", "Mbappe", "Messi", "FIFA"]
+        },
+        {
                 id: "jornada-11",
                 categoria: "MUNDIAL 2026",
                 titulo: "España 4-0 ante Arabia Saudita.",
@@ -34,7 +54,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["Yamal", "España", "Uruguay", "FIFA"]
         },
-        {
+                {
                 id: "jornada-10",
                 categoria: "MUNDIAL 2026",
                 titulo: "Alemania paso a los dieciseisavos de final.",

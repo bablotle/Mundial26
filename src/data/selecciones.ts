@@ -70,7 +70,7 @@ export const todasLasSelecciones: Seleccion[] = [
         "titulos": 0,
         "dt": "Gustavo Alfaro",
         "plantilla": "*Porteros:* Gatito Fernández (Cerro Porteño), Orlando Gill (San Lorenzo), Aldo Pérez (Guarani), Carlos Coronel (New York Red Bulls).\n\n*Defensas:* Gustavo Gómez (Palmeiras), Omar Alderete (Sunderland), Junior Alonso (Atlético Mineiro), Juan José Cáceres (Dynamo Moscú),Alexis Duarte (Santos), Alan Benítez (Internacional), Agustín Sández: (Rosario Central), Blas Riveros (Cerro Porteño), Gustavo Velázquez (Cerro Porteño).\n\n*Mediocampo:* Diego Gómez (Brighton & Hove Albion), Miguel Almirón (Atlanta), Ramón Sosa (Palmeiras), Damián Bobadilla Sao Paulo), Julio Enciso (Racing de Estrasburgo), Alejandro Romero Gamarra (Al Ain), Braian Ojeda (Real Salt Lake), Matías Galarza (River Plate), Andrés Cubas (Vancouver Whitecaps), Diego León (Manchester United), Hugo Cuenca (Genoa).\n\n*Delanteros:* Antonio Sanabria (Torino), Álex Arce (Liga de Quito), Ronaldo Martínez (Platense), Gabriel Ávalos (Independiente), Diego González (Atlas).",
-        "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
+        "stats": { "g": "1", "e": "0", "p": "1", "total": "2" },
         "noticias": [
             {
                 "id": 1,
@@ -91,7 +91,7 @@ export const todasLasSelecciones: Seleccion[] = [
         "titulos": 0,
         "dt": "Luis de la Fuente",
         "plantilla": "*Porteros:* Unai Simón (Athletic Club), David Raya (Arsenal FC), Álex Remiro (Real Sociedad).\n\n*Defensas:* Aymeric Laporte (Al-Nassr), Dani Vivian (Athletic Club), Pau Cubarsí (FC Barcelona), Marc Cucurella (Chelsea FC), Alejandro Grimaldo (Bayer Leverkusen), Pedro Porro (Tottenham), Robin Le Normand (Atlético de Madrid), Dani Carvajal (Real Madrid).\n\n*Mediocampo:* Rodri Hernández (Manchester City), Martín Zubimendi (Real Sociedad), Fabián Ruiz (PSG), Mikel Merino (Arsenal FC), Pedri González (FC Barcelona), Dani Olmo (FC Barcelona), Álex Baena (Villarreal CF), Gavi (FC Barcelona), Fermín López (FC Barcelona), Pablo Barrios (Atlético de Madrid).\n\n*Delanteros:* Lamine Yamal (FC Barcelona), Nico Williams (Athletic Club), Mikel Oyarzabal (Real Sociedad), Ferran Torres (FC Barcelona), Álvaro Morata (AC Milan), Yeremy Pino (Villarreal CF), Samu Aghehowa (FC Porto), Borja Iglesias (RC Celta de Vigo).",
-        "stats": { "g": "5", "e": "1", "p": "0", "total": "16" },
+        "stats": { "g": "-", "e": "-", "p": "-", "total": "-" },
         "noticias": [
             {
                 "id": 1,
