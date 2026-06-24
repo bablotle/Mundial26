@@ -10,46 +10,44 @@ export default async function SeleccionPage({ params }: { params: Promise<{ id: 
 
     if (!seleccionBase) return notFound();
 
-    // Filtramos comparando el nombre de la selección con el local o visitante del partido
+    // 1. Filtramos los partidos del país
     const partidosSeleccion = todosLosPartidos.filter(p =>
         p.local.toLowerCase() === seleccionBase.nombre.toLowerCase() ||
         p.visitante.toLowerCase() === seleccionBase.nombre.toLowerCase()
     );
 
-    // 🌟 NUEVO: Calculamos los stats dinámicos exclusivamente de los concluidos para esta vista
+    // 2. Inicializamos los contadores fuera de los bucles
     let g = 0, e = 0, p = 0;
-    
-    const partidosConcluidos = partidosSeleccion.filter(partido => 
+
+    const partidosConcluidos = partidosSeleccion.filter(partido =>
         partido.golesLocal !== undefined && partido.golesLocal !== null &&
         partido.golesVisitante !== undefined && partido.golesVisitante !== null
     );
 
-partidosConcluidos.forEach(partido => {
-   const esLocal = partido.local.toLowerCase() === seleccionBase.nombre.toLowerCase();
-   
-   // Forzamos a que TypeScript sepa que son números reales
-   const golesPropios = Number(esLocal ? partido.golesLocal : partido.golesVisitante);
-   const golesRivales = Number(esLocal ? partido.golesVisitante : partido.golesLocal);
+    partidosConcluidos.forEach(partido => {
+        const esLocal = partido.local.toLowerCase() === seleccionBase.nombre.toLowerCase();
+        const golesPropios = Number(esLocal ? partido.golesLocal : partido.golesVisitante);
+        const golesRivales = Number(esLocal ? partido.golesVisitante : partido.golesLocal);
 
-   if (golesPropios > golesRivales) {
-      g++; // Ganó
-   } else if (golesPropios < golesRivales) {
-      p++; // Perdió
-   } else {
-      e++; // Empató
-   }
-});
+        if (golesPropios > golesRivales) g++;
+        else if (golesPropios < golesRivales) p++;
+        else e++;
+    });
 
     const total = g + e + p;
 
-    // Fusionamos la selección con sus stats calculados vivos
+    // 🌟 AQUÍ SE DEFINE: Asegúrate de que esta línea esté justo AQUÍ (afuera del forEach)
+    const puntosTotales = (g * 3) + e;
+
+    // 3. Fusionamos todo en el nuevo objeto seleccion
     const seleccion = {
         ...seleccionBase,
         stats: {
             g: total > 0 ? g.toString() : "-",
             e: total > 0 ? e.toString() : "-",
             p: total > 0 ? p.toString() : "-",
-            total: total > 0 ? total.toString() : "-"
+            total: total > 0 ? total.toString() : "-",
+            pts: total > 0 ? puntosTotales.toString() : "-" // 🌟 Se asigna aquí sin problemas
         }
     };
 
@@ -118,7 +116,6 @@ partidosConcluidos.forEach(partido => {
                         </div>
                     </div>
                 </div>
-
                 {/* --- FRAME 3: DATA (Debut, Títulos y Stats) --- */}
                 <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
@@ -132,13 +129,20 @@ partidosConcluidos.forEach(partido => {
                         </div>
                     </div>
 
+                    {/* 🌟 ACTUALIZADO: Caja de Performance Histórica con 5 columnas */}
                     <div className="bg-blue-400 rounded-3xl p-6 text-white shadow-xl">
                         <h2 className="text-[10px] font-black uppercase tracking-[0.2em] mb-4 opacity-80">Performance Histórica</h2>
-                        <div className="grid grid-cols-4 gap-3">
+                        <div className="grid grid-cols-5 gap-2">
                             <div className="text-center bg-green-400 py-3 rounded-xl"><p className="text-xl font-black">{seleccion.stats.total}</p><p className="text-[8px] uppercase opacity-60">PJ</p></div>
                             <div className="text-center bg-green-400 py-3 rounded-xl"><p className="text-xl font-black">{seleccion.stats.g}</p><p className="text-[8px] uppercase text-green-300">G</p></div>
                             <div className="text-center bg-green-400 py-3 rounded-xl"><p className="text-xl font-black">{seleccion.stats.e}</p><p className="text-[8px] uppercase opacity-60">E</p></div>
                             <div className="text-center bg-green-400 py-3 rounded-xl"><p className="text-xl font-black">{seleccion.stats.p}</p><p className="text-[8px] uppercase text-black-300">P</p></div>
+
+                            {/* 🌟 NUEVO BLOQUE DE PUNTOS DINÁMICOS */}
+                            <div className="text-center bg-yellow-500 py-3 rounded-xl shadow-inner">
+                                <p className="text-xl font-black text-white">{seleccion.stats.pts}</p>
+                                <p className="text-[8px] uppercase font-bold text-yellow-100">PTS</p>
+                            </div>
                         </div>
                     </div>
                 </div>

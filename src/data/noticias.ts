@@ -16,6 +16,22 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-13",
+                categoria: "MUNDIAL 2026",
+                titulo: "Cristiano Ronaldo anota doblete para Portugal.",
+                resumen: "Colombia se lleva la victoria ante RD Congo en el estadio de Guadalajara.",
+                contenidoLargo: `La jornada del 23 de junio dejó los siguientes datos clave:
+                Colombia clasificada:
+                Venció por la mínima a RD Congo en Guadalajara, aseguró el primer lugar del Grupo K con 6 puntos y avanzó a dieciseisavos de final.
+                Goleada y récord luso: Portugal aplastó 5-0 a Uzbekistán. Cristiano Ronaldo marcó un doblete y se convirtió en el único jugador de la historia en anotar en seis Mundiales.
+                Freno a Inglaterra: Los dirigidos por Tuchel empataron 0-0 ante la férrea defensa de Ghana en Boston, dejando la cima del Grupo L compartida con 4 puntos cada uno.
+                Panamá eliminada: Croacia derrotó 1-0 a la selección canalera, dejándola fuera del torneo sin unidades y manteniendo vivas las esperanzas croatas.`,
+                imagen: "/images/noticias/noticia-19.jpg",
+                fecha: "2026-06-24",
+                autor: "Redacción Mil Goles",
+                tags: ["Cristiano", "Portugal", "Inglaterra", "FIFA"]
+        },
+        {
                 id: "jornada-12",
                 categoria: "MUNDIAL 2026",
                 titulo: "Noruega se impone 3-2 contra Senegal.",
