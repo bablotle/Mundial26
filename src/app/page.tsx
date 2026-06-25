@@ -71,7 +71,7 @@ const resultadosConcluidos = todosLosPartidos
 
          {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/azteca.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/levis.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
                   EL PARTIDO DESTACADO DE HOY 🌟
@@ -286,10 +286,10 @@ const resultadosConcluidos = todosLosPartidos
                      { id: "turquia", nombre: "Turquía", pj: 2, dg: -3, pts: 0, bandera: "/images/banderas/turquia.png" },
                   ]} />
                   <TablaGrupos nombre="Grupo A" equipos={[
-                     { id: "mexico", nombre: "México", pj: 2, dg: +3, pts: 6, bandera: "/images/banderas/mexico.png" },
-                     { id: "sudafrica", nombre: "Sudáfrica", pj: 2, dg: -2, pts: 1, bandera: "/images/banderas/sudafrica.png" },
-                     { id: "corea_sur", nombre: "Corea del Sur", pj: 2, dg: 0, pts: 3, bandera: "/images/banderas/corea-del-sur.png" },
-                     { id: "republica-checa", nombre: "República Checa", pj: 2, dg: -1, pts: 1, bandera: "/images/banderas/republica-checa.png" },
+                     { id: "mexico", nombre: "México", pj: 3, dg: +6, pts: 9, bandera: "/images/banderas/mexico.png" },
+                     { id: "sudafrica", nombre: "Sudáfrica", pj: 3, dg: -1, pts: 4, bandera: "/images/banderas/sudafrica.png" },
+                     { id: "corea_sur", nombre: "Corea del Sur", pj: 3, dg: -1, pts: 3, bandera: "/images/banderas/corea-del-sur.png" },
+                     { id: "republica-checa", nombre: "República Checa", pj: 3, dg: -4, pts: 1, bandera: "/images/banderas/republica-checa.png" },
                   ]} />
                </div>
             </section>

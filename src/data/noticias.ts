@@ -16,6 +16,32 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
       {
+                id: "jornada-14",
+                categoria: "MUNDIAL 2026",
+                titulo: "México derrota 3-0 a Republica Checa.",
+                resumen: "Doblete de Vinicius Jr. le dan a Brasil la victoria y el pase a los dieciseisavos.",
+                contenidoLargo: `Los resultados de la última jornada de los grupos A, B y C
+                Grupo A
+                México 3 - 0 República Checa
+                Con goles de Mateo Chávez, Julián Quiñones y Álvaro Fidalgo, le dan la victoria al TRI y avanza con puntaje perfecto con 9 puntos.
+                Sudáfrica 1 - 0 Corea del Sur
+                Resultado a favor de Sudáfrica con el gol de Thapelo Maseko, un triunfo histórico para la clasificación directa de los africanos.
+                Grupo B
+                Suiza 2 - 1 Canadá
+                Suiza clasificó en el primer lugar de la zona, ganando su tercer partido con goles remontados por la experiencia helvética.
+                Bosnia y Herzegovina 3 - 1 Catar
+                Alajbegovic, Mahmic y un autogol; descontó Al-Haydos, le dieron la victoria a Bosnia
+                Grupo C
+                Brasil 3 - 0 Escocia
+                Doblete de Vinícius Júnior y gol de Matheus Cunha, la Canarinha avanzó sin contratiempos como puntera.
+                Marruecos 4 - 2 Haití
+                Goles marroquíes de Achraf Hakimi, Ismael Saibari, Soufiane Rahimi y Gessime Yassine.`,
+                imagen: "/images/noticias/noticia-20.jpg",
+                fecha: "2026-06-24",
+                autor: "Redacción Mil Goles",
+                tags: ["Vinicius Jr.", "México", "Sudáfrica", "FIFA"]
+        },
+        {
                 id: "jornada-13",
                 categoria: "MUNDIAL 2026",
                 titulo: "Cristiano Ronaldo anota doblete para Portugal.",
@@ -31,7 +57,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["Cristiano", "Portugal", "Inglaterra", "FIFA"]
         },
-        {
+                {
                 id: "jornada-12",
                 categoria: "MUNDIAL 2026",
                 titulo: "Noruega se impone 3-2 contra Senegal.",
