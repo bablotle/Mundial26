@@ -90,8 +90,8 @@ export const todosLosPartidos: Partido[] = [
               sede: "CDMX",
               grupo: "A",
               fase: "Grupos",
-              golesLocal: 3,
-              golesVisitante: 0
+              golesLocal: 0,
+              golesVisitante: 3
        },
        {
               id: "A6",
