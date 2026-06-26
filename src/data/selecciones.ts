@@ -70,7 +70,7 @@ export const todasLasSelecciones: Seleccion[] = [
         "titulos": 0,
         "dt": "Gustavo Alfaro",
         "plantilla": "*Porteros:* Gatito Fernández (Cerro Porteño), Orlando Gill (San Lorenzo), Aldo Pérez (Guarani), Carlos Coronel (New York Red Bulls).\n\n*Defensas:* Gustavo Gómez (Palmeiras), Omar Alderete (Sunderland), Junior Alonso (Atlético Mineiro), Juan José Cáceres (Dynamo Moscú),Alexis Duarte (Santos), Alan Benítez (Internacional), Agustín Sández: (Rosario Central), Blas Riveros (Cerro Porteño), Gustavo Velázquez (Cerro Porteño).\n\n*Mediocampo:* Diego Gómez (Brighton & Hove Albion), Miguel Almirón (Atlanta), Ramón Sosa (Palmeiras), Damián Bobadilla Sao Paulo), Julio Enciso (Racing de Estrasburgo), Alejandro Romero Gamarra (Al Ain), Braian Ojeda (Real Salt Lake), Matías Galarza (River Plate), Andrés Cubas (Vancouver Whitecaps), Diego León (Manchester United), Hugo Cuenca (Genoa).\n\n*Delanteros:* Antonio Sanabria (Torino), Álex Arce (Liga de Quito), Ronaldo Martínez (Platense), Gabriel Ávalos (Independiente), Diego González (Atlas).",
-        "stats": { "g": "1", "e": "0", "p": "1", "total": "2" },
+        "stats": { "g": "1", "e": "1", "p": "1", "total": "3" },
         "noticias": [
             {
                 "id": 1,

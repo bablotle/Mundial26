@@ -19,7 +19,7 @@ export const todasLasNoticias: Noticia[] = [
                 id: "jornada-15",
                 categoria: "MUNDIAL 2026",
                 titulo: "Ecuador le gana 2-1 a Alemania.",
-                resumen: "Paraguay y Australia empatan a 0 y ambos consiguen su pase a dieciseisavos.",
+                resumen: "Paraguay y Australia empatan a 0 y Turquía le gana a Estados Unidos 3-2.",
                 contenidoLargo: `Los resultados de los seis partidos disputados el jueves 25 de junio de 2026, de grupos de las zonas D, E y F. 
                 Grupo E
                 Ecuador 2-1 Alemania

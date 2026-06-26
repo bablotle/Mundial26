@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 
 export default function MiSeleccion() {
    // 1. Estados
-   const [likes, setLikes] = useState(25430);
+   const [likes, setLikes] = useState(12430);
    const [isAnimate, setIsAnimate] = useState(false);
 
 
@@ -21,12 +21,11 @@ export default function MiSeleccion() {
          {
             id: '1',
             titulo: "Paraguay mantiene la esperanza",
-            desc: "La Selección de Paraguay ha registrado una derrota y una victoria en sus dos partidos disputados hasta el día de hoy dentro del Grupo D.\n\n\ Resultados en el Mundial 2026\n\n\ Estados Unidos 4 - 1 Paraguay\n\ (12 de junio de 2026) | Primera jornada.\n\n\ Paraguay cayó en su debut en el Estadio de Los Ángeles. El único tanto paraguayo lo convirtió el ingresado Mario tras una asistencia de Miguel Almirón.\n\n\ Turquía 0 - 1 Paraguay\n\ (19 de junio de 2026) | Segunda jornada.\n\n\ La Albirroja logró un triunfo heroico en el Estadio de la Bahía de San Francisco. Matías Galarza marcó el gol de la victoria a los 64 segundos de juego, registrando el gol más rápido del torneo hasta el momento. \n\n\ El equipo sostuvo el resultado con 10 jugadores durante todo el segundo tiempo por la expulsión de Miguel Almirón.",
-            img: "/images/noticias/paraguay-gol.jpg",
+            desc: "La Selección de Paraguay ha registrado una derrota, una victoria y un empate en sus tres partidos disputados hasta el día de hoy dentro del Grupo D.\n\n\ Resultados en el Mundial 2026\n\n\ Estados Unidos 4 - 1 Paraguay\n\ (12 de junio de 2026) | Primera jornada.\n\n\ Paraguay cayó en su debut en el Estadio de Los Ángeles. El único tanto paraguayo lo convirtió el ingresado Mario tras una asistencia de Miguel Almirón.\n\n\ Turquía 0 - 1 Paraguay\n\ (19 de junio de 2026) | Segunda jornada.\n\n\ La Albirroja logró un triunfo heroico en el Estadio de la Bahía de San Francisco. Matías Galarza marcó el gol de la victoria a los 64 segundos de juego, registrando el gol más rápido del torneo hasta el momento. \n\n\ El equipo sostuvo el resultado con 10 jugadores durante todo el segundo tiempo por la expulsión de Miguel Almirón.\n\n\ Australia 0 - 0 Paraguay\n\ (25 de junio de 2026) | Tercera jornada.\n\n\ Paraguay termino en empate ante el equipo de Australia.\n\n\ Paraguay aún no está clasificado matemáticamente a los dieciseisavos de final del Mundial 2026. Tras empatar sin goles contra Australia, la Albirroja cerró la fase de grupos en la tercera posición del Grupo D con 4 puntos y una diferencia de gol de -2.\n\n\ Aunque el panorama es altamente favorable y el técnico Gustavo Alfaro se muestra optimista, la confirmación oficial está en pausa porque debe esperar los resultados de los grupos restantes para asegurarse un lugar entre los ocho mejores terceros.",
+            img: "/images/noticias/paraguay-australia.jpg",
          }
       ]
    };
-
 
    // 4. Lógica del botón de aliento (AQUÍ ESTABA EL ERROR)
    const handleAliento = () => {

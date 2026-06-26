@@ -30,10 +30,15 @@ export default function Home() {
    const fechaHoyString = `${anoHoy}-${mesFormateado}-${diaFormateado}`;
 
    // A. PARTIDOS PARA EL MAP DE HOY
-   const partidosDeHoy = todosLosPartidos.filter(p => p.fecha === fechaHoyString);
+      const partidosDeHoy = todosLosPartidos.filter(p => p.fecha === fechaHoyString);
 
-   // B. EL PARTIDO DESTACADO (El primero de la lista de hoy, o uno por defecto si no hay partidos hoy)
-   const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
+         // B. EL PARTIDO DESTACADO (El primero de la lista de hoy, o uno por defecto si no hay partidos hoy)
+           // const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
+
+   // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "I5") // <-- Aquí pones el ID del partido que quieras
+      || partidosDeHoy[0] 
+      || todosLosPartidos[0];
 
    // C. PRÓXIMOS PARTIDOS (Días siguientes)
    const proximosPartidos = [...todosLosPartidos]
@@ -71,7 +76,7 @@ const resultadosConcluidos = todosLosPartidos
 
          {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/seattle.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/boston.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
                   EL PARTIDO DESTACADO DE HOY 🌟
@@ -226,19 +231,6 @@ const resultadosConcluidos = todosLosPartidos
                </div>
             </section>
 
-            {/* --- SELECCIONES CLASIFICADAS --- */}
-            <section className="mt-16">
-               <div className="flex justify-between items-end mb-6 px-2">
-                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Selecciones</h2>
-                  <Link href="/selecciones" className="text-[9px] font-black uppercase text-blue-600">Todas las federaciones →</Link>
-               </div>
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {todasLasSelecciones.slice(0, 4).map((s) => (
-                     <CardSeleccion key={s.id} {...s} />
-                  ))}
-               </div>
-            </section>
-
             {/* --- ÚLTIMAS NOTICIAS --- */}
             <section className="mt-16">
                <div className="flex items-end justify-between mb-8 px-2">
@@ -280,10 +272,10 @@ const resultadosConcluidos = todosLosPartidos
                </div>
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <TablaGrupos nombre="Grupo D" equipos={[
-                     { id: "estados_unidos", nombre: "Estados Unidos", pj: 2, dg: +5, pts: 6, bandera: "/images/banderas/usa.png" },
-                     { id: "paraguay", nombre: "Paraguay", pj: 2, dg: -2, pts: 3, bandera: "/images/banderas/paraguay.png" },
-                     { id: "australia", nombre: "Australia", pj: 2, dg: 0, pts: 3, bandera: "/images/banderas/australia.png" },
-                     { id: "turquia", nombre: "Turquía", pj: 2, dg: -3, pts: 0, bandera: "/images/banderas/turquia.png" },
+                     { id: "estados_unidos", nombre: "Estados Unidos", pj: 3, dg: +7, pts: 6, bandera: "/images/banderas/usa.png" },
+                     { id: "australia", nombre: "Australia", pj: 3, dg: 0, pts: 4, bandera: "/images/banderas/australia.png" },
+                     { id: "paraguay", nombre: "Paraguay", pj: 3, dg: -2, pts: 4, bandera: "/images/banderas/paraguay.png" },
+                     { id: "turquia", nombre: "Turquía", pj: 3, dg: -2, pts: 3, bandera: "/images/banderas/turquia.png" },
                   ]} />
                   <TablaGrupos nombre="Grupo A" equipos={[
                      { id: "mexico", nombre: "México", pj: 3, dg: +6, pts: 9, bandera: "/images/banderas/mexico.png" },
@@ -291,6 +283,19 @@ const resultadosConcluidos = todosLosPartidos
                      { id: "corea_sur", nombre: "Corea del Sur", pj: 3, dg: -1, pts: 3, bandera: "/images/banderas/corea-del-sur.png" },
                      { id: "republica-checa", nombre: "República Checa", pj: 3, dg: -4, pts: 1, bandera: "/images/banderas/republica-checa.png" },
                   ]} />
+               </div>
+            </section>
+
+             {/* --- SELECCIONES CLASIFICADAS --- */}
+            <section className="mt-16">
+               <div className="flex justify-between items-end mb-6 px-2">
+                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Selecciones</h2>
+                  <Link href="/selecciones" className="text-[9px] font-black uppercase text-blue-600">Todas las federaciones →</Link>
+               </div>
+               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {todasLasSelecciones.slice(0, 4).map((s) => (
+                     <CardSeleccion key={s.id} {...s} />
+                  ))}
                </div>
             </section>
 
