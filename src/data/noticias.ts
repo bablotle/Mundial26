@@ -15,7 +15,33 @@ export interface Noticia {
 
 
 export const todasLasNoticias: Noticia[] = [
-      {
+        {
+                id: "jornada-15",
+                categoria: "MUNDIAL 2026",
+                titulo: "Ecuador le gana 2-1 a Alemania.",
+                resumen: "Paraguay y Australia empatan a 0 y ambos consiguen su pase a dieciseisavos.",
+                contenidoLargo: `Los resultados de los seis partidos disputados el jueves 25 de junio de 2026, de grupos de las zonas D, E y F. 
+                Grupo E
+                Ecuador 2-1 Alemania
+                Histórica victoria de la selección ecuatoriana con goles de Nilson Angulo y Gonzalo Plata, metiéndose a la siguiente ronda como uno de los mejores terceros.
+                Curazao 0-2 Costa de Marfil
+                Con un doblete de Nicolas Pépé, los africanos sellaron su pase a los dieciseisavos de final. 
+                Grupo F
+                Túnez 1-3 Países Bajos
+                El equipo neerlandés aseguró el liderato de su sector tras vencer cómodamente a los tunecinos.
+                Japón 1-1 Suecia
+                Un empate que terminó beneficiando y clasificando a ambas escuadras. 
+                Grupo D
+                Turquía 3-2 Estados Unidos
+                Un gol agónico de Kaan Ayhan le dio la victoria a los turcos, cortando el paso perfecto de los norteamericanos. 
+                Paraguay 0-0 Australia
+                Un duelo cerrado sin anotaciones que confirmó el avance de los australianos directos y dejó a los guaraníes a la espera de los mejores terceros.`,
+                imagen: "/images/noticias/noticia-21.jpg",
+                fecha: "2026-06-26",
+                autor: "Redacción Mil Goles",
+                tags: ["Paraguay.", "Ecuador", "Alemania", "FIFA"]
+        },
+        {
                 id: "jornada-14",
                 categoria: "MUNDIAL 2026",
                 titulo: "México derrota 3-0 a Republica Checa.",
@@ -57,7 +83,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["Cristiano", "Portugal", "Inglaterra", "FIFA"]
         },
-                {
+        {
                 id: "jornada-12",
                 categoria: "MUNDIAL 2026",
                 titulo: "Noruega se impone 3-2 contra Senegal.",
@@ -96,7 +122,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["Yamal", "España", "Uruguay", "FIFA"]
         },
-                {
+        {
                 id: "jornada-10",
                 categoria: "MUNDIAL 2026",
                 titulo: "Alemania paso a los dieciseisavos de final.",
@@ -134,7 +160,7 @@ export const todasLasNoticias: Noticia[] = [
                 fecha: "2026-06-20",
                 autor: "Redacción Mil Goles",
                 tags: ["Paraguay", "Estados Unidos", "Brasil", "FIFA"]
-        },{
+        }, {
                 id: "jornada-8",
                 categoria: "MUNDIAL 2026",
                 titulo: "México se lleva la victoria 1-0 ante Corea.",
@@ -174,7 +200,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["Cristiano", "Harry Kane", "Portugal", "FIFA"]
         },
-                {
+        {
                 id: "jornada-6",
                 categoria: "MUNDIAL 2026",
                 titulo: "Messi anota los 3 goles del partido.  ",
@@ -259,7 +285,7 @@ export const todasLasNoticias: Noticia[] = [
                 autor: "Redacción Mil Goles",
                 tags: ["Paraguay", "Albirroja", "Mundial", "FIFA"]
         },
-         {
+        {
                 id: "partido-inaugural",
                 categoria: "MUNDIAL 2026",
                 titulo: "Inicio del Mundial 2026",
@@ -316,7 +342,7 @@ export const todasLasNoticias: Noticia[] = [
                 Irak (AFC) — Derrotó 2-1 a Bolivia en la otra final intercontinental (regresa después de 40 años, desde México 1986).
                 Bosnia y Herzegovina (UEFA) — Eliminó a Italia en penales (1-1, 4-1 en tiros desde el punto penal).
                 Suecia (UEFA) — Venció 3-2 a Polonia (con gol agónico de Gyökeres).
-                Turquía (UEFA) — Ganó 1-0 a Kosovo. República Checa (UEFA) — Superó a Dinamarca en penales (2-2, 3-1 en la tanda).`,      
+                Turquía (UEFA) — Ganó 1-0 a Kosovo. República Checa (UEFA) — Superó a Dinamarca en penales (2-2, 3-1 en la tanda).`,
                 imagen: "/images/noticias/repechaje.jpg",
                 fecha: "2026-03-1",
                 autor: "Redacción Mil Goles",
