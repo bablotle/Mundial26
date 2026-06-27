@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 
 export default function MiSeleccion() {
    // 1. Estados
-   const [likes, setLikes] = useState(12430);
+   const [likes, setLikes] = useState(14063);
    const [isAnimate, setIsAnimate] = useState(false);
 
 

@@ -90,19 +90,19 @@ export default function EstadisticasPage() {
                     {/* ESTADÍSTICAS GENERALES DEL TORNEO */}
                     <section className="grid grid-cols-2 gap-4">
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-blue-600 italic">60</p>
+                            <p className="text-3xl font-black text-blue-600 italic">66</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Partidos Jugados</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">177</p>
+                            <p className="text-3xl font-black text-black italic">187</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Goles Totales</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">140</p>
+                            <p className="text-3xl font-black text-black italic">180</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Amarillas</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center bg-blue-600">
-                            <p className="text-3xl font-black text-red italic">8</p>
+                            <p className="text-3xl font-black text-red italic">10</p>
                             <p className="text-[9px] font-black text-red-500 uppercase tracking-widest mt-1">Rojas Directas</p>
                         </div>
                     </section>
@@ -115,19 +115,19 @@ export default function EstadisticasPage() {
                             <div>
                                 <div className="flex justify-between mb-1">
                                     <span className="text-[10px] font-black uppercase">UEFA</span>
-                                    <span className="text-[10px] font-black">54.5%</span>
+                                    <span className="text-[10px] font-black">56.4%</span>
                                 </div>
                                 <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                    <div className="bg-blue-600 h-full w-[54%] transition-all"></div>
+                                    <div className="bg-blue-600 h-full w-[56%] transition-all"></div>
                                 </div>
                             </div>
                             <div>
                                 <div className="flex justify-between mb-1">
                                     <span className="text-[10px] font-black uppercase">CONMEBOL</span>
-                                    <span className="text-[10px] font-black">48.2%</span>
+                                    <span className="text-[10px] font-black">51.2%</span>
                                 </div>
                                 <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                    <div className="bg-black h-full w-[48%] transition-all"></div>
+                                    <div className="bg-black h-full w-[51%] transition-all"></div>
                                 </div>
                             </div>
                         </div>

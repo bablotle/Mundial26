@@ -16,6 +16,32 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
         {
+                id: "jornada-16",
+                categoria: "MUNDIAL 2026",
+                titulo: "Dembélé estampa triplete y Francia gana 4-1 a Noruega.",
+                resumen: "Uruguay queda eliminado del mundial ante la derrota contra España.",
+                contenidoLargo: `Partidos disputados por grupo:
+                Grupo H
+                España 1 - 0 Uruguay
+                España se quedó con el liderato del grupo con gol de Álex Baena, sentenciando la eliminación de la Celeste.
+                Cabo Verde 0 - 0 Arabia Saudita
+                Un empate sin goles le bastó a Cabo Verde para asegurar el segundo lugar y hacer historia avanzando a la siguiente fase.
+                Grupo I
+                Francia 4 - 1 Noruega
+                Francia se adueñó del liderato del grupo con una contundente victoria sobre los noruegos.
+                Senegal 5 - 0 Irak
+                Goleada categórica de los Leones de Teranga para cerrar la fase de grupos.
+                Grupo G, K y otros
+                Bélgica 5 - 1 Nueva Zelanda
+                Bélgica consiguió el liderato del grupo tras arrollar a una Nueva Zelanda que quedó eliminada. 
+                Egipto 1 - 1 Irán
+                Egipto aseguró su pase histórico a los dieciseisavos de final tras un agónico e intenso empate que lo dejó en el segundo puesto por diferencia de goles.`,
+                imagen: "/images/noticias/noticia-22.jpg",
+                fecha: "2026-06-27",
+                autor: "Redacción Mil Goles",
+                tags: ["Dembélé.", "Francia", "Noruega", "FIFA"]
+        },
+        {
                 id: "jornada-15",
                 categoria: "MUNDIAL 2026",
                 titulo: "Ecuador le gana 2-1 a Alemania.",
@@ -350,7 +376,7 @@ export const todasLasNoticias: Noticia[] = [
         },
         {
                 id: "albirroja-paraguay",
-                categoria: "SELECCIONES", // <--- Ves? Aquí ya empezamos a mutar el sitio
+                categoria: "MUNDIAL 2026", // <--- Ves? Aquí ya empezamos a mutar el sitio
                 titulo: "La Albirroja regresa despues de 16 años",
                 resumen: "La selección Paraguaya ya está clasificada, regresa despues de 16 años de ausencia.",
                 contenidoLargo: `La Albirroja de cara al Mundial 2026.
@@ -380,7 +406,7 @@ export const todasLasNoticias: Noticia[] = [
         },
         {
                 id: "lamine-yamal",
-                categoria: "LALIGA", // <--- Ves? Aquí ya empezamos a mutar el sitio
+                categoria: "SELECCIONES", // <--- Ves? Aquí ya empezamos a mutar el sitio
                 titulo: "Lamine Yamal la gran estrella?",
                 resumen: "La gran estrella emergente del Mundial 2026 es Lamine Yamal de España.",
                 contenidoLargo: `La figura joven más destacada y la que más se menciona como la gran estrella emergente del Mundial 2026 (que arranca en junio de este año) es Lamine Yamal (España, Barcelona).
@@ -423,7 +449,7 @@ export const todasLasNoticias: Noticia[] = [
         },
         {
                 id: "incertidumbre-finalissima",
-                categoria: "MUNDIAL 2026",
+                categoria: "LALIGA",
                 titulo: "Incertidumbre por la Finalissima 2026",
                 resumen: "FIFA y UEFA evalúan el futuro del enfrentamiento entre campeones.",
                 contenidoLargo: `La Finalissima 2026 entre Argentina y España, originalmente programada para el 27 de marzo de 2026 en el Estadio Lusail de Catar, ha sido suspendida debido a la situación de inestabilidad y conflicto bélico en la región de Oriente Medio.
@@ -435,7 +461,7 @@ export const todasLasNoticias: Noticia[] = [
         },
         {
                 id: "iran-mundial-duda",
-                categoria: "SELECCIONES",
+                categoria: "MUNDIAL 2026",
                 titulo: "En duda la participación de la selección de Irán",
                 resumen: "El conflicto bélico podría dejar fuera a la seleccion de Irán.",
                 contenidoLargo: `La participación de la selección de Irán en el Mundial 2026 se encuentra actualmente en seria duda debido a la escalada del conflicto bélico en Oriente Medio tras ataques recientes de Estados Unidos e Israel en territorio iraní.

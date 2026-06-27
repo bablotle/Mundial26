@@ -1,7 +1,7 @@
 
 'use client';
 import Navbar from '@/components/Navbar';
-import {todasLasNoticias} from '@/data/noticias';
+import { todasLasNoticias } from '@/data/noticias';
 import Link from 'next/link';
 
 
@@ -32,7 +32,7 @@ export default function NoticiasPage() {
                                 <span className="text-[8px] font-black text-blue-600 uppercase tracking-[0.2em] mb-1">{nota.categoria}</span>
                                 <h2 className="text-sm md:text-lg font-black uppercase italic leading-tight text-black">{nota.titulo}</h2>
                                 <p className="text-[9px] font-bold text-gray-400 mt-2 uppercase">{nota.fecha}</p>
-                            </div>l
+                            </div>
                         </Link>
                     ))}
                 </div>
