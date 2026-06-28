@@ -30,14 +30,14 @@ export default function Home() {
    const fechaHoyString = `${anoHoy}-${mesFormateado}-${diaFormateado}`;
 
    // A. PARTIDOS PARA EL MAP DE HOY
-      const partidosDeHoy = todosLosPartidos.filter(p => p.fecha === fechaHoyString);
+   const partidosDeHoy = todosLosPartidos.filter(p => p.fecha === fechaHoyString);
 
-         // B. EL PARTIDO DESTACADO (El primero de la lista de hoy, o uno por defecto si no hay partidos hoy)
-           // const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
+   // B. EL PARTIDO DESTACADO (El primero de la lista de hoy, o uno por defecto si no hay partidos hoy)
+   // const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
 
    // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "K5") // <-- Aquí pones el ID del partido que quieras
-      || partidosDeHoy[0] 
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "R32-01") // <-- Aquí pones el ID del partido que quieras
+      || partidosDeHoy[0]
       || todosLosPartidos[0];
 
    // C. PRÓXIMOS PARTIDOS (Días siguientes)
@@ -54,18 +54,18 @@ export default function Home() {
       .slice(0, 3);
 
    // D. HISTORIAL DE CONCLUIDOS (CORREGIDO: Muestra siempre los más recientes del torneo)
-const resultadosConcluidos = todosLosPartidos
-   .filter(p => p.golesLocal !== undefined && p.golesLocal !== null && p.golesVisitante !== undefined && p.golesVisitante !== null)
-   .sort((a, b) => {
-      // 1. Comparamos las fechas (Ej: "2026-06-16") de forma descendente
-      const fechaA = new Date(a.fecha).getTime();
-      const fechaB = new Date(b.fecha).getTime();
-      if (fechaB !== fechaA) return fechaB - fechaA;
-      
-      // 2. Si son del mismo día, comparamos las horas (Ej: "14:00" vs "19:00")
-      return b.hora.localeCompare(a.hora);
-   })
-   .slice(0, 6); // Te agarra estrictamente los últimos 6 del torneo cronológicamente
+   const resultadosConcluidos = todosLosPartidos
+      .filter(p => p.golesLocal !== undefined && p.golesLocal !== null && p.golesVisitante !== undefined && p.golesVisitante !== null)
+      .sort((a, b) => {
+         // 1. Comparamos las fechas (Ej: "2026-06-16") de forma descendente
+         const fechaA = new Date(a.fecha).getTime();
+         const fechaB = new Date(b.fecha).getTime();
+         if (fechaB !== fechaA) return fechaB - fechaA;
+
+         // 2. Si son del mismo día, comparamos las horas (Ej: "14:00" vs "19:00")
+         return b.hora.localeCompare(a.hora);
+      })
+      .slice(0, 6); // Te agarra estrictamente los últimos 6 del torneo cronológicamente
 
    const noticiasDestacadas = todasLasNoticias.slice(0, 2);
    const sedesDestacadas = todasLasSedes.slice(0, 3);
@@ -76,7 +76,7 @@ const resultadosConcluidos = todosLosPartidos
 
          {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/miami.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/sofi.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
                   EL PARTIDO DESTACADO DE HOY 🌟
@@ -85,7 +85,7 @@ const resultadosConcluidos = todosLosPartidos
                   {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}
                </h1>
                <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
-                  {partidoDestacado.fase || 'Grupos'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
+                  {partidoDestacado.fase || 'Dieciseisavos'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
                </p>
                <Link href="/partidos" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
                   Seguir Transmisión del Día
@@ -101,82 +101,55 @@ const resultadosConcluidos = todosLosPartidos
                   <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">
                      📅 Partidos de Hoy — {diaHoy} de {hoyObj.toLocaleString('es-ES', { month: 'long' })}
                   </h3>
-                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Fase de Grupos</span>
+                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">16avos</span>
                </div>
 
-               <div className="space-y-4">
+            <div className="space-y-4">
                   {partidosDeHoy.length > 0 ? (
                      partidosDeHoy.map((partido) => (
-                        <div key={partido.id} className="bg-slate-800/50 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-700/30 gap-3">
+                        <div key={partido.id} className="bg-slate-800/50 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-700/30 gap-3 relative overflow-hidden">
+                           
+                           {/* Etiqueta superior de la Fase */}
+                           <span className="absolute top-2 right-4 text-[7px] font-black uppercase tracking-wider opacity-40">
+                              {partido.fase || "Mundial 2026"}
+                           </span>
 
                            {/* Renglón 1: Hora */}
-                           <div className="shrink-0">
+                           <div className="shrink-0 mt-1">
                               <span className="bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block tracking-wider">
                                  {partido.hora}
                               </span>
                            </div>
 
-                           {/* Renglón 2: Bandera - Pais   VS   Pais - Bandera */}
-                           <div className="flex items-center justify-between w-full px-1 gap-2">
-                              {/* Local: Bandera en el lateral izquierdo, texto a la derecha */}
-                              <div className="flex items-center gap-3 flex-1 min-w-0 justify-start">
-                                 <img src={partido.banderaLocal} className="w-7 h-5 object-cover rounded shadow-sm shrink-0" alt="" />
-                                 <span className="font-black text-xs md:text-sm uppercase italic text-left text-slate-200 truncate">
-                                    {partido.local}
-                                 </span>
+                           {/* Renglón 2: Versus con Banderas */}
+                           <div className="flex items-center justify-between w-full px-4">
+                              <div className="flex items-center gap-2 flex-1">
+                                 <img src={partido.banderaLocal} className="w-6 h-4 object-cover rounded-sm" alt={partido.local} />
+                                 <span className="font-bold text-xs uppercase truncate">{partido.local}</span>
                               </div>
-
-                              {/* VS Central */}
-                              <span className="text-slate-600 font-bold text-[10px] shrink-0 px-1">VS</span>
-
-                              {/* Visitante: Texto a la izquierda, bandera en el lateral derecho */}
-                              <div className="flex items-center gap-3 flex-1 min-w-0 justify-end">
-                                 <span className="font-black text-xs md:text-sm uppercase italic text-right text-slate-200 truncate">
-                                    {partido.visitante}
-                                 </span>
-                                 <img src={partido.banderaVisitante} className="w-7 h-5 object-cover rounded shadow-sm shrink-0" alt="" />
+                              <span className="text-gray-500 font-bold text-xs px-3">VS</span>
+                              <div className="flex items-center gap-2 flex-1 justify-end">
+                                 <span className="font-bold text-xs uppercase truncate text-right">{partido.visitante}</span>
+                                 <img src={partido.banderaVisitante} className="w-6 h-4 object-cover rounded-sm" alt={partido.visitante} />
                               </div>
                            </div>
 
-                           {/* Renglón 3: Sede */}
-                           <div className="shrink-0 text-center">
-                              <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">
-                                 {partido.sede || 'Sede Central'}
-                              </p>
+                           {/* Renglón 3: Sede / Estadio del partido 🏟️ */}
+                           <div className="text-center">
+                              <span className="text-[8px] font-bold uppercase tracking-widest text-slate-400">
+                                 📍 {partido.sede || "Sede por definir"}
+                              </span>
                            </div>
 
                         </div>
                      ))
                   ) : (
-                     <p className="text-center text-slate-500 text-xs py-4 uppercase font-bold tracking-wider">No hay más partidos programados para hoy.</p>
+                     <div className="text-center py-6">
+                        <p className="text-[10px] font-black text-gray-500 uppercase tracking-wider">No hay partidos programados para hoy</p>
+                     </div>
                   )}
-
-                  {/* --- HISTORIAL DE RESULTADOS RECIENTES --- */}
-                  <div className="mt-4 pt-4 border-t border-slate-800/60">
-                     <div className="flex items-center gap-2 mb-2 px-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span className="text-[8px] font-black tracking-[0.2em] text-slate-500 uppercase">
-                           Partidos Concluidos
-                        </span>
-                     </div>
-
-                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {resultadosConcluidos.map((partido) => (
-                           <CardResultadoMini
-                              key={partido.id}
-                              local={partido.local}
-                              banderaLocal={partido.banderaLocal}
-                              golesLocal={partido.golesLocal!}
-                              golesVisitante={partido.golesVisitante!}
-                              visitante={partido.visitante}
-                              banderaVisitante={partido.banderaVisitante}
-                           />
-                        ))}
-                     </div>
-                  </div>
-
                </div>
-            </div>
+            </div> {/* Cierre del bloque azul oscuro */}
 
             <div className="my-10"><AdBanner /></div>
             <div className="my-10"><BreakingNews /></div>
@@ -286,7 +259,7 @@ const resultadosConcluidos = todosLosPartidos
                </div>
             </section>
 
-             {/* --- SELECCIONES CLASIFICADAS --- */}
+            {/* --- SELECCIONES CLASIFICADAS --- */}
             <section className="mt-16">
                <div className="flex justify-between items-end mb-6 px-2">
                   <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Selecciones</h2>

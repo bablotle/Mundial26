@@ -16,6 +16,27 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
         {
+                id: "jornada-17",
+                categoria: "MUNDIAL 2026",
+                titulo: "Bélgica golea 5-1 a Nueva Zelanda.",
+                resumen: "Argelia y Austria empatan a 3 goles y ambos pasan a 16avos.",
+                contenidoLargo: `Lo más destacado de la jornada
+                Grupo L
+                Inglaterra venció 2-0 a Panamá con una gran actuación de Jude Bellingham y un gol histórico de Harry Kane, quien se convirtió en el máximo goleador inglés en Mundiales.
+                Croacia sufrió pero derrotó 2-1 a Ghana sobre la hora con gol de Nikola Vlašić; ambos avanzaron de ronda junto a los ingleses.
+                Grupo K
+                Colombia y Portugal empataron 0-0 en un duelo estratégico que le dio el liderato del sector a los sudamericanos.
+                República Democrática del Congo remontó de forma dramática y venció 3-1 a Uzbekistán para sellar su pase a dieciseisavos.
+                Grupo J
+                Argentina venció 3-1 a Jordania, cerrando una fase de grupos perfecta con 9 puntos.
+                Lionel Messi ingresó desde el banquillo para anotar otro gol y estirar su racha histórica.
+                Argelia y Austria regalaron un electrizante empate 3-3 con gol en el descuento de Saša Kalajdžić, dándole la clasificación a ambas selecciones.`,
+                imagen: "/images/noticias/noticia-23.jpg",
+                fecha: "2026-06-28",
+                autor: "Redacción Mil Goles",
+                tags: ["Portugal", "Cristiano", "James", "FIFA"]
+        },
+        {
                 id: "jornada-16",
                 categoria: "MUNDIAL 2026",
                 titulo: "Dembélé estampa triplete y Francia gana 4-1 a Noruega.",
