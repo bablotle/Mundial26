@@ -7,10 +7,11 @@ import { ChartNoAxesColumnIncreasing, MessageCircleIcon } from 'lucide-react';
 export default function EstadisticasPage() {
     // Datos simulados para la estructura
     const goleadores = [
-        { nombre: "Lionel Messi", goles: 5, equipo: "Argentina", foto: "/images/jugadores/messi.jpg" },
+        { nombre: "Lionel Messi", goles: 6, equipo: "Argentina", foto: "/images/jugadores/messi.jpg" },
         { nombre: "Kylian Mbappé", goles: 4, equipo: "Francia", foto: "/images/jugadores/mbappe.jpg" },
         { nombre: "Erling Haaland", goles: 4, equipo: "Noruega", foto: "/images/jugadores/haaland.jpg" },
         { nombre: "Vinicius Júnior", goles: 4, equipo: "Brasil", foto: "/images/jugadores/vinicius.jpg" },
+        { nombre: "Ousmane Dembélé", goles: 4, equipo: "Francia", foto: "/images/jugadores/dembele.jpg" },
     ];
 
 
