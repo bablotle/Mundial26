@@ -16,6 +16,21 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
         {
+                id: "jornada-18",
+                categoria: "MUNDIAL 2026",
+                titulo: "Canada se lleva la victoria 1-0 ante Sudáfrica.",
+                resumen: "La seleccion de Canada hace historia y pasa a 8avos de final por primera vez.",
+                contenidoLargo: `Canadá venció 1-0 a Sudáfrica en el partido correspondiente a los dieciseisavos de final de la Copa Mundial de Fútbol de 2026. 
+                El encuentro se disputó el domingo 28 de junio de 2026 en Los Ángeles.
+                El gol decisivo: El capitán canadiense, Stephen Eustáquio, anotó de manera agónica en el minuto 92 con un potente derechazo desde la frontal del área tras un despeje defensivo defectuoso.
+                Histórico: Con este resultado, el conjunto norteamericano se transformó en el primer clasificado a los octavos de final del torneo, logrando superar una fase eliminatoria mundialista por primera vez en su historia.
+                Incidencias: El partido marcó el debut en este Mundial de la estrella Alphonso Davies, quien ingresó al minuto 75 recuperado de una lesión. El arquero sudafricano Ronwen Williams fue la gran figura de su equipo, evitando una derrota mayor.`,
+                imagen: "/images/noticias/noticia-24.jpg",
+                fecha: "2026-06-28",
+                autor: "Redacción Mil Goles",
+                tags: ["Canada", "Sudáfrica", "16avos", "FIFA"]
+        },
+        {
                 id: "jornada-17",
                 categoria: "MUNDIAL 2026",
                 titulo: "Bélgica golea 5-1 a Nueva Zelanda.",

@@ -1077,7 +1077,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "17:00",
               sede: "Los Angeles",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 0,
+              golesVisitante: 1
        },
        {
               id: "R32-02",
