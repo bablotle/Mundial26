@@ -2,14 +2,24 @@
 import { todasLasNoticias } from '@/data/noticias';
 
 export default function BreakingNews() {
-    // 1. Filtramos para tomar solo las 3 más recientes
+    // 1. Ordenamos de forma inteligente: primero por fecha y luego por ID descendente
     const noticiasDestacadas = todasLasNoticias && todasLasNoticias.length > 0
-        ? todasLasNoticias.slice(0, 4) // <--- ESTO ES LA CLAVE
+        ? [...todasLasNoticias]
+            .sort((a, b) => {
+                // Comparamos fechas de forma descendente (más reciente primero)
+                const fechaA = new Date(a.fecha).getTime();
+                const fechaB = new Date(b.fecha).getTime();
+                if (fechaB !== fechaA) return fechaB - fechaA;
+                
+                // Si son del mismo día, comparamos el ID (jornada-19 va después de jornada-18)
+                return b.id.localeCompare(a.id, undefined, { numeric: true, sensitivity: 'base' });
+            })
+            .slice(0, 4) // Tomamos las 4 más frescas
         : null;
 
     const titulares = noticiasDestacadas
         ? noticiasDestacadas.map(n => n.titulo)
-        : ["Cargando últimas noticias...", "Arena Pro: El mejor fútbol"];
+        : ["Cargando últimas noticias...", "Mil Goles: El mejor fútbol"];
 
     return (
         <div className="w-full bg-black text-white h-10 flex items-center overflow-hidden border-b border-white/10 relative z-[99]">

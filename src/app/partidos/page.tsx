@@ -78,7 +78,7 @@ export default function PartidosPage() {
                                 <div key={fecha}>
 
                                     {index === 1 && <SponsorBanner />}
-                                    
+
                                     {/* CABECERA DE DÍA */}
                                     <div className="flex flex-col items-center mb-6">
                                         <span className="text-[10px] font-black uppercase text-blue-600 tracking-[0.5em] mb-1">
@@ -98,20 +98,19 @@ export default function PartidosPage() {
                                         {grupos[fecha].map((p: any) => {
                                             // Evaluamos si el partido ya cuenta con resultado cargado
                                             const tieneResultado = p.golesLocal !== undefined && p.golesVisitante !== undefined;
-                                            
+
                                             // Estilos dinámicos para resaltar al equipo ganador
                                             const ganoLocal = tieneResultado && p.golesLocal > p.golesVisitante;
                                             const ganoVisitante = tieneResultado && p.golesVisitante > p.golesLocal;
 
                                             return (
                                                 <div key={p.id} className="p-5 bg-white flex items-center justify-between group hover:border-blue-500 transition-all rounded-2xl shadow-sm border border-transparent">
-                                                    
+
                                                     {/* Equipo Local */}
                                                     <div className="flex items-center gap-3 flex-1">
                                                         <img src={p.banderaLocal} className="w-9 h-6 object-cover rounded shadow-sm" alt={p.local} />
-                                                        <span className={`text-xs md:text-sm uppercase italic tracking-tighter ${
-                                                            tieneResultado ? (ganoLocal ? 'font-black text-black' : 'font-medium text-gray-400') : 'font-black text-gray-900'
-                                                        }`}>
+                                                        <span className={`text-xs md:text-sm uppercase italic tracking-tighter ${tieneResultado ? (ganoLocal ? 'font-black text-black' : 'font-medium text-gray-400') : 'font-black text-gray-900'
+                                                            }`}>
                                                             {p.local}
                                                         </span>
                                                     </div>
@@ -121,10 +120,21 @@ export default function PartidosPage() {
                                                         {tieneResultado ? (
                                                             /* DISEÑO SI YA JUGARON */
                                                             <div className="flex flex-col items-center">
-                                                                <div className="text-lg font-black bg-slate-100 text-slate-900 px-3 py-0.5 rounded-lg tabular-nums tracking-tight">
-                                                                    {p.golesLocal} <span className="text-blue-600 font-bold">-</span> {p.golesVisitante}
+                                                                <div className="flex items-center gap-1">
+                                                                    {/* Marcador Principal */}
+                                                                    <div className="text-lg font-black bg-slate-100 text-slate-900 px-3 py-0.5 rounded-lg tabular-nums tracking-tight">
+                                                                        {p.golesLocal} <span className="text-blue-600 font-bold">-</span> {p.golesVisitante}
+                                                                    </div>
                                                                 </div>
-                                                                <span className="text-[7px] font-black tracking-widest text-emerald-600 uppercase mt-1">Finalizado</span>
+
+                                                                {/* 🌟 SI HUBO TANDA DE PENALES, SE MUESTRAN AQUÍ ABAJO */}
+                                                                {p.penalesLocal !== undefined && p.penalesVisitante !== undefined ? (
+                                                                    <div className="text-[7px] font-black tracking-widest text-emerald-600 uppercase mt-1 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                                                                        Pen: {p.penalesLocal}-{p.penalesVisitante}
+                                                                    </div>
+                                                                ) : (
+                                                                    <span className="text-[7px] font-black tracking-widest text-gray-400 uppercase mt-1">Finalizado</span>
+                                                                )}
                                                             </div>
                                                         ) : (
                                                             /* DISEÑO SI NO JUGARON */
@@ -135,11 +145,12 @@ export default function PartidosPage() {
                                                         )}
                                                     </div>
 
+
+
                                                     {/* Equipo Visitante */}
                                                     <div className="flex items-center gap-3 flex-1 justify-end">
-                                                        <span className={`text-xs md:text-sm uppercase italic tracking-tighter text-right ${
-                                                            tieneResultado ? (ganoVisitante ? 'font-black text-black' : 'font-medium text-gray-400') : 'font-black text-gray-900'
-                                                        }`}>
+                                                        <span className={`text-xs md:text-sm uppercase italic tracking-tighter text-right ${tieneResultado ? (ganoVisitante ? 'font-black text-black' : 'font-medium text-gray-400') : 'font-black text-gray-900'
+                                                            }`}>
                                                             {p.visitante}
                                                         </span>
                                                         <img src={p.banderaVisitante} className="w-9 h-6 object-cover rounded shadow-sm" alt={p.visitante} />

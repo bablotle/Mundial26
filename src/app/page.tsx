@@ -36,7 +36,7 @@ export default function Home() {
    // const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
 
    // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "R32-03") // <-- Aquí pones el ID del partido que quieras
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "R32-07") // <-- Aquí pones el ID del partido que quieras
       || partidosDeHoy[0]
       || todosLosPartidos[0];
 
@@ -76,7 +76,7 @@ export default function Home() {
 
          {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/boston.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/azteca.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
                   EL PARTIDO DESTACADO DE HOY 🌟
@@ -121,18 +121,60 @@ export default function Home() {
                               </span>
                            </div>
 
-                           {/* Renglón 2: Versus con Banderas */}
+
+{/* Renglón 2: Versus con Banderas y Marcador/Penales ⚽ */}
                            <div className="flex items-center justify-between w-full px-4">
+                              
+                              {/* Local */}
                               <div className="flex items-center gap-2 flex-1">
                                  <img src={partido.banderaLocal} className="w-6 h-4 object-cover rounded-sm" alt={partido.local} />
                                  <span className="font-bold text-xs uppercase truncate">{partido.local}</span>
                               </div>
-                              <span className="text-gray-500 font-bold text-xs px-3">VS</span>
+                              
+                              {/* 🌟 AQUÍ VA EL MARCADOR CON PENALES (Reemplaza al VS estático) */}
+                              <div className="flex items-center gap-1.5 px-3">
+                                 {partido.golesLocal !== undefined && partido.golesLocal !== null ? (
+                                    <div className="flex items-center gap-1 text-slate-200">
+                                       
+                                       {/* Goles Local */}
+                                       <span className="text-sm font-black">{partido.golesLocal}</span>
+                                       
+                                       {/* Penales Local (si existen) */}
+                                       {partido.penalesLocal !== undefined && (
+                                          <span className="text-[10px] text-emerald-400 font-extrabold">({partido.penalesLocal})</span>
+                                       )}
+                                       
+                                       <span className="text-gray-600 font-bold px-1 text-xs">-</span>
+                                       
+                                       {/* Penales Visitante (si existen) */}
+                                       {partido.penalesVisitante !== undefined && (
+                                          <span className="text-[10px] text-emerald-400 font-extrabold">({partido.penalesVisitante})</span>
+                                       )}
+                                       
+                                       {/* Goles Visitante */}
+                                       <span className="text-sm font-black">{partido.golesVisitante}</span>
+                                       
+                                    </div>
+                                 ) : (
+                                    /* Si el partido no ha empezado, sigue mostrando el VS clásico */
+                                    <span className="text-gray-500 font-bold text-xs">VS</span>
+                                 )}
+                              </div>
+
+                              {/* Visitante */}
                               <div className="flex items-center gap-2 flex-1 justify-end">
                                  <span className="font-bold text-xs uppercase truncate text-right">{partido.visitante}</span>
                                  <img src={partido.banderaVisitante} className="w-6 h-4 object-cover rounded-sm" alt={partido.visitante} />
                               </div>
+
                            </div>
+
+                           {/* 🌟 AQUÍ VA LA OPCIÓN A (Justo debajo del versus, antes del cierre de la tarjeta) */}
+{partido.penalesLocal !== undefined && partido.penalesVisitante !== undefined && (
+   <div className="text-[9px] font-black uppercase tracking-widest text-emerald-400 mt-1 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 text-center animate-pulse">
+      🏆 {partido.clasificado || "Ganador"} avanza en penales ({partido.penalesLocal}-{partido.penalesVisitante})
+   </div>
+)}
 
                            {/* Renglón 3: Sede / Estadio del partido 🏟️ */}
                            <div className="text-center">

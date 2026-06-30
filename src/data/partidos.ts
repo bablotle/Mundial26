@@ -10,15 +10,14 @@ export interface Partido {
        grupo: string;
        golesLocal?: number;
        golesVisitante?: number;
+       penalesLocal?: number;
+       penalesVisitante?: number;
+       clasificado?: string;
 
+// Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
 
-       // Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
-
-
-       fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
-
+fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
 }
-
 
 export const todosLosPartidos: Partido[] = [
 
@@ -1091,7 +1090,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "14:00",
               sede: "Houston",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 2,
+              golesVisitante: 1
        },
        {
               id: "R32-03",
@@ -1103,7 +1104,11 @@ export const todosLosPartidos: Partido[] = [
               hora: "17:30",
               sede: "Boston",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 1,
+              golesVisitante: 1,
+              penalesLocal: 3,
+              penalesVisitante: 4
        },
        {
               id: "R32-04",
@@ -1115,7 +1120,12 @@ export const todosLosPartidos: Partido[] = [
               hora: "22:00",
               sede: "Monterrey",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 1,
+              golesVisitante: 1,
+              penalesLocal: 2,
+              penalesVisitante: 3,
+              clasificado: "Marruecos"
        },
        {
               id: "R32-05",

@@ -15,6 +15,23 @@ export interface Noticia {
 
 
 export const todasLasNoticias: Noticia[] = [
+       {
+                id: "jornada-19",
+                categoria: "MUNDIAL 2026",
+                titulo: "Paraguay elimina en tanda de penales a Alemania.",
+                resumen: "Brasil, Marruecos y Paraguay pasan a la siguiente ronda de Octavos de Final.",
+                contenidoLargo: `El resumen de los partidos del 29 de junio:
+                Brasil 2-1 Japón
+                Los asiáticos sorprendieron con gol de Kaishu Sano al minuto 29. La Canarinha reaccionó en el segundo tiempo con gol de Casemiro al 56' y selló la remontada con un agónico gol de Gabriel Martinelli al 90+5'.
+                Paraguay 1-1 (4-3 pen.) Alemania
+                La gran sorpresa del torneo. Julio Enciso adelantó a la Albirroja de cabeza al 42', mientras que Kai Havertz empató para los alemanes al 54'. Tras mantener la igualdad, el arquero y los ejecutores paraguayos sentenciaron la histórica eliminación alemana por la vía penal.
+                Marruecos 1-1 (3-2 pen.) Países Bajos
+                Cody Gakpo anotó para adelantar a la Oranje al 72'. Sin embargo, Issa Diop empató de cabeza al 91' para mandar el partido al tiempo extra. En la tanda de penales, el arquero Bono volvió a ser figura tapando disparos clave para el pase de los "Leones del Atlas".`,
+                imagen: "/images/noticias/noticia-25.jpg",
+                fecha: "2026-06-29",
+                autor: "Redacción Mil Goles",
+                tags: ["Paraguay", "Marruecos", "Brasil", "FIFA"]
+        },
         {
                 id: "jornada-18",
                 categoria: "MUNDIAL 2026",
