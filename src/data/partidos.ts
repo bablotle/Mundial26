@@ -1223,9 +1223,9 @@ export const todosLosPartidos: Partido[] = [
        {
               id: "R32-012",
               local: "Portugal",
-              visitante: "Dinamarca",
+              visitante: "Noruega",
               banderaLocal: "/images/banderas/portugal.png",
-              banderaVisitante: "/images/banderas/dinamarca.png",
+              banderaVisitante: "/images/banderas/noruega.png",
               fecha: "2026-07-02",
               hora: "18:00",
               sede: "Miami",
