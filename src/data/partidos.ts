@@ -1137,7 +1137,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "14:00",
               sede: "Dallas",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 1,
+              golesVisitante: 2,
+              clasificado: "Noruega"
        },
        {
               id: "R32-06",
@@ -1149,7 +1152,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "18:00",
               sede: "New Jersey",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 3,
+              golesVisitante: 0,
+              clasificado: "Francia"
        },
        {
               id: "R32-07",
@@ -1161,7 +1167,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "22:00",
               sede: "Ciudad de México",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 2,
+              golesVisitante: 0,
+              clasificado: "México"
        },
        {
               id: "R32-08",

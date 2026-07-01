@@ -16,6 +16,23 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
        {
+                id: "jornada20-",
+                categoria: "MUNDIAL 2026",
+                titulo: "México elimina a Ecuador 2-0 .",
+                resumen: "Noruega, Francia y México pasan a la siguiente ronda de Octavos de Final.",
+                contenidoLargo: `Partidos del 30 de junio Dieciseisavos:
+                Costa de Marfil 1 - 2 Noruega
+                El equipo africano dominó el juego, pero la contundencia de Antonio Nusa y un gol decisivo de Erling Haaland al minuto 86 le dieron la clasificación a los europeos.
+                Francia 3 - 0 Suecia
+                Superioridad absoluta de los galos con un doblete de Kylian Mbappé y un gol de Bradley Barcola, sellando un cómodo pase a la siguiente ronda.
+                México 2 - 0 Ecuador
+                En un Estadio Azteca encendido, el Tri resolvió el encuentro en la primera media hora con anotaciones de Julián Quiñones y Raúl Jiménez.`,
+                imagen: "/images/noticias/noticia-26.jpg",
+                fecha: "2026-06-29",
+                autor: "Redacción Mil Goles",
+                tags: ["México", "Francia", "Noruega", "FIFA"]
+        },
+        {
                 id: "jornada-19",
                 categoria: "MUNDIAL 2026",
                 titulo: "Paraguay elimina en tanda de penales a Alemania.",
