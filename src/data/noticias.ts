@@ -16,11 +16,28 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
        {
-                id: "jornada20-",
+                id: "jornada-21",
+                categoria: "MUNDIAL 2026",
+                titulo: "Inglaterra le da la vuelta 2-1 a RD Congo y pasa a Octavos.",
+                resumen: "Eatados Unidos, Bélgica e Inglaterra pasan a la siguiente ronda de Octavos de Final.",
+                contenidoLargo: `Partidos del 1 de Julio - Dieciseisavos:
+                🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra 2 - 1 RD Congo 🇨🇩
+                Inglaterra sufrió en Atlanta tras recibir un gol tempranero de Brian Cipenga a los 6 minutos. La RD del Congo defendió su ventaja con un gran nivel de su arquero, pero la jerarquía británica pesó en el cierre. Un doblete de Harry Kane (goles a los 75' y 86') rescató el triunfo y la clasificación para el equipo de Thomas Tuchel.
+                🇧🇪 Bélgica 3 - 2 Senegal 🇸🇳
+                Senegal dio la sorpresa en Seattle poniéndose en ventaja por 2-0 con goles de Habib Diarra (24') e Ismaïla Sarr (47'). Cuando parecía sentenciado, Bélgica revivió con un gol de Lukaku al 86' y el empate de Youri Tielemans al 89'. En la prórroga, el propio Tielemans anotó el gol del triunfo de penal al minuto 125 tras una revisión del VAR.
+                🇺🇸 Estados Unidos 2 - 0 Bosnia y Herzegovina 🇧🇦
+                El anfitrión avanzó a octavos en Santa Clara. Folarin Balogun abrió el marcador al minuto 45, pero en el segundo tiempo pasó de héroe a villano al ser expulsado con roja directa al 64'. A pesar de jugar con diez hombres, el equipo de Mauricio Pochettino resistió los ataques bosnios y liquidó el partido con un golazo de tiro libre de Malik Tillman al 82'.`,
+                imagen: "/images/noticias/noticia-27.jpg",
+                fecha: "2026-07-2",
+                autor: "Redacción Mil Goles",
+                tags: ["Inglaterra", "Bélgica", "USA", "FIFA"]
+        },
+       {
+                id: "jornada-20",
                 categoria: "MUNDIAL 2026",
                 titulo: "México elimina a Ecuador 2-0 .",
                 resumen: "Noruega, Francia y México pasan a la siguiente ronda de Octavos de Final.",
-                contenidoLargo: `Partidos del 30 de junio Dieciseisavos:
+                contenidoLargo: `Partidos del 30 de Junio - Dieciseisavos:
                 Costa de Marfil 1 - 2 Noruega
                 El equipo africano dominó el juego, pero la contundencia de Antonio Nusa y un gol decisivo de Erling Haaland al minuto 86 le dieron la clasificación a los europeos.
                 Francia 3 - 0 Suecia
@@ -28,7 +45,7 @@ export const todasLasNoticias: Noticia[] = [
                 México 2 - 0 Ecuador
                 En un Estadio Azteca encendido, el Tri resolvió el encuentro en la primera media hora con anotaciones de Julián Quiñones y Raúl Jiménez.`,
                 imagen: "/images/noticias/noticia-26.jpg",
-                fecha: "2026-06-29",
+                fecha: "2026-07-1",
                 autor: "Redacción Mil Goles",
                 tags: ["México", "Francia", "Noruega", "FIFA"]
         },
@@ -45,7 +62,7 @@ export const todasLasNoticias: Noticia[] = [
                 Marruecos 1-1 (3-2 pen.) Países Bajos
                 Cody Gakpo anotó para adelantar a la Oranje al 72'. Sin embargo, Issa Diop empató de cabeza al 91' para mandar el partido al tiempo extra. En la tanda de penales, el arquero Bono volvió a ser figura tapando disparos clave para el pase de los "Leones del Atlas".`,
                 imagen: "/images/noticias/noticia-25.jpg",
-                fecha: "2026-06-29",
+                fecha: "2026-06-30",
                 autor: "Redacción Mil Goles",
                 tags: ["Paraguay", "Marruecos", "Brasil", "FIFA"]
         },
@@ -60,7 +77,7 @@ export const todasLasNoticias: Noticia[] = [
                 Histórico: Con este resultado, el conjunto norteamericano se transformó en el primer clasificado a los octavos de final del torneo, logrando superar una fase eliminatoria mundialista por primera vez en su historia.
                 Incidencias: El partido marcó el debut en este Mundial de la estrella Alphonso Davies, quien ingresó al minuto 75 recuperado de una lesión. El arquero sudafricano Ronwen Williams fue la gran figura de su equipo, evitando una derrota mayor.`,
                 imagen: "/images/noticias/noticia-24.jpg",
-                fecha: "2026-06-28",
+                fecha: "2026-06-29",
                 autor: "Redacción Mil Goles",
                 tags: ["Canada", "Sudáfrica", "16avos", "FIFA"]
         },

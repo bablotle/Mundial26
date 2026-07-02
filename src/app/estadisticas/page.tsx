@@ -91,15 +91,15 @@ export default function EstadisticasPage() {
                     {/* ESTADÍSTICAS GENERALES DEL TORNEO */}
                     <section className="grid grid-cols-2 gap-4">
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-blue-600 italic">79</p>
+                            <p className="text-3xl font-black text-blue-600 italic">82</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Partidos Jugados</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">233</p>
+                            <p className="text-3xl font-black text-black italic">243</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Goles Totales</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">215</p>
+                            <p className="text-3xl font-black text-black italic">214</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Amarillas</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center bg-blue-600">
@@ -116,19 +116,19 @@ export default function EstadisticasPage() {
                             <div>
                                 <div className="flex justify-between mb-1">
                                     <span className="text-[10px] font-black uppercase">UEFA</span>
-                                    <span className="text-[10px] font-black">53%</span>
+                                    <span className="text-[10px] font-black">52%</span>
                                 </div>
                                 <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                    <div className="bg-blue-600 h-full w-[53%] transition-all"></div>
+                                    <div className="bg-blue-600 h-full w-[52%] transition-all"></div>
                                 </div>
                             </div>
                             <div>
                                 <div className="flex justify-between mb-1">
                                     <span className="text-[10px] font-black uppercase">CONMEBOL</span>
-                                    <span className="text-[10px] font-black">47%</span>
+                                    <span className="text-[10px] font-black">48%</span>
                                 </div>
                                 <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                    <div className="bg-black h-full w-[47%] transition-all"></div>
+                                    <div className="bg-black h-full w-[48%] transition-all"></div>
                                 </div>
                             </div>
                         </div>
