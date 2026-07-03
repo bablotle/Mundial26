@@ -36,7 +36,7 @@ export default function Home() {
    // const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
 
    // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "R32-012") // <-- Aquí pones el ID del partido que quieras
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "R32-015") // <-- Aquí pones el ID del partido que quieras
       || partidosDeHoy[0]
       || todosLosPartidos[0];
 

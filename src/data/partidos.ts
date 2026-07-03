@@ -1078,7 +1078,8 @@ export const todosLosPartidos: Partido[] = [
               grupo: "R32",
               fase: "Dieciseisavos",
               golesLocal: 0,
-              golesVisitante: 1
+              golesVisitante: 1,
+              clasificado: "Canada"
        },
        {
               id: "R32-02",
@@ -1092,7 +1093,8 @@ export const todosLosPartidos: Partido[] = [
               grupo: "R32",
               fase: "Dieciseisavos",
               golesLocal: 2,
-              golesVisitante: 1
+              golesVisitante: 1,
+              clasificado: "Brasil"
        },
        {
               id: "R32-03",
@@ -1108,7 +1110,8 @@ export const todosLosPartidos: Partido[] = [
               golesLocal: 1,
               golesVisitante: 1,
               penalesLocal: 3,
-              penalesVisitante: 4
+              penalesVisitante: 4,
+              clasificado: "Paraguay"
        },
        {
               id: "R32-04",
@@ -1220,14 +1223,17 @@ export const todosLosPartidos: Partido[] = [
        {
               id: "R32-011",
               local: "España",
-              visitante: "Arabia Saudita",
+              visitante: "Austria",
               banderaLocal: "/images/banderas/espana.png",
-              banderaVisitante: "/images/banderas/arabia-saudita.png",
+              banderaVisitante: "/images/banderas/austria.png",
               fecha: "2026-07-02",
               hora: "16:00",
               sede: "Filadelfia",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 3,
+              golesVisitante: 0,
+              clasificado: "España"
        },
        {
               id: "R32-012",
@@ -1239,7 +1245,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "20:00",
               sede: "Miami",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 2,
+              golesVisitante: 1,
+              clasificado: "Portugal"
        },
        {
               id: "R32-013",
@@ -1251,7 +1260,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "00:00",
               sede: "Vancouver",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 2,
+              golesVisitante: 0,
+              clasificado: "Suiza"
        },
        {
               id: "R32-014",

@@ -15,11 +15,28 @@ export interface Noticia {
 
 
 export const todasLasNoticias: Noticia[] = [
-       {
+        {
+                id: "jornada-22",
+                categoria: "MUNDIAL 2026",
+                titulo: "Suiza vence 2-0 a Argelia y pasa a Octavos.",
+                resumen: "Portugal, España y Suiza pasan a la siguiente ronda de Octavos de Final.",
+                contenidoLargo: `Partidos de los dieciseisavos de final disputados el 2 de julio:
+                🇪🇸 España 3 - 0 Austria 🇦🇹
+                España dominó por completo el encuentro en Los Ángeles y firmó su mejor actuación del torneo. Mikel Oyarzabal fue la gran figura al marcar un doblete (36' y 89'), complementado por un gol de cabeza de Pedro Porro (66'). Con este resultado, el portero Unai Simón alcanzó un récord de 519 minutos consecutivos sin encajar goles en mundiales, consolidando la sólida defensa de "La Roja" que aún no recibe anotaciones en esta cita.
+                🇵🇹 Portugal 2 - 1 Croacia 🇭🇷
+                En un partido repleto de drama y alta tensión en Toronto, Portugal logró remontar tras empezar perdiendo por un gol de Ivan Perišić. Cristiano Ronaldo empató el marcador desde el punto de penal en el minuto 68 y el ingresado Gonçalo Ramos anotó el gol de la victoria en el tiempo de descuento (90+1'). El final estuvo marcado por la polémica cuando el VAR anuló un gol agónico de Croacia por fuera de juego posicional, decretando la eliminación de la selección de Luka Modrić.
+                🇨🇭 Suiza 2 - 0 Argelia 🇩🇿
+                Suiza rompió una racha histórica de 88 años sin ganar un partido de eliminación directa en un Mundial al imponerse con autoridad a Argelia en Vancouver. Un gol tempranero de Breel Embolo a los 10 minutos y otro golpe de Dan Ndoye a los 46 segundos de iniciado el segundo tiempo definieron el choque. El combinado suizo controló defensivamente el resto del partido, anulando los intentos del conjunto africano comandado por Riyad Mahrez.`,
+                imagen: "/images/noticias/noticia-28.jpg",
+                fecha: "2026-07-3",
+                autor: "Redacción Mil Goles",
+                tags: ["Suiza", "Portugal", "España", "FIFA"]
+        },
+        {
                 id: "jornada-21",
                 categoria: "MUNDIAL 2026",
                 titulo: "Inglaterra le da la vuelta 2-1 a RD Congo y pasa a Octavos.",
-                resumen: "Eatados Unidos, Bélgica e Inglaterra pasan a la siguiente ronda de Octavos de Final.",
+                resumen: "Estados Unidos, Bélgica e Inglaterra pasan a la siguiente ronda de Octavos de Final.",
                 contenidoLargo: `Partidos del 1 de Julio - Dieciseisavos:
                 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra 2 - 1 RD Congo 🇨🇩
                 Inglaterra sufrió en Atlanta tras recibir un gol tempranero de Brian Cipenga a los 6 minutos. La RD del Congo defendió su ventaja con un gran nivel de su arquero, pero la jerarquía británica pesó en el cierre. Un doblete de Harry Kane (goles a los 75' y 86') rescató el triunfo y la clasificación para el equipo de Thomas Tuchel.
