@@ -1275,7 +1275,12 @@ export const todosLosPartidos: Partido[] = [
               hora: "15:00",
               sede: "Dallas",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 1,
+              golesVisitante: 1,
+              penalesLocal: 2,
+              penalesVisitante: 4,
+              clasificado: "Egipto"
        },
        {
               id: "R32-015",
@@ -1287,7 +1292,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "19:00",
               sede: "Miami",
               grupo: "R32",
-              fase: "Dieciseisavos"
+              fase: "Dieciseisavos",
+              golesLocal: 3,
+              golesVisitante: 2,
+              clasificado: "Argentina"
        },
        {
               id: "R32-016",
@@ -1299,8 +1307,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "22:30",
               sede: "Kansas City",
               grupo: "R32",
-              fase: "Dieciseisavos"
-       },
+              fase: "Dieciseisavos",
+              golesLocal: 1,
+              golesVisitante: 0,
+              clasificado: "Colombia"       },
 
 
        // --- Grupo Octavos ---
@@ -1323,7 +1333,7 @@ export const todosLosPartidos: Partido[] = [
               banderaLocal: "/images/banderas/paraguay.png",
               banderaVisitante: "/images/banderas/francia.png",
               fecha: "2026-07-04",
-              hora: "13:00",
+              hora: "17:00",
               sede: "Filadelfia",
               grupo: "R16",
               fase: "Octavos"

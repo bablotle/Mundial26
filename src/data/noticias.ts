@@ -15,6 +15,23 @@ export interface Noticia {
 
 
 export const todasLasNoticias: Noticia[] = [
+     {
+                id: "jornada-23",
+                categoria: "MUNDIAL 2026",
+                titulo: "Colombia pasa a Octavos venciendo 1-0 a Ghana.",
+                resumen: "Argentina, Egipto y Colombia pasan a la siguiente ronda de Octavos de Final.",
+                contenidoLargo: `Detalles destacados de la jornada:
+                🇦🇺 Australia 1-1 (P 2-4) Egipto 🇪🇬
+                Egipto hizo historia al ganar su primera eliminatoria directa en un Mundial tras superar a Australia desde los once metros, donde convirtieron todos sus cobros (incluido un gol a lo Panenka de Mohamed Salah).
+                🇦🇷 Argentina 2-2 (TE 3-2) Cabo Verde 🇨🇼
+                Argentina sufrió más de lo esperado en Miami frente al debutante Cabo Verde. Lionel Messi abrió el marcador, pero el conjunto africano forzó la prórroga. Un autogol provocado por Cristian "Cuti" Romero selló el pase de la Albiceleste.
+                🇨🇴 Colombia 1-0 Ghana 🇬🇭
+                Colombia aseguró el último boleto disponible al derrotar por la mínima a Ghana gracias a un tempranero gol de Jhon Arias en Kansas City.`,
+                imagen: "/images/noticias/noticia-29.jpg",
+                fecha: "2026-07-3",
+                autor: "Redacción Mil Goles",
+                tags: ["Argentina", "Colombia", "Egipto", "FIFA"]
+        },
         {
                 id: "jornada-22",
                 categoria: "MUNDIAL 2026",
