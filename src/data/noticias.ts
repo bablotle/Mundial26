@@ -15,7 +15,22 @@ export interface Noticia {
 
 
 export const todasLasNoticias: Noticia[] = [
-     {
+    {
+                id: "jornada-23",
+                categoria: "MUNDIAL 2026",
+                titulo: "Marruecos pasa a Cuartos venciendo 3-0 a Canada.",
+                resumen: "Francia vence 1-0 a Paraguay y pasan a la siguiente ronda de Cuartos de Final.",
+                contenidoLargo: `Octavos de Final del sábado 4 de julio:
+                🇲🇦 Marruecos 3 - 0 Canadá 🇨🇦
+                Los goles africanos fueron anotados por Azzedine Ounahi (doblete) y Soufiane Rahimi.El jugador del Real Madrid, Brahim Díaz, aportó dos asistencias.Con este resultado, el anfitrión Canadá quedó eliminado.
+                🇫🇷 Francia 1 - 0 Paraguay 🇵🇾
+                El único gol del encuentro lo marcó Kylian Mbappé desde el punto penal en el minuto 70.La falta penal fue recibida por Desiré Doué tras la revisión del VAR.Francia selló su pase a la siguiente fase y eliminar de esta manera a la Albirroja.`,
+                imagen: "/images/noticias/noticia-30.jpg",
+                fecha: "2026-07-5",
+                autor: "Redacción Mil Goles",
+                tags: ["Francia", "Marruecos", "Cuartos", "FIFA"]
+        },
+        {
                 id: "jornada-23",
                 categoria: "MUNDIAL 2026",
                 titulo: "Colombia pasa a Octavos venciendo 1-0 a Ghana.",
@@ -28,7 +43,7 @@ export const todasLasNoticias: Noticia[] = [
                 🇨🇴 Colombia 1-0 Ghana 🇬🇭
                 Colombia aseguró el último boleto disponible al derrotar por la mínima a Ghana gracias a un tempranero gol de Jhon Arias en Kansas City.`,
                 imagen: "/images/noticias/noticia-29.jpg",
-                fecha: "2026-07-3",
+                fecha: "2026-07-4",
                 autor: "Redacción Mil Goles",
                 tags: ["Argentina", "Colombia", "Egipto", "FIFA"]
         },

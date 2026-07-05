@@ -8,7 +8,7 @@ export default function EstadisticasPage() {
     // Datos simulados para la estructura
     const goleadores = [
         { nombre: "Lionel Messi", goles: 7, equipo: "Argentina", foto: "/images/jugadores/messi.jpg" },
-        { nombre: "Kylian Mbappé", goles: 6, equipo: "Francia", foto: "/images/jugadores/mbappe.jpg" },
+        { nombre: "Kylian Mbappé", goles: 7, equipo: "Francia", foto: "/images/jugadores/mbappe.jpg" },
         { nombre: "Harry Kane", goles: 5, equipo: "Inglaterra", foto: "/images/jugadores/harry_kane.jpg" },
         { nombre: "Erling Haaland", goles: 5, equipo: "Noruega", foto: "/images/jugadores/haaland.jpg" },
         { nombre: "Vinicius Júnior", goles: 4, equipo: "Brasil", foto: "/images/jugadores/vinicius.jpg" },
@@ -92,15 +92,15 @@ export default function EstadisticasPage() {
                     {/* ESTADÍSTICAS GENERALES DEL TORNEO */}
                     <section className="grid grid-cols-2 gap-4">
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-blue-600 italic">88</p>
+                            <p className="text-3xl font-black text-blue-600 italic">90</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Partidos Jugados</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">266</p>
+                            <p className="text-3xl font-black text-black italic">261</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Goles Totales</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">209</p>
+                            <p className="text-3xl font-black text-black italic">244</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Amarillas</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center bg-blue-600">
