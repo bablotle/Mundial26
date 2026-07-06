@@ -101,7 +101,7 @@ export default function Home() {
                   <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">
                      📅 Partidos de Hoy — {diaHoy} de {hoyObj.toLocaleString('es-ES', { month: 'long' })}
                   </h3>
-                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">16avos</span>
+                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">8avos</span>
                </div>
 
             <div className="space-y-4">

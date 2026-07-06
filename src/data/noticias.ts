@@ -19,7 +19,7 @@ export const todasLasNoticias: Noticia[] = [
                 id: "jornada-24",
                 categoria: "MUNDIAL 2026",
                 titulo: "Inglaterra y Noruega pasan a Cuartos.",
-                resumen: "Bellinham anota 2 de los 3 goles y le da la victoria a Inglaterra 3-2 ante México.",
+                resumen: "Bellingham anota 2 de los 3 goles y le da la victoria a Inglaterra 3-2 ante México.",
                 contenidoLargo: `Resumen de la Jornada:
                 🇳🇴 Noruega 2 - 1 Brasil 🇧🇷
                 Un histórico doblete de Erling Haaland le dio el pase a los europeos en Nueva Jersey. Brasil descontó sobre el final con un penal de Neymar, pero sumó una nueva eliminación consecutiva ante rivales del viejo continente.
