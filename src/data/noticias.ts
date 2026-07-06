@@ -16,6 +16,21 @@ export interface Noticia {
 
 export const todasLasNoticias: Noticia[] = [
     {
+                id: "jornada-24",
+                categoria: "MUNDIAL 2026",
+                titulo: "Inglaterra y Noruega pasan a Cuartos.",
+                resumen: "Bellinham anota 2 de los 3 goles y le da la victoria a Inglaterra 3-2 ante México.",
+                contenidoLargo: `Resumen de la Jornada:
+                🇳🇴 Noruega 2 - 1 Brasil 🇧🇷
+                Un histórico doblete de Erling Haaland le dio el pase a los europeos en Nueva Jersey. Brasil descontó sobre el final con un penal de Neymar, pero sumó una nueva eliminación consecutiva ante rivales del viejo continente.
+                🇬🇧 Inglaterra 3 - 2 México 🇲🇽
+                El conjunto inglés venció al coanfitrión en el Estadio Azteca. Jude Bellingham anotó un doblete y Harry Kane amplió de penal. México reaccionó con goles de Julián Quiñones y Raúl Jiménez, pero no le alcanzó pese a jugar con un hombre más por la expulsión de Jarell Quansah.`,
+                imagen: "/images/noticias/noticia-31.jpg",
+                fecha: "2026-07-6",
+                autor: "Redacción Mil Goles",
+                tags: ["Noruega", "Inglatera", "México", "FIFA"]
+        },
+        {
                 id: "jornada-23",
                 categoria: "MUNDIAL 2026",
                 titulo: "Marruecos pasa a Cuartos venciendo 3-0 a Canada.",
