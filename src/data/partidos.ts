@@ -1384,7 +1384,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "16:00",
               sede: "Dallas",
               grupo: "R16",
-              fase: "Octavos"
+              fase: "Octavos",
+              golesLocal: 0,
+              golesVisitante: 1,
+              clasificado: "Portugal"
        },
        {
               id: "R16-06",
@@ -1396,7 +1399,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "21:00",
               sede: "Seattle",
               grupo: "R16",
-              fase: "Octavos"
+              fase: "Octavos",
+              golesLocal: 1,
+              golesVisitante: 4,
+              clasificado: "Bélgica"
        },
        {
               id: "R16-07",
@@ -1440,10 +1446,10 @@ export const todosLosPartidos: Partido[] = [
        },
        {
               id: "QF-02",
-              local: "Por/Esp",
-              visitante: "EU/Bél",
-              banderaLocal: "/images/banderas/tbd.png",
-              banderaVisitante: "/images/banderas/tbd.png",
+              local: "España",
+              visitante: "Bélgica",
+              banderaLocal: "/images/banderas/espana.png",
+              banderaVisitante: "/images/banderas/belgica.png",
               fecha: "2026-07-10",
               hora: "16:00",
               sede: "Los Ángeles",

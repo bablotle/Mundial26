@@ -14,8 +14,24 @@ export interface Noticia {
 }
 
 
-export const todasLasNoticias: Noticia[] = [
-    {
+export const todasLasNoticias: Noticia[] = [  
+   {
+                id: "jornada-24",
+                categoria: "MUNDIAL 2026",
+                titulo: "Bélgica y España pasan a Cuartos.",
+                resumen: "España vence a Portugal 1-0 metiendo el gol al minuto 90+1.",
+                contenidoLargo: `España y Bélgica clasificaron ayer a cuartos de final del Mundial tras eliminar a Portugal y Estados Unidos respectivamente.
+                Claves de la jornada
+                🇪🇦 España 1 - 0 Portugal 🇵🇹
+                Un gol agónico de Mikel Merino en el minuto 91 selló el pase español y marcó la despedida definitiva de Cristiano Ronaldo de los mundiales.
+                🇧🇪 Bélgica 4 - 1 Estados Unidos 🇺🇲
+                Los belgas golearon con doblete de De Ketelaere y tantos de Vanaken y Lukaku. Descontó Tillman para el último anfitrión eliminado.El próximo partido de cuartos de final será un choque directo entre España y Bélgica.`,
+                imagen: "/images/noticias/noticia-32.jpg",
+                fecha: "2026-07-7",
+                autor: "Redacción Mil Goles",
+                tags: ["España", "Bélgica", "Cristiano", "FIFA"]
+        },
+        {
                 id: "jornada-24",
                 categoria: "MUNDIAL 2026",
                 titulo: "Inglaterra y Noruega pasan a Cuartos.",
@@ -23,7 +39,7 @@ export const todasLasNoticias: Noticia[] = [
                 contenidoLargo: `Resumen de la Jornada:
                 🇳🇴 Noruega 2 - 1 Brasil 🇧🇷
                 Un histórico doblete de Erling Haaland le dio el pase a los europeos en Nueva Jersey. Brasil descontó sobre el final con un penal de Neymar, pero sumó una nueva eliminación consecutiva ante rivales del viejo continente.
-                🇬🇧 Inglaterra 3 - 2 México 🇲🇽
+                🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra 3 - 2 México 🇲🇽
                 El conjunto inglés venció al coanfitrión en el Estadio Azteca. Jude Bellingham anotó un doblete y Harry Kane amplió de penal. México reaccionó con goles de Julián Quiñones y Raúl Jiménez, pero no le alcanzó pese a jugar con un hombre más por la expulsión de Jarell Quansah.`,
                 imagen: "/images/noticias/noticia-31.jpg",
                 fecha: "2026-07-6",
