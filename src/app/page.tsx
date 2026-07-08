@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { todosLosPartidos } from '@/data/partidos';
 import { todasLasSelecciones } from '@/data/selecciones';
-import { todasLasNoticias } from '@/data/noticias';
+import { todasLasNoticias } from "@/data/todasLasNoticias";
 import CardResultadoMini from '@/components/CardResultadoMini';
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
    // const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
 
    // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "R16-07") // <-- Aquí pones el ID del partido que quieras
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "QF-01") // <-- Aquí pones el ID del partido que quieras
       || partidosDeHoy[0]
       || todosLosPartidos[0];
 
@@ -76,10 +76,10 @@ export default function Home() {
 
          {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/atlanta.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/boston.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
-                  EL PARTIDO DESTACADO DE HOY 🌟
+                  EL PARTIDO DESTACADO 9 DE JULIO 🌟
                </span>
                <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
                   {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}
@@ -101,7 +101,7 @@ export default function Home() {
                   <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">
                      📅 Partidos de Hoy — {diaHoy} de {hoyObj.toLocaleString('es-ES', { month: 'long' })}
                   </h3>
-                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">8avos</span>
+                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Cuartos</span>
                </div>
 
             <div className="space-y-4">

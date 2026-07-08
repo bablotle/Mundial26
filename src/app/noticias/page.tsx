@@ -1,7 +1,7 @@
 
 'use client';
 import Navbar from '@/components/Navbar';
-import { todasLasNoticias } from '@/data/noticias';
+import { todasLasNoticias } from "@/data/todasLasNoticias";
 import Link from 'next/link';
 
 

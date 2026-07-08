@@ -1414,7 +1414,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "13:00",
               sede: "Atlanta",
               grupo: "R16",
-              fase: "Octavos"
+              fase: "Octavos",
+              golesLocal: 3,
+              golesVisitante: 2,
+              clasificado: "Argentina"
        },
        {
               id: "R16-08",
@@ -1426,7 +1429,12 @@ export const todosLosPartidos: Partido[] = [
               hora: "17:00",
               sede: "Vancouver",
               grupo: "R16",
-              fase: "Octavos"
+              fase: "Octavos",
+              golesLocal: 0,
+              golesVisitante: 0,
+              penalesLocal: 4,
+              penalesVisitante: 3,
+              clasificado: "Egipto"
        },
 
        // --- Grupo Cuartos ---
@@ -1470,10 +1478,10 @@ export const todosLosPartidos: Partido[] = [
        },
        {
               id: "QF-04",
-              local: "Arg/Egi",
-              visitante: "Sui/Col",
-              banderaLocal: "/images/banderas/tbd.png",
-              banderaVisitante: "/images/banderas/tbd.png",
+              local: "Argentina",
+              visitante: "Suiza",
+              banderaLocal: "/images/banderas/argentina.png",
+              banderaVisitante: "/images/banderas/suiza.png",
               fecha: "2026-07-11",
               hora: "22:00",
               sede: "Kansas City",
@@ -1485,8 +1493,8 @@ export const todosLosPartidos: Partido[] = [
        // --- Grupo Semifinal ---
        {
               id: "SF-01",
-              local: "Ganador Partido 97",
-              visitante: "Ganador Partido 98",
+              local: "Fran/Marr",
+              visitante: "Esp/Bel",
               banderaLocal: "/images/banderas/tbd.png",
               banderaVisitante: "/images/banderas/tbd.png",
               fecha: "2026-07-14",
@@ -1497,8 +1505,8 @@ export const todosLosPartidos: Partido[] = [
        },
        {
               id: "SF-02",
-              local: "Ganador Partido 99",
-              visitante: "Ganador Partido 100",
+              local: "Nor/Ing",
+              visitante: "Arg/Sui",
               banderaLocal: "/images/banderas/tbd.png",
               banderaVisitante: "/images/banderas/tbd.png",
               fecha: "2026-07-15",

@@ -7,7 +7,7 @@ import { ChartNoAxesColumnIncreasing, MessageCircleIcon } from 'lucide-react';
 export default function EstadisticasPage() {
     // Datos simulados para la estructura
     const goleadores = [
-        { nombre: "Lionel Messi", goles: 7, equipo: "Argentina", foto: "/images/jugadores/messi.jpg" },
+        { nombre: "Lionel Messi", goles: 8, equipo: "Argentina", foto: "/images/jugadores/messi.jpg" },
         { nombre: "Kylian Mbappé", goles: 7, equipo: "Francia", foto: "/images/jugadores/mbappe.jpg" },
         { nombre: "Erling Haaland", goles: 7, equipo: "Noruega", foto: "/images/jugadores/haaland.jpg" },      
         { nombre: "Harry Kane", goles: 5, equipo: "Inglaterra", foto: "/images/jugadores/harry_kane.jpg" },
@@ -92,15 +92,15 @@ export default function EstadisticasPage() {
                     {/* ESTADÍSTICAS GENERALES DEL TORNEO */}
                     <section className="grid grid-cols-2 gap-4">
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-blue-600 italic">94</p>
+                            <p className="text-3xl font-black text-blue-600 italic">96</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Partidos Jugados</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">275</p>
+                            <p className="text-3xl font-black text-black italic">280</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Goles Totales</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">237</p>
+                            <p className="text-3xl font-black text-black italic">247</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Amarillas</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center bg-blue-600">

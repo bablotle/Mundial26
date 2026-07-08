@@ -1,7 +1,7 @@
 'use client';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { todasLasNoticias } from '@/data/noticias';
+import { todasLasNoticias } from "@/data/todasLasNoticias";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 

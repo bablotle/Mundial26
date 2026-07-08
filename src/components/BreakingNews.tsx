@@ -1,5 +1,5 @@
 'use client';
-import { todasLasNoticias } from '@/data/noticias';
+import { todasLasNoticias } from "@/data/todasLasNoticias";
 
 export default function BreakingNews() {
     // 1. Ordenamos de forma inteligente: primero por fecha y luego por ID descendente

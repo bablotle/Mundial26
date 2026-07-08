@@ -1,19 +1,9 @@
-// src/data/noticias.ts
+import { Noticia } from "./noticias";
 
-export interface Noticia {
-        id: string;
-        categoria: "MUNDIAL 2026" | "LIBERTADORES" | "MUNDIAL DE CLUBES" | "LALIGA" | "SELECCIONES"; // Esto ayuda a que el sitio "mute"
-        titulo: string;
-        resumen: string;
-        contenidoLargo: string;
-        imagen: string;
-        fecha: string;
-        autor: string;
-        tags: string[];
-}
+
 
 export const todasLasNoticias: Noticia[] = [
-        {
+       {
                 id: "jornada-25",
                 categoria: "MUNDIAL 2026",
                 titulo: "Suiza y Argentina pasan a Cuartos.",
@@ -38,7 +28,8 @@ export const todasLasNoticias: Noticia[] = [
                 🇪🇦 España 1 - 0 Portugal 🇵🇹
                 Un gol agónico de Mikel Merino en el minuto 91 selló el pase español y marcó la despedida definitiva de Cristiano Ronaldo de los mundiales.
                 🇧🇪 Bélgica 4 - 1 Estados Unidos 🇺🇲
-                Los belgas golearon con doblete de De Ketelaere y tantos de Vanaken y Lukaku. Descontó Tillman para el último anfitrión eliminado.El próximo partido de cuartos de final será un choque directo entre España y Bélgica.`, imagen: "/images/noticias/noticia-32.jpg",
+                Los belgas golearon con doblete de De Ketelaere y tantos de Vanaken y Lukaku. Descontó Tillman para el último anfitrión eliminado.El próximo partido de cuartos de final será un choque directo entre España y Bélgica.`,
+                imagen: "/images/noticias/noticia-32.jpg",
                 fecha: "2026-07-7",
                 autor: "Redacción Mil Goles",
                 tags: ["España", "Bélgica", "Cristiano", "FIFA"]
