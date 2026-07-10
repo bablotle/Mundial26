@@ -3,7 +3,23 @@ import { Noticia } from "./noticias";
 
 
 export const todasLasNoticias: Noticia[] = [
-       {
+     {
+                id: "jornada-25",
+                categoria: "MUNDIAL 2026",
+                titulo: "Francia logra la victoria ante Marruecos 2-0.",
+                resumen: "Francia es el primer clasificado a Semifinales.",
+                contenidoLargo: `Francia venció 2-0 a Marruecos el 9 de julio de 2026, eliminándola en los cuartos de final de la Copa del Mundo.
+                Puntos clave del partido
+                Sede: Estadio Boston, Massachusetts.
+                Primer tiempo: Kylian Mbappé falló un penal al minuto 27.
+                Goles: Mbappé anotó al minuto 60 y Ousmane Dembélé al 66.
+                Resultado: Francia avanzó a semifinales y Marruecos quedó fuera.`,
+                imagen: "/images/noticias/noticia-34.jpg",
+                fecha: "2026-07-9",               
+                autor: "Redacción Mil Goles",
+                tags: ["Francia", "Marruecos", "Mbappe", "FIFA"]
+        },    
+        {
                 id: "jornada-25",
                 categoria: "MUNDIAL 2026",
                 titulo: "Suiza y Argentina pasan a Cuartos.",
