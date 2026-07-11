@@ -4,7 +4,23 @@ import { Noticia } from "./noticias";
 
 export const todasLasNoticias: Noticia[] = [
      {
-                id: "jornada-25",
+                id: "jornada-27",
+                categoria: "MUNDIAL 2026",
+                titulo: "España logra la victoria ante Bélgica 2-1.",
+                resumen: "España se mete a las Semifinales.",
+                contenidoLargo: `España venció 2-1 a Bélgica gracias a las altas calificaciones de su mediocampo y la efectividad de sus cambios.
+                Puntos clave de las notas
+                La figura: Mikel Merino (9) fue el mejor tras entrar desde el banco y anotar el gol del triunfo al minuto 88.
+                El motor: Rodri (8) y Fabián Ruiz (8) dominaron el mediocampo español con recuperación y el primer gol del partido.
+                El muro belga: Thibaut Courtois (8) fue el más destacado de su equipo con paradas clave antes de lesionarse.
+                El punto débil: El portero suplente belga Senne Lammens (5) recibió la peor nota tras el error que costó el partido.`,
+                imagen: "/images/noticias/noticia-35.jpg",
+                fecha: "2026-07-10",               
+                autor: "Redacción Mil Goles",
+                tags: ["España", "Bélgica", "Yamal", "FIFA"]
+                },
+        {
+                id: "jornada-26",
                 categoria: "MUNDIAL 2026",
                 titulo: "Francia logra la victoria ante Marruecos 2-0.",
                 resumen: "Francia es el primer clasificado a Semifinales.",

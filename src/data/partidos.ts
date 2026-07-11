@@ -1465,7 +1465,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "16:00",
               sede: "Los Ángeles",
               grupo: "QF",
-              fase: "Cuartos"
+              fase: "Cuartos",
+              golesLocal: 2,
+              golesVisitante: 1,
+              clasificado: "España"
        },
        {
               id: "QF-03",
@@ -1496,10 +1499,10 @@ export const todosLosPartidos: Partido[] = [
        // --- Grupo Semifinal ---
        {
               id: "SF-01",
-              local: "Fran/Marr",
-              visitante: "Esp/Bel",
-              banderaLocal: "/images/banderas/tbd.png",
-              banderaVisitante: "/images/banderas/tbd.png",
+              local: "Francia",
+              visitante: "España",
+              banderaLocal: "/images/banderas/francia.png",
+              banderaVisitante: "/images/banderas/espana.png",
               fecha: "2026-07-14",
               hora: "15:00",
               sede: "Dallas",

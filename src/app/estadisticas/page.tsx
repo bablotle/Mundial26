@@ -92,15 +92,15 @@ export default function EstadisticasPage() {
                     {/* ESTADÍSTICAS GENERALES DEL TORNEO */}
                     <section className="grid grid-cols-2 gap-4">
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-blue-600 italic">97</p>
+                            <p className="text-3xl font-black text-blue-600 italic">98</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Partidos Jugados</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">282</p>
+                            <p className="text-3xl font-black text-black italic">285</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Goles Totales</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">248</p>
+                            <p className="text-3xl font-black text-black italic">250</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Amarillas</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center bg-blue-600">
