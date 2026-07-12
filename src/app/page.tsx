@@ -36,7 +36,7 @@ export default function Home() {
    // const partidoDestacado = partidosDeHoy[0] || todosLosPartidos[0];
 
    // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "QF-03") // <-- Aquí pones el ID del partido que quieras
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "SF-01") // <-- Aquí pones el ID del partido que quieras
       || partidosDeHoy[0]
       || todosLosPartidos[0];
 
@@ -76,16 +76,16 @@ export default function Home() {
 
          {/* --- SECCIÓN HERO (DINÁMICA BASADA EN EL PARTIDO DESTACADO) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/miami.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/dallas.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
-                  EL PARTIDO DESTACADO DE HOY 🌟
+                  EL PARTIDO DESTACADO DEL 14 DE JULIO 🌟
                </span>
                <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
                   {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}
                </h1>
                <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
-                  {partidoDestacado.fase || 'Dieciseisavos'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
+                  {partidoDestacado.fase || 'Semifinales'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
                </p>
                <Link href="/partidos" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
                   Seguir Transmisión del Día
@@ -101,7 +101,7 @@ export default function Home() {
                   <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">
                      📅 Partidos de Hoy — {diaHoy} de {hoyObj.toLocaleString('es-ES', { month: 'long' })}
                   </h3>
-                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Cuartos</span>
+                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Semis</span>
                </div>
 
             <div className="space-y-4">

@@ -1480,7 +1480,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "18:00",
               sede: "Miami",
               grupo: "QF",
-              fase: "Cuartos"
+              fase: "Cuartos",
+              golesLocal: 1,
+              golesVisitante: 2,
+              clasificado: "Inglaterra"
        },
        {
               id: "QF-04",
@@ -1492,7 +1495,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "22:00",
               sede: "Kansas City",
               grupo: "QF",
-              fase: "Cuartos"
+              fase: "Cuartos",
+              golesLocal: 3,
+              golesVisitante: 1,
+              clasificado: "Argentina"
        },
 
 
@@ -1511,10 +1517,10 @@ export const todosLosPartidos: Partido[] = [
        },
        {
               id: "SF-02",
-              local: "Nor/Ing",
-              visitante: "Arg/Sui",
-              banderaLocal: "/images/banderas/tbd.png",
-              banderaVisitante: "/images/banderas/tbd.png",
+              local: "Inglaterra",
+              visitante: "Argentina",
+              banderaLocal: "/images/banderas/inglaterra.png",
+              banderaVisitante: "/images/banderas/argentina.png",
               fecha: "2026-07-15",
               hora: "15:00 ",
               sede: "Atlanta",
@@ -1526,8 +1532,8 @@ export const todosLosPartidos: Partido[] = [
        // --- Grupo Final ---
        {
               id: "F",
-              local: "Ganador Partido 101",
-              visitante: "Ganador Partido 102",
+              local: "Fra/Esp",
+              visitante: "Arg/Ing",
               banderaLocal: "/images/banderas/tbd.png",
               banderaVisitante: "/images/banderas/tbd.png",
               fecha: "2026-07-19",
@@ -1541,8 +1547,8 @@ export const todosLosPartidos: Partido[] = [
        // --- Grupo Final ---
        {
               id: "TP",
-              local: "Perdedor Partido 101",
-              visitante: "Perdedor Partido 102",
+              local: "Perdedor Fra/Esp",
+              visitante: "Perdedor Arg/Ing",
               banderaLocal: "/images/banderas/tbd.png",
               banderaVisitante: "/images/banderas/tbd.png",
               fecha: "2026-07-18",

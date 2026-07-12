@@ -4,6 +4,21 @@ import { Noticia } from "./noticias";
 
 export const todasLasNoticias: Noticia[] = [
      {
+                id: "jornada-28",
+                categoria: "MUNDIAL 2026",
+                titulo: "Argentina e Inglaterra pasan de ronda.",
+                resumen: "Inglaterra vence a Noruega 2-1 y se mete a las Semifinales.",
+                contenidoLargo: `Los cartos de final del 11 de julio de 2026:
+                🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra 2 - 1 Noruega 🇳🇴
+                Inglaterra clasificó en tiempo extra con un gol clave de Jude Bellingham.
+                🇦🇷 Argentina 3 - 1 Suiza 🇨🇭
+                Argentina avanzó en tiempo extra con goles de Mac Allister, Álvarez y Martínez.Próximo paso: Inglaterra y Argentina se enfrentarán en las semifinales el miércoles 15 de julio.`,
+                imagen: "/images/noticias/noticia-36.jpg",
+                fecha: "2026-07-11",               
+                autor: "Redacción Mil Goles",
+                tags: ["Inglaterra", "Argentina", "Semifinales", "FIFA"]
+                },
+        {
                 id: "jornada-27",
                 categoria: "MUNDIAL 2026",
                 titulo: "España logra la victoria ante Bélgica 2-1.",
