@@ -1528,7 +1528,10 @@ export const todosLosPartidos: Partido[] = [
               hora: "15:00 ",
               sede: "Atlanta",
               grupo: "F",
-              fase: "Semis"
+              fase: "Semis",
+              golesLocal: 1,
+              golesVisitante: 2,
+              clasificado: "Argentina"
        },
 
 
