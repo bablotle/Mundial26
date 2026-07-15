@@ -11,6 +11,9 @@ import { todasLasSelecciones } from '@/data/selecciones';
 import { todasLasNoticias } from "@/data/todasLasNoticias";
 import CardResultadoMini from '@/components/CardResultadoMini';
 
+// Fuerza a la página a revalidar los datos o renderizarse en el servidor en cada petición
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
    // 1. Datos de Sedes
    const todasLasSedes = [
