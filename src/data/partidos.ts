@@ -1536,9 +1536,9 @@ export const todosLosPartidos: Partido[] = [
        {
               id: "F",
               local: "España",
-              visitante: "Arg/Ing",
+              visitante: "Argentina",
               banderaLocal: "/images/banderas/espana.png",
-              banderaVisitante: "/images/banderas/tbd.png",
+              banderaVisitante: "/images/banderas/argentina.png",
               fecha: "2026-07-19",
               hora: "17:00",
               sede: "New Jersey",
@@ -1550,10 +1550,10 @@ export const todosLosPartidos: Partido[] = [
        // --- Grupo Final ---
        {
               id: "TP",
-              local: "Perdedor Fra/Esp",
-              visitante: "Perdedor Arg/Ing",
-              banderaLocal: "/images/banderas/tbd.png",
-              banderaVisitante: "/images/banderas/tbd.png",
+              local: "Francia",
+              visitante: "Inglaterra",
+              banderaLocal: "/images/banderas/francia.png",
+              banderaVisitante: "/images/banderas/inglaterra.png",
               fecha: "2026-07-18",
               hora: "17:00",
               sede: "Miami",

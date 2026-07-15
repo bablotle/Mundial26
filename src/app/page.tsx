@@ -19,13 +19,12 @@ export default function Home() {
       { id: '3', nombre: 'BC Place', ciudad: 'Vancouver', pais: 'CANADÁ', capacidad: '54,500', temp: '16°C', imagen: '/images/sedes/vancouver.jpg' },
    ];
 
-   // 2. Obtener directamente las dos llaves de Semifinales
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "SF-02") || todosLosPartidos[0];
-     const final = todosLosPartidos.find(p => p.id === "TP");
+   // 2. Buscar la Gran Final y el Tercer Puesto
+   // Ajusta "F" por el ID exacto que uses para la final en tu data/partidos (ej: "FINAL", "F-01")
+   const granFinal = todosLosPartidos.find(p => p.id === "F" || p.fase?.toLowerCase().includes("final")) || todosLosPartidos[0];
+   const tercerPuesto = todosLosPartidos.find(p => p.id === "TP");
 
-   // Creamos la lista de la sección inferior basándonos en el segundo partido
-   const partidosSemis = final ? [final] : [];
-
+   const partidosSecundarios = tercerPuesto ? [tercerPuesto] : [];
    const noticiasDestacadas = todasLasNoticias.slice(0, 2);
    const sedesDestacadas = todasLasSedes.slice(0, 3);
 
@@ -33,90 +32,94 @@ export default function Home() {
       <main className="min-h-screen bg-[#f0f2f5] pb-20">
          <Navbar />
 
-         {/* --- SECCIÓN HERO: PARTIDO DESTACADO (SEMIFINAL 1) --- */}
+         {/* --- SECCIÓN HERO: LA GRAN FINAL --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/atlanta.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/metlife.jpg" className="w-full h-full object-cover brightness-[0.5]" alt="MetLife Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
-               <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase animate-pulse">
-                  🏆 SEMIFINAL DESTACADA 15 DE JULIO 🌟
+               <span className="bg-amber-500 text-slate-950 text-[10px] font-black px-4 py-1 rounded-full mb-4 tracking-widest uppercase animate-pulse shadow-lg shadow-amber-500/20">
+                  🏆 LA GRAN FINAL · DOMINGO 19 DE JULIO 🌟
                </span>
-               <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
-                  {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}
+               <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
+                  {granFinal.local || "Argentina"} <span className="text-red-500">vs</span> {granFinal.visitante || "España"}
                </h1>
-               <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
-                  {partidoDestacado.fase || 'Semifinales'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
+               <p className="text-white/90 font-bold uppercase tracking-widest text-[12px] mb-6">
+                  {granFinal.fase || 'Gran Final'} · {granFinal.hora} · {granFinal.sede || 'MetLife Stadium'}
                </p>
-               <Link href="/partidos" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
-                  Seguir Transmisión
+               <Link href="/partidos" className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-amber-500/30">
+                  Seguir Transmisión En Vivo
                </Link>
             </div>
          </section>
 
          <div className="max-w-4xl mx-auto px-5 -mt-12 relative z-10">
 
-            {/* --- BLOQUE PRINCIPAL: PRIMERA SEMIFINAL CON MARCADOR --- */}
-            <div className="bg-slate-900 rounded-[2rem] p-6 text-white shadow-xl border border-slate-800">
+            {/* --- BLOQUE PRINCIPAL: DETALLE DE LA FINAL --- */}
+            <div className="bg-gradient-to-b from-slate-900 to-slate-950 rounded-[2rem] p-6 text-white shadow-2xl border border-amber-500/20">
                <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-3">
-                  <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">
-                     📅 SEMIFINAL PRINCIPAL
+                  <h3 className="text-[11px] font-black uppercase tracking-widest text-amber-400 flex items-center gap-1.5">
+                     👑 CAMPEONATO DEL MUNDO
                   </h3>
-                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">EN VIVO / PRÓXIMO</span>
+                  <span className="bg-amber-500/10 text-amber-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-amber-500/20 tracking-wider">
+                     PARTIDO DEFINITORIO
+                  </span>
                </div>
 
                <div className="space-y-4">
-                  <div className="bg-slate-800/50 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-700/30 gap-3 relative overflow-hidden">
-                     <span className="absolute top-2 right-4 text-[7px] font-black uppercase tracking-wider opacity-40">
-                        {partidoDestacado.fase || "Semifinales"}
+                  <div className="bg-slate-800/40 rounded-2xl p-6 flex flex-col items-center justify-center border border-slate-700/30 gap-4 relative overflow-hidden">
+                     <span className="absolute top-3 right-4 text-[8px] font-black uppercase tracking-widest opacity-30 text-amber-400">
+                        MATCH 104
                      </span>
 
-                     <div className="shrink-0 mt-1">
-                        <span className="bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block tracking-wider">
-                           {partidoDestacado.hora}
+                     <div className="shrink-0">
+                        <span className="bg-amber-500 text-slate-950 text-[9px] font-black px-2.5 py-0.5 rounded uppercase block tracking-wider">
+                           {granFinal.hora}
                         </span>
                      </div>
 
-                     <div className="flex items-center justify-between w-full px-4">
+                     <div className="flex items-center justify-between w-full px-2 md:px-6">
                         {/* Local */}
-                        <div className="flex items-center gap-2 flex-1">
-                           <img src={partidoDestacado.banderaLocal} className="w-6 h-4 object-cover rounded-sm" alt={partidoDestacado.local} />
-                           <span className="font-bold text-xs uppercase truncate">{partidoDestacado.local}</span>
+                        <div className="flex items-center gap-3 flex-1">
+                           <img src={granFinal.banderaLocal || "/images/banderas/argentina.png"} className="w-8 h-5 object-cover rounded shadow-md" alt={granFinal.local} />
+                           <span className="font-black text-sm md:text-base uppercase truncate tracking-tight">{granFinal.local || "Argentina"}</span>
                         </div>
-                        
+
                         {/* Marcador / VS */}
-                        <div className="flex items-center gap-1.5 px-3">
-                           {partidoDestacado.golesLocal !== undefined && partidoDestacado.golesLocal !== null ? (
-                              <div className="flex items-center gap-1 text-slate-200">
-                                 <span className="text-sm font-black">{partidoDestacado.golesLocal}</span>
-                                 {partidoDestacado.penalesLocal !== undefined && (
-                                    <span className="text-[10px] text-emerald-400 font-extrabold">({partidoDestacado.penalesLocal})</span>
+                        <div className="flex items-center gap-1.5 px-4">
+                           {granFinal.golesLocal !== undefined && granFinal.golesLocal !== null ? (
+                              <div className="flex items-center gap-2 text-slate-200">
+                                 <span className="text-xl font-black">{granFinal.golesLocal}</span>
+                                 {granFinal.penalesLocal !== undefined && (
+                                    <span className="text-[11px] text-emerald-400 font-extrabold">({granFinal.penalesLocal})</span>
                                  )}
-                                 <span className="text-gray-600 font-bold px-1 text-xs">-</span>
-                                 {partidoDestacado.penalesVisitante !== undefined && (
-                                    <span className="text-[10px] text-emerald-400 font-extrabold">({partidoDestacado.penalesVisitante})</span>
+                                 <span className="text-slate-600 font-bold px-1 text-sm">-</span>
+                                 {granFinal.penalesVisitante !== undefined && (
+                                    <span className="text-[11px] text-emerald-400 font-extrabold">({granFinal.penalesVisitante})</span>
                                  )}
-                                 <span className="text-sm font-black">{partidoDestacado.golesVisitante}</span>
+                                 <span className="text-xl font-black">{granFinal.golesVisitante}</span>
                               </div>
                            ) : (
-                              <span className="text-gray-500 font-bold text-xs">VS</span>
+                              <div className="bg-slate-800 px-3 py-1 rounded-md border border-slate-700">
+                                 <span className="text-amber-400 font-black text-xs tracking-widest">VS</span>
+                              </div>
                            )}
                         </div>
 
                         {/* Visitante */}
-                        <div className="flex items-center gap-2 flex-1 justify-end">
-                           <span className="font-bold text-xs uppercase truncate text-right">{partidoDestacado.visitante}</span>
-                           <img src={partidoDestacado.banderaVisitante} className="w-6 h-4 object-cover rounded-sm" alt={partidoDestacado.visitante} />
+                        <div className="flex items-center gap-3 flex-1 justify-end">
+                           <span className="font-black text-sm md:text-base uppercase truncate text-right tracking-tight">{granFinal.visitante || "España"}</span>
+                           <img src={granFinal.banderaVisitante || "/images/banderas/espana.png"} className="w-8 h-5 object-cover rounded shadow-md" alt={granFinal.visitante} />
                         </div>
                      </div>
 
-                     {partidoDestacado.penalesLocal !== undefined && partidoDestacado.penalesVisitante !== undefined && (
-                        <div className="text-[9px] font-black uppercase tracking-widest text-emerald-400 mt-1 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 text-center">
-                           🏆 {partidoDestacado.clasificado} avanza a la Final ({partidoDestacado.penalesLocal}-{partidoDestacado.penalesVisitante})
+                     {granFinal.penalesLocal !== undefined && granFinal.penalesVisitante !== undefined && (
+                        <div className="text-[10px] font-black uppercase tracking-widest text-emerald-400 mt-2 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20 text-center">
+                           🎉 ¡<span className="underline underline-offset-4 decoration-amber-400 text-white">{granFinal.clasificado || granFinal.ganador}</span> CAMPEÓN DEL MUNDO! 🏆
                         </div>
                      )}
 
-                     <div className="text-center">
-                        <span className="text-[8px] font-bold uppercase tracking-widest text-slate-400">
-                           📍 {partidoDestacado.sede}
+                     <div className="text-center mt-1">
+                        <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 block">
+                           📍 {granFinal.sede || "MetLife Stadium, New York / New Jersey"}
                         </span>
                      </div>
                   </div>
@@ -126,23 +129,21 @@ export default function Home() {
             <div className="my-10"><AdBanner /></div>
             <div className="my-10"><BreakingNews /></div>
 
-            {/* --- SECCIÓN INFERIOR: LA OTRA SEMIFINAL --- */}
-            {partidosSemis.length > 0 && (
+            {/* --- SECCIÓN INFERIOR: TERCER PUESTO --- */}
+            {partidosSecundarios.length > 0 && (
                <section className="mt-12 text-slate-900">
                   <div className="flex justify-between items-end mb-4 px-2">
-                     <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">La otra llave</h2>
-                     <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Ver Calendario Completo →</Link>
+                     <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Definición Tercer Puesto</h2>
+                     <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Calendario Completo →</Link>
                   </div>
                   <div className="space-y-3">
-                     {partidosSemis.map((p) => (
+                     {partidosSecundarios.map((p) => (
                         <div key={p.id} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm border border-gray-100 group hover:border-blue-100 transition-colors">
-                           {/* Local */}
                            <div className="flex items-center gap-3 flex-1">
                               <img src={p.banderaLocal} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.local} />
                               <span className="font-black text-[11px] uppercase italic text-gray-900">{p.local}</span>
                            </div>
 
-                           {/* Centro: Muestra Marcador o la Hora si no se ha jugado */}
                            <div className="px-4 text-center border-x border-gray-50 min-w-[110px]">
                               {p.golesLocal !== undefined && p.golesLocal !== null ? (
                                  <div className="text-xs font-black bg-slate-100 text-slate-900 px-2 py-0.5 rounded text-center">
@@ -153,13 +154,12 @@ export default function Home() {
                                  </div>
                               ) : (
                                  <>
-                                    <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5 tracking-wider">{p.hora}</p>
-                                    <p className="text-[7px] font-bold text-gray-400 uppercase whitespace-nowrap">{p.sede}</p>
+                                    <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5 tracking-wider">{p.hora || "Podio"}</p>
+                                    <p className="text-[7px] font-bold text-gray-400 uppercase whitespace-nowrap truncate max-w-[90px]">{p.sede}</p>
                                  </>
                               )}
                            </div>
 
-                           {/* Visitante */}
                            <div className="flex items-center gap-3 flex-1 justify-end">
                               <span className="font-black text-[11px] uppercase italic text-right text-gray-900">{p.visitante}</span>
                               <img src={p.banderaVisitante} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.visitante} />
@@ -168,7 +168,7 @@ export default function Home() {
                      ))}
                   </div>
                </section>
-            )} {/* 🌟 ERROR CORREGIDO: Se cerró correctamente el condicional aquí */}
+            )}
 
             {/* --- ÚLTIMAS NOTICIAS --- */}
             <section className="mt-16">
