@@ -20,11 +20,11 @@ export default function Home() {
    ];
 
    // 2. Obtener directamente las dos llaves de Semifinales
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "SF-01") || todosLosPartidos[0];
-   const segundoPartido = todosLosPartidos.find(p => p.id === "SF-02");
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "SF-02") || todosLosPartidos[0];
+     const final = todosLosPartidos.find(p => p.id === "TP");
 
    // Creamos la lista de la sección inferior basándonos en el segundo partido
-   const partidosSemis = segundoPartido ? [segundoPartido] : [];
+   const partidosSemis = final ? [final] : [];
 
    const noticiasDestacadas = todasLasNoticias.slice(0, 2);
    const sedesDestacadas = todasLasSedes.slice(0, 3);
@@ -35,10 +35,10 @@ export default function Home() {
 
          {/* --- SECCIÓN HERO: PARTIDO DESTACADO (SEMIFINAL 1) --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/dallas.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
+            <img src="/images/sedes/atlanta.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase animate-pulse">
-                  🏆 SEMIFINAL DESTACADA 14 DE JULIO 🌟
+                  🏆 SEMIFINAL DESTACADA 15 DE JULIO 🌟
                </span>
                <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
                   {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}

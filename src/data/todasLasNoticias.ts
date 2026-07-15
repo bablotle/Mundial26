@@ -3,7 +3,22 @@ import { Noticia } from "./noticias";
 
 
 export const todasLasNoticias: Noticia[] = [
-     {
+         {
+                id: "jornada-29",
+                categoria: "MUNDIAL 2026",
+                titulo: "España llega a la Final.",
+                resumen: "España vence a Francia con marcador 2-0 y obtiene el pase a la Final del Mundial 2026.",
+                contenidoLargo: `España clasificó a la final del Mundial 2026 tras vencer 2-0 a Francia en las semifinales celebradas en Dallas.
+                Puntos Clave
+                Goles: Mikel Oyarzabal anotó de penal al minuto 22 y Pedro Porro selló el 2-0 definitivo al minuto 58.
+                Hito: España se convirtió en la primera selección en lograr seis partidos consecutivos con la portería en cero en la historia de los Mundiales.
+                Siguiente paso: La selección española buscará el título mundial este domingo 19 de julio en el MetLife Stadium frente al ganador del cruce entre Argentina e Inglaterra.`,
+                imagen: "/images/noticias/noticia-37.jpg",
+                fecha: "2026-07-15",               
+                autor: "Redacción Mil Goles",
+                tags: ["Inglaterra", "Argentina", "Semifinales", "FIFA"]
+                },
+        {
                 id: "jornada-28",
                 categoria: "MUNDIAL 2026",
                 titulo: "Argentina e Inglaterra pasan de ronda.",
