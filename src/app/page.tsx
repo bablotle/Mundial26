@@ -40,7 +40,7 @@ export default function Home() {
             <img src="/images/sedes/metlife.jpg" className="w-full h-full object-cover brightness-[0.5]" alt="MetLife Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
                <span className="bg-amber-500 text-slate-950 text-[10px] font-black px-4 py-1 rounded-full mb-4 tracking-widest uppercase animate-pulse shadow-lg shadow-amber-500/20">
-                  🏆 LA GRAN FINAL · DOMINGO 19 DE JULIO 🌟
+                  🏆 LA GRAN FINAL · DOMINGO 19 DE JULIO 16:00 🌟
                </span>
                <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
                   {granFinal.local || "Argentina"} <span className="text-red-500">vs</span> {granFinal.visitante || "España"}

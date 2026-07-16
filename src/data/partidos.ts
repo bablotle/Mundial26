@@ -1543,7 +1543,7 @@ export const todosLosPartidos: Partido[] = [
               banderaLocal: "/images/banderas/espana.png",
               banderaVisitante: "/images/banderas/argentina.png",
               fecha: "2026-07-19",
-              hora: "17:00",
+              hora: "16:00",
               sede: "New Jersey",
               grupo: "F",
               fase: "Final"
