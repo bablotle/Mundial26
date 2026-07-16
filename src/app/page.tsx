@@ -114,7 +114,7 @@ export default function Home() {
 
                      {granFinal.penalesLocal !== undefined && granFinal.penalesVisitante !== undefined && (
                         <div className="text-[10px] font-black uppercase tracking-widest text-emerald-400 mt-2 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20 text-center">
-                           🎉 ¡<span className="underline underline-offset-4 decoration-amber-400 text-white">{granFinal.clasificado || granFinal.ganador}</span> CAMPEÓN DEL MUNDO! 🏆
+                           🎉 ¡<span className="underline underline-offset-4 decoration-amber-400 text-white">{granFinal.ganador}</span> CAMPEÓN DEL MUNDO! 🏆
                         </div>
                      )}
 
