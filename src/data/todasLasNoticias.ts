@@ -3,7 +3,25 @@ import { Noticia } from "./noticias";
 
 
 export const todasLasNoticias: Noticia[] = [
-         {
+        {
+                id: "jornada-30",
+                categoria: "MUNDIAL 2026",
+                titulo: "Argentina vs España se enfrentan en la Final.",
+                resumen: "España y Argentina jugarán el domingo 19 de julio la Final del Mundial 2026.",
+                contenidoLargo: `La final del Mundial 2026 entre 🇪🇸 España y 🇦🇷 Argentina se jugará el domingo 19 de julio de 2026 a las 16:00(hora local).
+                Detalles del Partido
+                Fase: Final de la Copa Mundial de la FIFA 2026
+                Fecha: Domingo 19 de julio de 2026
+                Hora: 16:00(4:00 PM)
+                El Camino a la Final
+                🇪🇸 España: Clasificó tras vencer a Francia en las semifinales el 14 de julio.
+                🇦🇷 Argentina: Clasificó tras derrotar a Inglaterra en las semifinales el 15 de julio.`,
+                imagen: "/images/noticias/noticia-38.jpg",
+                fecha: "2026-07-16",
+                autor: "Redacción Mil Goles",
+                tags: ["España", "Argentina", "Final", "FIFA"]
+        },
+        {
                 id: "jornada-29",
                 categoria: "MUNDIAL 2026",
                 titulo: "España llega a la Final.",

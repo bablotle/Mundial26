@@ -13,6 +13,7 @@ export interface Partido {
        penalesLocal?: number;
        penalesVisitante?: number;
        clasificado?: string;
+       ganador?: string;
 
 // Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
 
@@ -1546,7 +1547,8 @@ export const todosLosPartidos: Partido[] = [
               hora: "16:00",
               sede: "New Jersey",
               grupo: "F",
-              fase: "Final"
+              fase: "Final",
+              ganador: "-"
        },
 
 
