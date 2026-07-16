@@ -1,4 +1,3 @@
-'use client';
 import Navbar from '@/components/Navbar';
 import BreakingNews from '@/components/BreakingNews';
 import AdBanner from '@/components/ads/AdBanner';
@@ -11,7 +10,7 @@ import { todasLasSelecciones } from '@/data/selecciones';
 import { todasLasNoticias } from "@/data/todasLasNoticias";
 import CardResultadoMini from '@/components/CardResultadoMini';
 
-// Fuerza a la página a revalidar los datos o renderizarse en el servidor en cada petición
+// Fuerza a la página a renderizarse en el servidor en cada petición (Invalida la caché de compilación)
 export const dynamic = 'force-dynamic';
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
    ];
 
    // 2. Buscar la Gran Final y el Tercer Puesto
-   // Ajusta "F" por el ID exacto que uses para la final en tu data/partidos (ej: "FINAL", "F-01")
    const granFinal = todosLosPartidos.find(p => p.id === "F" || p.fase?.toLowerCase().includes("final")) || todosLosPartidos[0];
    const tercerPuesto = todosLosPartidos.find(p => p.id === "TP");
 
