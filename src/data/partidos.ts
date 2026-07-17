@@ -1,42 +1,43 @@
 export interface Partido {
-       id: string;
-       local: string;
-       visitante: string;
-       banderaLocal: string;
-       banderaVisitante: string;
-       fecha: string;
-       hora: string;
-       sede: string;
-       grupo: string;
-       golesLocal?: number;
-       golesVisitante?: number;
-       penalesLocal?: number;
-       penalesVisitante?: number;
-       clasificado?: string;
-       ganador?: string;
+              id: string;
+                     local: string;
+                            visitante: string;
+                                   banderaLocal: string;
+                                          banderaVisitante: string;
+                                                 fecha: string;
+                                                        hora: string;
+                                                               sede: string;
+                                                                      grupo: string;
+                                                                             golesLocal?: number;
+                                                                                    golesVisitante?: number;
+                                                                                           penalesLocal?: number;
+                                                                                                  penalesVisitante?: number;
+                                                                                                         clasificado?: string;
+                                                                                                                ganador?: string;
 
-// Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
+                                                                                                                // Asegúrate que estos textos coincidan EXACTO con los botones de tu menú //
 
-fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
+                                                                                                                fase: 'Grupos' | 'Dieciseisavos' | 'Octavos' | 'Cuartos' | 'Semis' | 'Final' | 'Tercer Puesto';
+                                                                                                                }
+
+                                                                                                                export const todosLosPartidos: Partido[] = [
+
+                                                                                                                       // --- Grupo A ---
+                                                                                                                              {
+                                                                                                                                            id: "A1",
+                                                                                                                                                          local: "México",
+                                                                                                                                                                        visitante: "Sudáfrica",
+                                                                                                                                                                                      banderaLocal: "/images/banderas/mexico.png",
+                                                                                                                                                                                                    banderaVisitante: "/images/banderas/sudafrica.png",
+                                                                                                                                                                                                                  fecha: "2026-06-11",
+                                                                                                                                                                                                                                hora: "16:00",
+                                                                                                                                                                                                                                              sede: "CDMX",
+                                                                                                                                                                                                                                                            grupo: "A",
+                                                                                                                                                                                                                                                                          fase: "Grupos",
+                                                                                                                                                                                                                                                                                        golesLocal: 2,
+                                                                                                                                                                                                                                                                                                      golesVisitante: 0
+                                                                                                                                                                                                                                                                                                             },
 }
-
-export const todosLosPartidos: Partido[] = [
-
-       // --- Grupo A ---
-       {
-              id: "A1",
-              local: "México",
-              visitante: "Sudáfrica",
-              banderaLocal: "/images/banderas/mexico.png",
-              banderaVisitante: "/images/banderas/sudafrica.png",
-              fecha: "2026-06-11",
-              hora: "16:00",
-              sede: "CDMX",
-              grupo: "A",
-              fase: "Grupos",
-              golesLocal: 2,
-              golesVisitante: 0
-       },
        {
               id: "A2",
               local: "Corea del Sur",

@@ -10,9 +10,6 @@ import { todasLasSelecciones } from '@/data/selecciones';
 import { todasLasNoticias } from "@/data/todasLasNoticias";
 import CardResultadoMini from '@/components/CardResultadoMini';
 
-// Fuerza a la página a renderizarse en el servidor en cada petición (Invalida la caché de compilación)
-export const dynamic = 'force-dynamic';
-
 export default function Home() {
    // 1. Datos de Sedes
    const todasLasSedes = [
@@ -21,144 +18,192 @@ export default function Home() {
       { id: '3', nombre: 'BC Place', ciudad: 'Vancouver', pais: 'CANADÁ', capacidad: '54,500', temp: '16°C', imagen: '/images/sedes/vancouver.jpg' },
    ];
 
-   // 2. Buscar la Gran Final y el Tercer Puesto
-   const granFinal = todosLosPartidos.find(p => p.id === "F" || p.fase?.toLowerCase().includes("final")) || todosLosPartidos[0];
-   const tercerPuesto = todosLosPartidos.find(p => p.id === "TP");
+   // 2. Lógica de filtrado de Fechas
+   const hoyObj = new Date();
+   const anoHoy = hoyObj.getFullYear();
+   const mesHoy = hoyObj.getMonth() + 1;
+   const diaHoy = hoyObj.getDate();
 
-   const partidosSecundarios = tercerPuesto ? [tercerPuesto] : [];
+   // Formateamos la fecha de hoy para machear con el string de la data (ej: "2026-06-16")
+   const mesFormateado = mesHoy < 10 ? `0${mesHoy}` : mesHoy;
+   const diaFormateado = diaHoy < 10 ? `0${diaHoy}` : diaHoy;
+   const fechaHoyString = `${anoHoy}-${mesFormateado}-${diaFormateado}`;
+
+   // A. PARTIDOS PARA EL MAP DE HOY
+   const partidosDeHoy = todosLosPartidos.filter(p => p.fecha === fechaHoyString);
+
+   // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
+   // 💡 Tip: Si quieres destacar la Final en el Hero principal, cambia "QF-01" por "F"
+   const partidoDestacado = todosLosPartidos.find(p => p.id === "QF-01") 
+      || partidosDeHoy[0]
+      || todosLosPartidos[0];
+
+   // C. PRÓXIMOS PARTIDOS (Días siguientes)
+   const proximosPartidos = [...todosLosPartidos]
+      .filter((p) => {
+         const [anoP, mesP, diaP] = p.fecha.split('-').map(Number);
+         if (anoP > anoHoy) return true;
+         if (anoP < anoHoy) return false;
+         if (mesP > mesHoy) return true;
+         if (mesP < mesHoy) return false;
+         return diaP > diaHoy;
+      })
+      .sort((a, b) => new Date(a.fecha + 'T12:00:00').getTime() - new Date(b.fecha + 'T12:00:00').getTime())
+      .slice(0, 3);
+
+   // D. HISTORIAL DE CONCLUIDOS (Muestra siempre los más recientes del torneo)
+   const resultadosConcluidos = todosLosPartidos
+      .filter(p => p.golesLocal !== undefined && p.golesLocal !== null && p.golesVisitante !== undefined && p.golesVisitante !== null)
+      .sort((a, b) => {
+         const fechaA = new Date(a.fecha).getTime();
+         const fechaB = new Date(b.fecha).getTime();
+         if (fechaB !== fechaA) return fechaB - fechaA;
+         return b.hora.localeCompare(a.hora);
+      })
+      .slice(0, 6); 
+
    const noticiasDestacadas = todasLasNoticias.slice(0, 2);
    const sedesDestacadas = todasLasSedes.slice(0, 3);
 
    return (
       <main className="min-h-screen bg-[#f0f2f5] pb-20">
          <Navbar />
-
-         {/* --- SECCIÓN HERO: LA GRAN FINAL --- */}
+         
+         {/* --- SECCIÓN HERO --- */}
          <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/metlife.jpg" className="w-full h-full object-cover brightness-[0.5]" alt="MetLife Stadium" />
+            <img src="/images/sedes/boston.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
-               <span className="bg-amber-500 text-slate-950 text-[10px] font-black px-4 py-1 rounded-full mb-4 tracking-widest uppercase animate-pulse shadow-lg shadow-amber-500/20">
-                  🏆 LA GRAN FINAL · DOMINGO 19 DE JULIO 16:00 🌟
+               <span className="bg-blue-600 text-white text-[9px] font-black px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
+                  EL PARTIDO DESTACADO 🌟
                </span>
-               <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
-                  {granFinal.local || "Argentina"} <span className="text-red-500">vs</span> {granFinal.visitante || "España"}
+               <h1 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
+                  {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}
                </h1>
-               <p className="text-white/90 font-bold uppercase tracking-widest text-[12px] mb-6">
-                  {granFinal.fase || 'Gran Final'} · {granFinal.hora} · {granFinal.sede || 'MetLife Stadium'}
+               <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
+                  {partidoDestacado.fase || 'Dieciseisavos'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
                </p>
-               <Link href="/partidos" className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-amber-500/30">
-                  Seguir Transmisión En Vivo
+               <Link href="/partidos" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
+                  Seguir Transmisión del Día
                </Link>
             </div>
          </section>
 
          <div className="max-w-4xl mx-auto px-5 -mt-12 relative z-10">
-
-            {/* --- BLOQUE PRINCIPAL: DETALLE DE LA FINAL --- */}
-            <div className="bg-gradient-to-b from-slate-900 to-slate-950 rounded-[2rem] p-6 text-white shadow-2xl border border-amber-500/20">
+            {/* --- BLOQUE: PARTIDOS DE HOY AUTOMATIZADO --- */}
+            <div className="bg-slate-900 rounded-[2rem] p-6 text-white shadow-xl border border-slate-800">
                <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-3">
-                  <h3 className="text-[11px] font-black uppercase tracking-widest text-amber-400 flex items-center gap-1.5">
-                     👑 CAMPEONATO DEL MUNDO
+                  <h3 className="text-[11px] font-black uppercase tracking-widest text-blue-400">
+                     📅 Partidos de Hoy — {diaHoy} de {hoyObj.toLocaleString('es-ES', { month: 'long' })}
                   </h3>
-                  <span className="bg-amber-500/10 text-amber-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-amber-500/20 tracking-wider">
-                     PARTIDO DEFINITORIO
-                  </span>
+                  <span className="bg-emerald-500/10 text-emerald-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-emerald-500/20">Mundial</span>
                </div>
 
                <div className="space-y-4">
-                  <div className="bg-slate-800/40 rounded-2xl p-6 flex flex-col items-center justify-center border border-slate-700/30 gap-4 relative overflow-hidden">
-                     <span className="absolute top-3 right-4 text-[8px] font-black uppercase tracking-widest opacity-30 text-amber-400">
-                        MATCH 104
-                     </span>
+                  {partidosDeHoy.length > 0 ? (
+                     partidosDeHoy.map((partido) => (
+                        <div key={partido.id} className="bg-slate-800/50 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-700/30 gap-3 relative overflow-hidden">
+                           
+                           {/* Etiqueta superior de la Fase */}
+                           <span className="absolute top-2 right-4 text-[7px] font-black uppercase tracking-wider opacity-40">
+                              {partido.fase || "Mundial 2026"}
+                           </span>
 
-                     <div className="shrink-0">
-                        <span className="bg-amber-500 text-slate-950 text-[9px] font-black px-2.5 py-0.5 rounded uppercase block tracking-wider">
-                           {granFinal.hora}
-                        </span>
-                     </div>
+                           {/* Renglón 1: Hora */}
+                           <div className="shrink-0 mt-1">
+                              <span className="bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block tracking-wider">
+                                 {partido.hora}
+                              </span>
+                           </div>
 
-                     <div className="flex items-center justify-between w-full px-2 md:px-6">
-                        {/* Local */}
-                        <div className="flex items-center gap-3 flex-1">
-                           <img src={granFinal.banderaLocal || "/images/banderas/argentina.png"} className="w-8 h-5 object-cover rounded shadow-md" alt={granFinal.local} />
-                           <span className="font-black text-sm md:text-base uppercase truncate tracking-tight">{granFinal.local || "Argentina"}</span>
-                        </div>
-
-                        {/* Marcador / VS */}
-                        <div className="flex items-center gap-1.5 px-4">
-                           {granFinal.golesLocal !== undefined && granFinal.golesLocal !== null ? (
-                              <div className="flex items-center gap-2 text-slate-200">
-                                 <span className="text-xl font-black">{granFinal.golesLocal}</span>
-                                 {granFinal.penalesLocal !== undefined && (
-                                    <span className="text-[11px] text-emerald-400 font-extrabold">({granFinal.penalesLocal})</span>
-                                 )}
-                                 <span className="text-slate-600 font-bold px-1 text-sm">-</span>
-                                 {granFinal.penalesVisitante !== undefined && (
-                                    <span className="text-[11px] text-emerald-400 font-extrabold">({granFinal.penalesVisitante})</span>
-                                 )}
-                                 <span className="text-xl font-black">{granFinal.golesVisitante}</span>
+                           {/* Renglón 2: Versus con Banderas y Marcador/Penales */}
+                           <div className="flex items-center justify-between w-full px-4">
+                              {/* Local */}
+                              <div className="flex items-center gap-2 flex-1">
+                                 <img src={partido.banderaLocal} className="w-6 h-4 object-cover rounded-sm" alt={partido.local} />
+                                 <span className="font-bold text-xs uppercase truncate">{partido.local}</span>
                               </div>
-                           ) : (
-                              <div className="bg-slate-800 px-3 py-1 rounded-md border border-slate-700">
-                                 <span className="text-amber-400 font-black text-xs tracking-widest">VS</span>
+                              
+                              {/* Marcador */}
+                              <div className="flex items-center gap-1.5 px-3">
+                                 {partido.golesLocal !== undefined && partido.golesLocal !== null ? (
+                                    <div className="flex items-center gap-1 text-slate-200">
+                                       <span className="text-sm font-black">{partido.golesLocal}</span>
+                                       
+                                       {partido.penalesLocal !== undefined && (
+                                          <span className="text-[10px] text-emerald-400 font-extrabold">({partido.penalesLocal})</span>
+                                       )}
+                                       
+                                       <span className="text-gray-600 font-bold px-1 text-xs">-</span>
+                                       
+                                       {partido.penalesVisitante !== undefined && (
+                                          <span className="text-[10px] text-emerald-400 font-extrabold">({partido.penalesVisitante})</span>
+                                       )}
+                                       
+                                       <span className="text-sm font-black">{partido.golesVisitante}</span>
+                                    </div>
+                                 ) : (
+                                    <span className="text-gray-500 font-bold text-xs">VS</span>
+                                 )}
+                              </div>
+
+                              {/* Visitante */}
+                              <div className="flex items-center gap-2 flex-1 justify-end">
+                                 <span className="font-bold text-xs uppercase truncate text-right">{partido.visitante}</span>
+                                 <img src={partido.banderaVisitante} className="w-6 h-4 object-cover rounded-sm" alt={partido.visitante} />
+                              </div>
+                           </div>
+
+                           {/* Bloque Campeón / Ganador en Penales de forma dinámica */}
+                           {partido.penalesLocal !== undefined && partido.penalesVisitante !== undefined && (
+                              <div className="text-[9px] font-black uppercase tracking-widest text-emerald-400 mt-1 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 text-center animate-pulse">
+                                 🏆 {partido.ganador || partido.clasificado || "Ganador"} avanza ({partido.penalesLocal}-{partido.penalesVisitante})
                               </div>
                            )}
-                        </div>
 
-                        {/* Visitante */}
-                        <div className="flex items-center gap-3 flex-1 justify-end">
-                           <span className="font-black text-sm md:text-base uppercase truncate text-right tracking-tight">{granFinal.visitante || "España"}</span>
-                           <img src={granFinal.banderaVisitante || "/images/banderas/espana.png"} className="w-8 h-5 object-cover rounded shadow-md" alt={granFinal.visitante} />
+                           {/* Renglón 3: Sede */}
+                           <div className="text-center">
+                              <span className="text-[8px] font-bold uppercase tracking-widest text-slate-400">
+                                 📍 {partido.sede || "Sede por definir"}
+                              </span>
+                           </div>
                         </div>
+                     ))
+                  ) : (
+                     <div className="text-center py-6">
+                        <p className="text-[10px] font-black text-gray-500 uppercase tracking-wider">No hay partidos programados para hoy</p>
                      </div>
-
-                     {granFinal.penalesLocal !== undefined && granFinal.penalesVisitante !== undefined && (
-                        <div className="text-[10px] font-black uppercase tracking-widest text-emerald-400 mt-2 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20 text-center">
-                           🎉 ¡<span className="underline underline-offset-4 decoration-amber-400 text-white">{granFinal.ganador}</span> CAMPEÓN DEL MUNDO! 🏆
-                        </div>
-                     )}
-
-                     <div className="text-center mt-1">
-                        <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 block">
-                           📍 {granFinal.sede || "MetLife Stadium, New York / New Jersey"}
-                        </span>
-                     </div>
-                  </div>
+                  )}
                </div>
             </div>
 
             <div className="my-10"><AdBanner /></div>
             <div className="my-10"><BreakingNews /></div>
 
-            {/* --- SECCIÓN INFERIOR: TERCER PUESTO --- */}
-            {partidosSecundarios.length > 0 && (
-               <section className="mt-12 text-slate-900">
-                  <div className="flex justify-between items-end mb-4 px-2">
-                     <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Definición Tercer Puesto</h2>
-                     <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Calendario Completo →</Link>
-                  </div>
-                  <div className="space-y-3">
-                     {partidosSecundarios.map((p) => (
+            {/* --- PRÓXIMOS PARTIDOS --- */}
+            <section className="mt-12 text-slate-900">
+               <div className="flex justify-between items-end mb-4 px-2">
+                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Próximos Días</h2>
+                  <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Ver Calendario Completo →</Link>
+               </div>
+
+               <div className="space-y-3">
+                  {proximosPartidos.map((p) => {
+                     const [anoStr, mesStr, diaStr] = p.fecha.split('-');
+                     const meses = [
+                        'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+                     ];
+                     const fechaFormateada = `${parseInt(diaStr)} de ${meses[parseInt(mesStr) - 1]}`;
+                     return (
                         <div key={p.id} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm border border-gray-100 group hover:border-blue-100 transition-colors">
                            <div className="flex items-center gap-3 flex-1">
                               <img src={p.banderaLocal} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.local} />
                               <span className="font-black text-[11px] uppercase italic text-gray-900">{p.local}</span>
                            </div>
 
-                           <div className="px-4 text-center border-x border-gray-50 min-w-[110px]">
-                              {p.golesLocal !== undefined && p.golesLocal !== null ? (
-                                 <div className="text-xs font-black bg-slate-100 text-slate-900 px-2 py-0.5 rounded text-center">
-                                    {p.golesLocal} - {p.golesVisitante}
-                                    {p.penalesLocal !== undefined && (
-                                       <span className="block text-[8px] text-emerald-600 font-bold">({p.penalesLocal}-{p.penalesVisitante} P)</span>
-                                    )}
-                                 </div>
-                              ) : (
-                                 <>
-                                    <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5 tracking-wider">{p.hora || "Podio"}</p>
-                                    <p className="text-[7px] font-bold text-gray-400 uppercase whitespace-nowrap truncate max-w-[90px]">{p.sede}</p>
-                                 </>
-                              )}
+                           <div className="px-4 text-center border-x border-gray-50 min-w-[95px]">
+                              <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5 tracking-wider">{p.hora}</p>
+                              <p className="text-[7px] font-bold text-gray-400 uppercase whitespace-nowrap">{fechaFormateada}</p>
                            </div>
 
                            <div className="flex items-center gap-3 flex-1 justify-end">
@@ -166,10 +211,17 @@ export default function Home() {
                               <img src={p.banderaVisitante} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.visitante} />
                            </div>
                         </div>
-                     ))}
-                  </div>
-               </section>
-            )}
+                     );
+                  })}
+                  {proximosPartidos.length === 0 && (
+                     <div className="bg-white rounded-2xl p-6 text-center border border-gray-100">
+                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-wider">
+                           No hay más partidos programados para los próximos días
+                        </p>
+                     </div>
+                  )}
+               </div>
+            </section>
 
             {/* --- ÚLTIMAS NOTICIAS --- */}
             <section className="mt-16">
@@ -182,7 +234,6 @@ export default function Home() {
                      VER TODAS <span>→</span>
                   </Link>
                </div>
-
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {noticiasDestacadas.map((noticia) => (
                      <Link key={noticia.id} href={`/noticias/${noticia.id}`} className="group bg-white rounded-[32px] overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500">
@@ -238,8 +289,7 @@ export default function Home() {
                   ))}
                </div>
             </section>
-
-            {/* --- SEDES --- */}
+             {/* --- SEDES --- */}
             <section className="mt-16">
                <div className="flex justify-between items-end mb-4 px-2">
                   <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Sedes</h2>
