@@ -7,8 +7,8 @@ import { ChartNoAxesColumnIncreasing, MessageCircleIcon } from 'lucide-react';
 export default function EstadisticasPage() {
     // Datos simulados para la estructura
     const goleadores = [
+        { nombre: "Kylian Mbappé", goles: 10, equipo: "Francia", foto: "/images/jugadores/mbappe.jpg" },          
         { nombre: "Lionel Messi", goles: 8, equipo: "Argentina", foto: "/images/jugadores/messi.jpg" },
-        { nombre: "Kylian Mbappé", goles: 8, equipo: "Francia", foto: "/images/jugadores/mbappe.jpg" },
         { nombre: "Erling Haaland", goles: 7, equipo: "Noruega", foto: "/images/jugadores/haaland.jpg" },      
         { nombre: "Harry Kane", goles: 5, equipo: "Inglaterra", foto: "/images/jugadores/harry_kane.jpg" },
         { nombre: "Vinicius Júnior", goles: 4, equipo: "Brasil", foto: "/images/jugadores/vinicius.jpg" },
@@ -17,7 +17,7 @@ export default function EstadisticasPage() {
 
 
     // 2. Buscamos la data base (Paraguay)
-    const seleccionBase = todasLasSelecciones.find(s => s.id === 'paraguay');
+        const seleccionBase = todasLasSelecciones.find(s => s.id === 'paraguay');
 
 
     // 3. Creamos el objeto final "seleccion"
@@ -92,15 +92,15 @@ export default function EstadisticasPage() {
                     {/* ESTADÍSTICAS GENERALES DEL TORNEO */}
                     <section className="grid grid-cols-2 gap-4">
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-blue-600 italic">101</p>
+                            <p className="text-3xl font-black text-blue-600 italic">103</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Partidos Jugados</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">294</p>
+                            <p className="text-3xl font-black text-black italic">303</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Goles Totales</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center">
-                            <p className="text-3xl font-black text-black italic">253</p>
+                            <p className="text-3xl font-black text-black italic">266</p>
                             <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1">Amarillas</p>
                         </div>
                         <div className="island-card p-5 flex flex-col items-center justify-center text-center bg-blue-600">
@@ -160,7 +160,7 @@ export default function EstadisticasPage() {
                                 {/* Contenido de la Noticia abajo */}
                                 <div className="p-8">
                                     <div className="inline-block bg-blue-50 text-blue-600 text-[9px] font-black uppercase px-3 py-1 rounded-full mb-4 tracking-tighter">
-                                        Novedades Albirroja
+                                        Las Estrellas que no vuelvel 
                                     </div>
                                     <h3 className="text-2xl md:text-3xl font-black uppercase italic leading-tight mb-4 text-black tracking-tighter">
                                         {nota.titulo}

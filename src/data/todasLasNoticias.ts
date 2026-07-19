@@ -4,6 +4,23 @@ import { Noticia } from "./noticias";
 
 export const todasLasNoticias: Noticia[] = [
         {
+                id: "jornada-31",
+                categoria: "MUNDIAL 2026",
+                titulo: "Inglaterra vence a Francia 6-4.",
+                resumen: "Inglaterra se queda con el tercer lugar del Mundial 2026.",
+                contenidoLargo: `Inglaterra venció 6-4 a Francia en Miami y se quedó con el tercer puesto del Mundial 2026.
+                Lo más importante:
+                Primer tiempo: Inglaterra goleaba 4-0 al descanso con un doblete de Bukayo Saka y tantos de Declan Rice y Ezri Konsa.
+                Segunda mitad: Francia reaccionó con doblete de Kylian Mbappé y un gol de Bradley Barcola para ponerse 4-3.
+                Cierre: Saka completó su hat-trick, Ousmane Dembélé descontó para los galos y Jude Bellingham selló el 6-4 definitivo.
+                Récord: Fue el partido por el tercer puesto con más goles en la historia de los Mundiales.
+                Hito: Mbappé llegó a 22 goles mundiales, superando el récord histórico de Lionel Messi.`,
+                imagen: "/images/noticias/noticia-39.jpg",
+                fecha: "2026-07-16",
+                autor: "Redacción Mil Goles",
+                tags: ["Inglaterra", "Francia", "Mbappe", "FIFA"]
+        },
+        {
                 id: "jornada-30",
                 categoria: "MUNDIAL 2026",
                 titulo: "Argentina vs España se enfrentan en la Final.",

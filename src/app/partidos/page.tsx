@@ -5,8 +5,8 @@ import SponsorBanner from '@/components/SponsorBanner';
 import { todosLosPartidos } from '@/data/partidos';
 
 export default function PartidosPage() {
-    const [faseActiva, setFaseActiva] = useState('Semis');
-    const fases = ['Semis', 'Final','Grupos', 'Dieciseisavos', 'Octavos', 'Cuartos' ];
+    const [faseActiva, setFaseActiva] = useState('Final');
+    const fases = ['Final', 'Semis', 'Cuartos', 'Octavos', 'Dieciseisavos', 'Grupos' ];
 
     // 1. Filtrar partidos por fase
     const partidosFiltrados = todosLosPartidos.filter(partido => partido.fase === faseActiva);
