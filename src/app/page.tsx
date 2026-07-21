@@ -18,270 +18,117 @@ export default function Home() {
       { id: '3', nombre: 'BC Place', ciudad: 'Vancouver', pais: 'CANADÁ', capacidad: '54,500', temp: '16°C', imagen: '/images/sedes/vancouver.jpg' },
    ];
 
-   // 2. Lógica de filtrado de Fechas
-   const hoyObj = new Date();
-   const anoHoy = hoyObj.getFullYear();
-   const mesHoy = hoyObj.getMonth() + 1;
-   const diaHoy = hoyObj.getDate();
-
-   // Formateamos la fecha de hoy para machear con el string de la data (ej: "2026-06-16")
-   const mesFormateado = mesHoy < 10 ? `0${mesHoy}` : mesHoy;
-   const diaFormateado = diaHoy < 10 ? `0${diaHoy}` : diaHoy;
-   const fechaHoyString = `${anoHoy}-${mesFormateado}-${diaFormateado}`;
-
-   // A. PARTIDOS PARA EL MAP DE HOY
-   const partidosDeHoy = todosLosPartidos.filter(p => p.fecha === fechaHoyString);
-
-   // B. EL PARTIDO DESTACADO (Fijado por ID, y si no existe, usa el de hoy o el primero)
-   // 💡 Tip: Si quieres destacar la Final en el Hero principal, cambia "QF-01" por "F"
-   const partidoDestacado = todosLosPartidos.find(p => p.id === "F") 
-      || partidosDeHoy[0]
-      || todosLosPartidos[0];
-
-   // C. PRÓXIMOS PARTIDOS (Días siguientes)
-   const proximosPartidos = [...todosLosPartidos]
-      .filter((p) => {
-         const [anoP, mesP, diaP] = p.fecha.split('-').map(Number);
-         if (anoP > anoHoy) return true;
-         if (anoP < anoHoy) return false;
-         if (mesP > mesHoy) return true;
-         if (mesP < mesHoy) return false;
-         return diaP > diaHoy;
-      })
-      .sort((a, b) => new Date(a.fecha + 'T12:00:00').getTime() - new Date(b.fecha + 'T12:00:00').getTime())
-      .slice(0, 3);
-
-   // D. HISTORIAL DE CONCLUIDOS (Muestra siempre los más recientes del torneo)
-   const resultadosConcluidos = todosLosPartidos
-      .filter(p => p.golesLocal !== undefined && p.golesLocal !== null && p.golesVisitante !== undefined && p.golesVisitante !== null)
-      .sort((a, b) => {
-         const fechaA = new Date(a.fecha).getTime();
-         const fechaB = new Date(b.fecha).getTime();
-         if (fechaB !== fechaA) return fechaB - fechaA;
-         return b.hora.localeCompare(a.hora);
-      })
-      .slice(0, 6); 
-
-   const noticiasDestacadas = todasLasNoticias.slice(0, 2);
    const sedesDestacadas = todasLasSedes.slice(0, 3);
+   const noticiasDestacadas = todasLasNoticias.slice(0, 2);
 
-    // 2. Buscamos la data base (Paraguay)
-    const seleccionBase = todasLasSelecciones.find(s => s.id === 'paraguay');
+   // 2. Buscamos la data base (Paraguay)
+   const seleccionBase = todasLasSelecciones.find(s => s.id === 'paraguay');
 
-// 3. Creamos el objeto final "seleccion"
-    const seleccion = {
+   // 3. Creamos el objeto final "seleccion"
+   const seleccion = {
         ...seleccionBase,
         noticias: [
             {
                 id: '1',
                 titulo: "El último baile",
                 desc: `Las 7 leyendas que jugarán su último Mundial, una generación de futbolistas que le han dado una nueva definición al futbol actual.
-                                                                                                                                      • Son Heung-min - Corea del Sur
-                                                                                                                                                     • Luka Modric - Croacia
-                                                                                                                                                                    • Cristiano Ronaldo - Portugal
-                                                                                                                                                                                   • Lionel Messi - Argentina
-                                                                                                                                                                                                  • Neymar Jr - Brasil
-                                                                                                                                                                                                                 • Mohamed Salah - Egipto
-                                                                                                                                                                                                                                • Kevin de Bruyne - Bélgica`,
+• Son Heung-min - Corea del Sur
+• Luka Modric - Croacia
+• Cristiano Ronaldo - Portugal
+• Lionel Messi - Argentina
+• Neymar Jr - Brasil
+• Mohamed Salah - Egipto
+• Kevin de Bruyne - Bélgica`,
                 img: "/images/noticias/jugadores.jpg",
             }
         ]
-    }
+   };
 
    return (
       <main className="min-h-screen bg-[#f0f2f5] pb-20">
          <Navbar />
          
-         {/* --- SECCIÓN HERO --- */}
-         <section className="relative h-[420px] w-full overflow-hidden">
-            <img src="/images/sedes/metlife.jpg" className="w-full h-full object-cover brightness-[0.6]" alt="Stadium" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
-               <span className="bg-yellow-600 text-black text-[12px] font-black px-5 py-1 rounded-full mb-4  Black ng-widest uppercase">
-                  🏆 LA GRAN FINAL - DOMINGO 19 DE JULIO 16:00
+         {/* --- SECCIÓN HERO FINAL: ¡ESPAÑA CAMPEÓN DEL MUNDO! 🏆 --- */}
+         <section className="relative h-[560px] w-full overflow-hidden">
+            {/* Imagen de fondo de la selección con el trofeo */}
+            <img 
+               src="/images/noticias/espana_campeon.jpg" 
+               className="w-full h-full object-cover brightness-[0.6] object-center" 
+               alt="España Campeón del Mundo 2026" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col items-center justify-center text-center px-5">
+               <span className="bg-amber-500 text-slate-950 text-[10px] font-black px-4 py-1 rounded-full tracking-widest uppercase shadow-lg shadow-amber-500/20">
+                  🏆 ¡ESPAÑA CAMPEÓN DEL MUNDO! 👑
                </span>
-               <h1 className="text-5xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-[0.9] mb-4">
-                  {partidoDestacado.local} <span className="text-red-500">vs</span> {partidoDestacado.visitante}
-               </h1>
-               <p className="text-white/80 font-bold uppercase tracking-widest text-[11px] mb-6">
-                  {partidoDestacado.fase || 'Dieciseisavos'} · {partidoDestacado.hora} · {partidoDestacado.sede || 'Sede del Torneo'}
-               </p>
-               <Link href="/partidos" className="bg-yellow-600 hover:bg-red-700 text-black px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-red-600/30">
-                  Seguir transmisión en vivo
+               
+               {/* Margen vertical pronunciado (~4cm en pantalla) para apreciar el fondo */}
+               <div className="my-16">
+                  <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter leading-[0.9]">
+                     España <span className="text-amber-400">Campeón</span>
+                  </h1>
+               </div>
+
+               {/* El resultado definitivo justo abajo del título */}
+               <div className="bg-black/50 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/10 flex items-center gap-4 text-white mb-6">
+                  <div className="flex items-center gap-2">
+                     <img src="/images/banderas/argentina.png" className="w-5 h-3.5 object-cover rounded-sm" alt="Argentina" />
+                     <span className="text-xs font-bold uppercase opacity-80">ARG</span>
+                  </div>
+                  <span className="text-xl font-black tracking-tight">
+                     0 <span className="text-[10px] text-emerald-400 font-bold"></span>
+                  </span>
+                  <span className="text-white/40 font-bold text-xs">-</span>
+                  <span className="text-xl font-black tracking-tight">
+                     1 <span className="text-[10px] text-emerald-400 font-bold"></span>
+                  </span>
+                  <div className="flex items-center gap-2">
+                     <span className="text-xs font-bold uppercase opacity-80">ESP</span>
+                     <img src="/images/banderas/espana.png" className="w-5 h-3.5 object-cover rounded-sm" alt="España" />
+                  </div>
+               </div>
+
+               <Link href="/estadisticas" className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-amber-500/30">
+                  Revivir Estadísticas del Torneo
                </Link>
             </div>
          </section>
 
-         <div className="max-w-4xl mx-auto px-5 -mt-12 relative z-10">
-            {/* --- BLOQUE: PARTIDOS DE HOY AUTOMATIZADO --- */}
-            <div className="bg-slate-900 rounded-[2rem] p-6 text-white shadow-xl border border-slate-800">
-               <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-3">
-                  <h3 className="text-[11px] font-black uppercase tracking-widest text-yellow-400">
-                     👑 CAMPEONATO DEL MUNDO {/* --- {diaHoy} de {hoyObj.toLocaleString('es-ES', { month: 'long' })} --- */}
-                  </h3>
-                  <span className="bg-yellow-500/10 text-yellow-400 text-[8px] font-bold px-2 py-0.5 rounded-full uppercase border border-yellow-500/20">Match 104</span>
-               </div>
-
-               <div className="space-y-4">
-                  {partidosDeHoy.length > 0 ? (
-                     partidosDeHoy.map((partido) => (
-                        <div key={partido.id} className="bg-slate-800/50 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-700/30 gap-3 relative overflow-hidden">
-                           
-                           {/* Etiqueta superior de la Fase */}
-                           <span className="absolute top-2 right-4 text-[7px] font-black uppercase tracking-wider opacity-40">
-                              {partido.fase || "Mundial 2026"}
-                           </span>
-
-                           {/* Renglón 1: Hora */}
-                           <div className="shrink-0 mt-1">
-                              <span className="bg-yellow-600 text-white text-[9px] font-black px-2 py-0.5 rounded uppercase block tracking-wider">
-                                 {partido.hora}
-                              </span>
-                           </div>
-
-                           {/* Renglón 2: Versus con Banderas y Marcador/Penales */}
-                           <div className="flex items-center justify-between w-full px-1">
-                              {/* Local */}
-                              <div className="flex items-center gap-2 flex-1">
-                                 <img src={partido.banderaLocal} className="w-10 h-8 object-cover rounded-sm" alt={partido.local} />
-                                 <span className="font-bold text-xs uppercase truncate">{partido.local}</span>
-                              </div>
-                              
-                              {/* Marcador */}
-                              <div className="flex items-center gap-0.5 px-2">
-                                 {partido.golesLocal !== undefined && partido.golesLocal !== null ? (
-                                    <div className="flex items-center gap-1 text-slate-200">
-                                       <span className="text-sm font-black">{partido.golesLocal}</span>
-                                       
-                                       {partido.penalesLocal !== undefined && (
-                                          <span className="text-[10px] text-emerald-400 font-extrabold">({partido.penalesLocal})</span>
-                                       )}
-                                       
-                                       <span className="text-gray-600 font-bold px-1 text-xs">-</span>
-                                       
-                                       {partido.penalesVisitante !== undefined && (
-                                          <span className="text-[10px] text-emerald-400 font-extrabold">({partido.penalesVisitante})</span>
-                                       )}
-                                       
-                                       <span className="text-sm font-black">{partido.golesVisitante}</span>
-                                    </div>
-                                 ) : (
-                                    <span className="text-gray-500 font-bold text-xs">VS</span>
-                                 )}
-                              </div>
-
-                              {/* Visitante */}
-                              <div className="flex items-center gap-2 flex-1 justify-end">
-                                 <span className="font-bold text-xs uppercase truncate text-right">{partido.visitante}</span>
-                                 <img src={partido.banderaVisitante} className="w-10 h-8 object-cover rounded-sm" alt={partido.visitante} />
-                              </div>
-                           </div>
-
-                           {/* Bloque Campeón / Ganador en Penales de forma dinámica */}
-                           {partido.penalesLocal !== undefined && partido.penalesVisitante !== undefined && (
-                              <div className="text-[9px] font-black uppercase tracking-widest text-emerald-400 mt-1 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 text-center animate-pulse">
-                                 🏆 {partido.ganador || partido.clasificado || "Ganador"} avanza ({partido.penalesLocal}-{partido.penalesVisitante})
-                              </div>
-                           )}
-
-                           {/* Renglón 3: Sede */}
-                           <div className="text-center">
-                              <span className="text-[8px] font-bold uppercase tracking-widest text-slate-400">
-                                 📍 {partido.sede || "Sede por definir"}
-                              </span>
-                           </div>
-                        </div>
-                     ))
-                  ) : (
-                     <div className="text-center py-6">
-                        <p className="text-[10px] font-black text-gray-500 uppercase tracking-wider">No hay partidos programados para hoy</p>
-                     </div>
-                  )}
-               </div>
-            </div>
-
-         {/* ---   <div className="my-10"><AdBanner /></div> --- */}
+         <div className="max-w-4xl mx-auto px-5 mt-12 relative z-10">
+            
             <div className="my-10"><BreakingNews /></div>
 
- {/* --- SECCIÓN DE NOTICIAS (NUEVO DISEÑO HORIZONTAL) --- */}
-                    <section className="space-y-8 mb-16">
-                        <h4 className="text-[9px] font-black text-gray-400 uppercase italic tracking-widest ml-2">
-                            MUNDIAL 2026 
-                        </h4>
+            {/* --- SECCIÓN DE NOTICIAS --- */}
+            <section className="space-y-8 mb-16">
+               <h4 className="text-[9px] font-black text-gray-400 uppercase italic tracking-widest ml-2">
+                  MUNDIAL 2026 
+               </h4>
 
-
-                        {seleccion.noticias.map((nota) => (
-                            <div key={nota.id} className="bg-white rounded-[2rem] overflow-hidden shadow-md border border-gray-100">
-                                {/* Imagen Superior Horizontal con Margen (0.5cm aprox = p-4) */}
-                                <div className="p-4 pb-0">
-                                    <div className="relative w-full h-26 md:h-64 rounded-[1.5rem] overflow-hidden shadow-inner bg-gray-100">
-                                        <img
-                                            src={nota.img}
-                                            className="w-full h-full object-cover"
-                                            alt={nota.titulo}
-                                        />
-                                    </div>
-                                </div>
-
-
-                                {/* Contenido de la Noticia abajo */}
-                                <div className="p-8">
-                                    <div className="inline-block bg-blue-50 text-blue-600 text-[9px] font-black uppercase px-3 py-1 rounded-full mb-4">
-                                        Las Estrellas que no vuelvel 
-                                    </div>
-                                    <h3 className="text-2xl md:text-3xl font-black uppercase italic leading-tight mb-4 text-black tracking-tighter">
-                                        {nota.titulo}
-                                    </h3>
-                                    <p className="text-sm md:text-base text-gray-500 font-medium leading-relaxed italic whitespace-pre-line">
-                                        {nota.desc}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </section>
-
-            {/* --- PRÓXIMOS PARTIDOS --- */}
-         {/* ---   <section className="mt-12 text-slate-900">
-               <div className="flex justify-between items-end mb-4 px-2">
-                  <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Próximos Días</h2>
-                  <Link href="/partidos" className="text-[9px] font-black uppercase text-blue-600 hover:underline">Ver Calendario Completo →</Link>
-               </div>
-
-               <div className="space-y-3">
-                  {proximosPartidos.map((p) => {
-                     const [anoStr, mesStr, diaStr] = p.fecha.split('-');
-                     const meses = [
-                        'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-                        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-                     ];
-                     const fechaFormateada = `${parseInt(diaStr)} de ${meses[parseInt(mesStr) - 1]}`;
-                     return (
-                        <div key={p.id} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm border border-gray-100 group hover:border-blue-100 transition-colors">
-                           <div className="flex items-center gap-3 flex-1">
-                              <img src={p.banderaLocal} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.local} />
-                              <span className="font-black text-[11px] uppercase italic text-gray-900">{p.local}</span>
-                           </div>
-
-                           <div className="px-4 text-center border-x border-gray-50 min-w-[95px]">
-                              <p className="text-[8px] font-black text-blue-600 uppercase mb-0.5 tracking-wider">{p.hora}</p>
-                              <p className="text-[7px] font-bold text-gray-400 uppercase whitespace-nowrap">{fechaFormateada}</p>
-                           </div>
-
-                           <div className="flex items-center gap-3 flex-1 justify-end">
-                              <span className="font-black text-[11px] uppercase italic text-right text-gray-900">{p.visitante}</span>
-                              <img src={p.banderaVisitante} className="w-6 h-4 object-cover rounded-sm shadow-sm" alt={p.visitante} />
-                           </div>
+               {seleccion.noticias.map((nota) => (
+                  <div key={nota.id} className="bg-white rounded-[2rem] overflow-hidden shadow-md border border-gray-100">
+                     <div className="p-4 pb-0">
+                        <div className="relative w-full h-48 md:h-64 rounded-[1.5rem] overflow-hidden shadow-inner bg-gray-100">
+                           <img
+                              src={nota.img}
+                              className="w-full h-full object-cover"
+                              alt={nota.titulo}
+                           />
                         </div>
-                     );
-                  })}
-                  {proximosPartidos.length === 0 && (
-                     <div className="bg-white rounded-2xl p-6 text-center border border-gray-100">
-                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-wider">
-                           No hay más partidos programados para los próximos días
+                     </div>
+
+                     <div className="p-8">
+                        <div className="inline-block bg-blue-50 text-blue-600 text-[9px] font-black uppercase px-3 py-1 rounded-full mb-4">
+                           Las Estrellas que no vuelven 
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black uppercase italic leading-tight mb-4 text-black tracking-tighter">
+                           {nota.titulo}
+                        </h3>
+                        <p className="text-sm md:text-base text-gray-500 font-medium leading-relaxed italic whitespace-pre-line">
+                           {nota.desc}
                         </p>
                      </div>
-                  )}
-               </div>
-            </section> --- */}
+                  </div>
+               ))}
+            </section>
 
             {/* --- ÚLTIMAS NOTICIAS --- */}
             <section className="mt-16">
@@ -349,7 +196,8 @@ export default function Home() {
                   ))}
                </div>
             </section>
-             {/* --- SEDES --- */}
+
+            {/* --- SEDES --- */}
             <section className="mt-16">
                <div className="flex justify-between items-end mb-4 px-2">
                   <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Sedes</h2>
@@ -381,6 +229,7 @@ export default function Home() {
                   ))}
                </div>
             </section>
+            
             <div className="my-12"><AdBanner /></div>
          </div>
       </main>

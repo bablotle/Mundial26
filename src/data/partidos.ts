@@ -1550,7 +1550,10 @@ export const todosLosPartidos: Partido[] = [
               sede: "New Jersey",
               grupo: "F",
               fase: "Final",
-              ganador: "-"
+              golesLocal: 1,
+              golesVisitante: 0,
+              ganador: "España"
+
        },
 
 
@@ -1565,6 +1568,9 @@ export const todosLosPartidos: Partido[] = [
               hora: "17:00",
               sede: "Miami",
               grupo: "TP",
-              fase: "Tercer Puesto"
+              fase: "Tercer Puesto",
+              golesLocal: 4,
+              golesVisitante: 6,
+              ganador: "Inglaterra"
        }
 ]
